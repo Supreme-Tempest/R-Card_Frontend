@@ -8,6 +8,7 @@ const apiOptions = {
 /* GET home page. */
 router.get('/', function(req, res, next) {
   //console.log('route');
+  //res.render('index', { title: 'Express' });
   axios.get(apiOptions.server, {})
       .then((response) => {
         //console.log(response);
@@ -15,7 +16,8 @@ router.get('/', function(req, res, next) {
       })
       .catch((error) => {
         //console.log(error);
-        res.send(error);
+        res.send(error.message);
+        console.log('No logro concetar a la direccion');
       })
       .then(() => {
         // always executed
