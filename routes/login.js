@@ -5,17 +5,23 @@ const apiOptions = {
     server: 'http://localhost:3000/',
 }
 
+router.get('/', (req, res) => {
+    res.render('signup')
+});
+
 /* GET users listing. */
-router.get('/singup', function(req, res, next) {
-    //res.render('singup', { title: 'Register' });
+router.get('/signup', function(req, res, next) {
+    //res.render('signup', { title: 'Register' });
     //res.send('respond with a resource');
+    console.log(req.body);
     axios({
         method: 'post',
         url: apiOptions.server + 'auth/v1/register',
         data: {
-            username: 'luist23', 
-            password: '12345', 
-            email: 'luist23@correo.com'
+        
+            username: req.body.username, 
+            password: req.body.password, 
+            email: req.body.email
         }
     })
         .then((response) => {
