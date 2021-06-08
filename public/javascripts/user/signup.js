@@ -7,7 +7,7 @@ form.addEventListener('submit', function (event) {
         password: form.password.value,
         email: form.email.value
     }
-    fetch('/login/signup', {
+    fetch('/user/signup', {
         method: 'POST',
         body: JSON.stringify(data),
         headers: {

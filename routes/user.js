@@ -5,14 +5,11 @@ const apiOptions = {
     server: 'http://localhost:3000/',
 }
 
-router.get('/', (req, res) => {
-    res.render('signup')
+router.get('/signup', (req, res) => {
+    res.render('user/signup')
 });
 
-/* GET users listing. */
-router.get('/signup', function(req, res, next) {
-    //res.render('signup', { title: 'Register' });
-    //res.send('respond with a resource');
+router.post('/signup', function(req, res, next) {
     console.log(req.body);
     axios({
         method: 'post',
@@ -39,7 +36,11 @@ router.get('/signup', function(req, res, next) {
     });
 });
 
-router.get('/login', function(req, res, next) {
+router.get('/login', (req, res) => {
+    res.render('user/login')
+});
+
+router.post('/login', function(req, res, next) {
     //res.render('singup', { title: 'Register' });
     //res.send('respond with a resource');
     axios({
