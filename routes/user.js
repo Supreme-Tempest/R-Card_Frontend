@@ -6,13 +6,14 @@ const apiOptions = {
 }
 
 router.get('/', (req, res) => {
-    res.render('signup')
+    res.render('index')
 });
 
-/* GET users listing. */
+router.get('/signup', (req, res) => {
+    res.render('user/signup')
+});
+
 router.post('/signup', function(req, res, next) {
-    //res.render('signup', { title: 'Register' });
-    //res.send('respond with a resource');
     console.log(req.body);
     axios({
         method: 'post',
@@ -39,16 +40,19 @@ router.post('/signup', function(req, res, next) {
     });
 });
 
-router.get('/login', function(req, res, next) {
+router.get('/login', (req, res) => {
+    res.render('user/login')
+});
+
+router.post('/login', function(req, res, next) {
     //res.render('singup', { title: 'Register' });
     //res.send('respond with a resource');
     axios({
         method: 'post',
         url: apiOptions.server + 'auth/v1/login',
         data: {
-            username: 'luist23', 
-            password: '12345', 
-            email: 'luist23@correo.com'
+            username: req.body.username,
+            password: req.body.password
         }
     })
         .then((response) => {
