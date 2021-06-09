@@ -8,7 +8,7 @@ const apiOptions = {
 router.get('/', (req, res) => {
     console.log(localStorage.getItem('init'));
     console.log(localStorage.getItem('user'));
-    res.render('index')
+    res.render('register')
 });
 
 router.get('/signup', (req, res) => {
