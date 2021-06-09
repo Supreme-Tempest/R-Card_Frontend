@@ -6,6 +6,7 @@ const apiOptions = {
 }
 
 router.get('/', (req, res) => {
+    console.log(localStorage.getItem('init'));
     res.render('index')
 });
 
