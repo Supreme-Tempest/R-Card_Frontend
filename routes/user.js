@@ -5,6 +5,10 @@ const apiOptions = {
     server: 'http://localhost:3000/',
 }
 
+router.get('/', (req, res) => {
+    res.render('index')
+});
+
 router.get('/signup', (req, res) => {
     res.render('user/signup')
 });
@@ -47,9 +51,8 @@ router.post('/login', function(req, res, next) {
         method: 'post',
         url: apiOptions.server + 'auth/v1/login',
         data: {
-            username: 'luist23', 
-            password: '12345', 
-            email: 'luist23@correo.com'
+            username: req.body.username,
+            password: req.body.password
         }
     })
         .then((response) => {

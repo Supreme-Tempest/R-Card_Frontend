@@ -15,5 +15,5 @@
     "morgan": "~1.9.1",
     "node-localstorage": "^2.2.1",
     "nodemon": "^2.0.7"
-  }
+  } 
 }
