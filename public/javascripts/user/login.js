@@ -1,5 +1,5 @@
 var form = (document.forms.login);
-console.log(form);
+console.log(form); 
 form.addEventListener('submit', function (event) {
     event.preventDefault();
     let data = {

@@ -6,13 +6,16 @@ const apiOptions = {
 }
 
 router.get('/', (req, res) => {
-    console.log(localStorage.getItem('init'));
-    console.log(localStorage.getItem('user'));
-    res.render('register')
+    //console.log('init test: ', localStorage.getItem('init'));
+    //console.log('token: ', localStorage.getItem('token'));
+    //console.log('username: ', localStorage.getItem('username'));
+    console.log('user token: ', JSON.parse(localStorage.getItem('user')).token);
+    //console.log(localStorage.getItem('login'));
+    res.render('index')
 });
 
 router.get('/signup', (req, res) => {
-    res.render('user/signup')
+    res.render('signup')
 });
 
 router.post('/signup', function(req, res, next) {
@@ -43,13 +46,17 @@ router.post('/signup', function(req, res, next) {
 });
 
 router.get('/login', (req, res) => {
-    res.render('user/login')
+    /*localStorage.setItem('login', {
+        login: 'yes',
+        item: 'yes'
+    });*/
+    res.render('login')
 });
 
 router.post('/login', function(req, res, next) {
     //res.render('singup', { title: 'Register' });
     //res.send('respond with a resource');
-    console.log(req.body);
+    console.log('login post body: ', req.body);
     axios({
         method: 'post',
         url: apiOptions.server + 'auth/v1/login',
@@ -60,7 +67,8 @@ router.post('/login', function(req, res, next) {
     })
         .then((response) => {
         //console.log(response);
-        localStorage.setItem('user',res.data);
+        //const { token, role, username } = req.body.token;
+        localStorage.setItem('user',JSON.stringify(response.data));
         res.send(response.data);
         })
         .catch((error) => {
