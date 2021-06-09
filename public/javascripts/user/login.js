@@ -3,7 +3,7 @@ console.log(form);
 form.addEventListener('submit', function (event) {
     event.preventDefault();
     let data = {
-        username: form.name.value,
+        username: form.username.value,
         password: form.password.value,
     }
     fetch('/login', {

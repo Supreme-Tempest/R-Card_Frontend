@@ -25,7 +25,7 @@ if (typeof localStorage === "undefined" || localStorage === null) {
   localStorage = new LocalStorage('./scratch');
 }
 
-localStorage.setItem('init', 'yes init :v');
+//localStorage.setItem('init', 'yes init :v');
 
 //app.use('/', indexRouter);
 //app.use('/users', usersRouter);
