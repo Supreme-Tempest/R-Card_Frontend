@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
 });
 
 /* GET users listing. */
-router.get('/signup', function(req, res, next) {
+router.post('/signup', function(req, res, next) {
     //res.render('signup', { title: 'Register' });
     //res.send('respond with a resource');
     console.log(req.body);
