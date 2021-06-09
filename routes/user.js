@@ -7,6 +7,7 @@ const apiOptions = {
 
 router.get('/', (req, res) => {
     console.log(localStorage.getItem('init'));
+    console.log(localStorage.getItem('user'));
     res.render('index')
 });
 
@@ -48,6 +49,7 @@ router.get('/login', (req, res) => {
 router.post('/login', function(req, res, next) {
     //res.render('singup', { title: 'Register' });
     //res.send('respond with a resource');
+    console.log(req.body);
     axios({
         method: 'post',
         url: apiOptions.server + 'auth/v1/login',
@@ -58,6 +60,7 @@ router.post('/login', function(req, res, next) {
     })
         .then((response) => {
         //console.log(response);
+        localStorage.setItem('user',res.data);
         res.send(response.data);
         })
         .catch((error) => {
