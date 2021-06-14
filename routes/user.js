@@ -31,18 +31,20 @@ router.post('/signup', function(req, res, next) {
         }
     })
         .then((response) => {
-        //console.log(response);
+        console.log(response);
         res.send(response.data);
         })
         .catch((error) => {
         //console.log(error);
-        res.send(error.message);
+        console.log(error.response.data.error.message);
+        if (error.response.data.error.message.code == 40145) {
+            console.log('usuario ya existe');
+        }
+        if (error.response.data.error.message.code == 40146) {
+            console.log('email ya existe');
+        }
         console.log('No logro concetar a la direccion');
-        })
-        .then(() => {
-        // always executed
-        console.log('goal :v');
-    });
+        });
 });
 
 router.get('/login', (req, res) => {
@@ -69,17 +71,14 @@ router.post('/login', function(req, res, next) {
         //console.log(response);
         //const { token, role, username } = req.body.token;
         localStorage.setItem('user',JSON.stringify(response.data));
+        console.log('responce login');
         res.send(response.data);
         })
         .catch((error) => {
         //console.log(error);
         res.send(error.message);
         console.log('No logro concetar a la direccion');
-        })
-        .then(() => {
-        // always executed
-        console.log('goal :v');
-    });
+        });
 });
 
 module.exports = router;
