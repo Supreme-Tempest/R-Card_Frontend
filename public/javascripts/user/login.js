@@ -15,7 +15,8 @@ form.addEventListener('submit', function (event) {
     }).then(res => res.json())
         .then(res => {
             if (res.ok) {
-                console.log("se pudo perro")
+                console.log("se pudo perro");
+                location.href = '/testGet'
             } else {
                 alert("puede que estes repitiendo nombre o te falten datos");
             }

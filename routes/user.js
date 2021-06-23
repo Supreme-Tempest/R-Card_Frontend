@@ -4,6 +4,7 @@ const axios = require('axios');
 const apiOptions = {
     server: 'http://localhost:3000/',
 }
+const homeController = require('../controllers/home');
 
 router.get('/', (req, res) => {
     //console.log('init test: ', localStorage.getItem('init'));
@@ -53,6 +54,7 @@ router.get('/login', (req, res) => {
         item: 'yes'
     });*/
     res.render('login')
+    //res.end();
 });
 
 router.post('/login', function(req, res, next) {
@@ -72,7 +74,13 @@ router.post('/login', function(req, res, next) {
         //const { token, role, username } = req.body.token;
         localStorage.setItem('user',JSON.stringify(response.data));
         console.log('responce login');
-        res.send(response.data);
+        //res.send(response.data);
+        //homeController(res);
+        res.json({ok: true});
+        
+        //res.render('index');
+        //res.header({method: 'post'};)
+        //res.redirect(307,'/testPost'); // 307 reirect
         })
         .catch((error) => {
         //console.log(error);
