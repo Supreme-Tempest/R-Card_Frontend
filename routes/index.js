@@ -24,8 +24,8 @@ router.get('/testGet', (req, res) => {
     const data = {
         menssage: 'metodo get',
     };
-    res.render('index');
-    //apiMethods.ApiGet(routes.testPost, data, res);
+    //res.render('index');
+    apiMethods.ApiGet(routes.testGet, data, res);
 });
 
 module.exports = router;
