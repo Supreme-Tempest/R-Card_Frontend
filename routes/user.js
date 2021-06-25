@@ -4,6 +4,7 @@ const axios = require('axios');
 const apiOptions = {
     server: 'http://localhost:3000/',
 }
+const homeController = require('../controllers/home');
 
 router.get('/', (req, res) => {
     //console.log('init test: ', localStorage.getItem('init'));
@@ -40,18 +41,20 @@ router.post('/signup', function(req, res, next) {
         }
     })
         .then((response) => {
-        //console.log(response);
+        console.log(response);
         res.send(response.data);
         })
         .catch((error) => {
         //console.log(error);
-        res.send(error.message);
+        console.log(error.response.data.error.message);
+        if (error.response.data.error.message.code == 40145) {
+            console.log('usuario ya existe');
+        }
+        if (error.response.data.error.message.code == 40146) {
+            console.log('email ya existe');
+        }
         console.log('No logro concetar a la direccion');
-        })
-        .then(() => {
-        // always executed
-        console.log('goal :v');
-    });
+        });
 });
 
 router.get('/login', (req, res) => {
@@ -60,6 +63,7 @@ router.get('/login', (req, res) => {
         item: 'yes'
     });*/
     res.render('login')
+    //res.end();
 });
 
 router.post('/login', function(req, res, next) {
@@ -75,6 +79,7 @@ router.post('/login', function(req, res, next) {
         }
     })
         .then((response) => {
+<<<<<<< HEAD
             //console.log(response);
             //const { token, role, username } = req.body.token;
             localStorage.setItem('user',JSON.stringify(response.data));
@@ -85,6 +90,24 @@ router.post('/login', function(req, res, next) {
             //console.log(error);
             res.send(error.message);
             console.log('No logro concetar a la direccion');
+=======
+        //console.log(response);
+        //const { token, role, username } = req.body.token;
+        localStorage.setItem('user',JSON.stringify(response.data));
+        console.log('responce login');
+        //res.send(response.data);
+        //homeController(res);
+        res.json({ok: true});
+        
+        //res.render('index');
+        //res.header({method: 'post'};)
+        //res.redirect(307,'/testPost'); // 307 reirect
+        })
+        .catch((error) => {
+        //console.log(error);
+        res.send(error.message);
+        console.log('No logro concetar a la direccion');
+>>>>>>> b3cfb74e1633de5b35ee727166a3a6f31170d60f
         });
 });
 

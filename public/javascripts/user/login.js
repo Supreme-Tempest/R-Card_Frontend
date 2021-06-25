@@ -14,8 +14,9 @@ form.addEventListener('submit', function (event) {
         }
     }).then(res => res.json())
         .then(res => {
-            if (res.status) {
-                console.log("se pudo perro")
+            if (res.ok) {
+                console.log("se pudo perro");
+                location.href = '/testGet'
             } else {
                 console.log("error")
             }
