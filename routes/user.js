@@ -9,9 +9,18 @@ router.get('/', (req, res) => {
     //console.log('init test: ', localStorage.getItem('init'));
     //console.log('token: ', localStorage.getItem('token'));
     //console.log('username: ', localStorage.getItem('username'));
-    console.log('user token: ', JSON.parse(localStorage.getItem('user')).token);
+    //console.log('user token: ', JSON.parse(localStorage.getItem('user')).token);
     //console.log(localStorage.getItem('login'));
     res.render('index')
+});
+
+router.get('/inicio', (req, res) => {
+    //console.log('init test: ', localStorage.getItem('init'));
+    //console.log('token: ', localStorage.getItem('token'));
+    //console.log('username: ', localStorage.getItem('username'));
+    console.log('user token: ', JSON.parse(localStorage.getItem('user')).token);
+    //console.log(localStorage.getItem('login'));
+    res.render(302,'inicio');
 });
 
 router.get('/signup', (req, res) => {
@@ -66,20 +75,17 @@ router.post('/login', function(req, res, next) {
         }
     })
         .then((response) => {
-        //console.log(response);
-        //const { token, role, username } = req.body.token;
-        localStorage.setItem('user',JSON.stringify(response.data));
-        res.send(response.data);
+            //console.log(response);
+            //const { token, role, username } = req.body.token;
+            localStorage.setItem('user',JSON.stringify(response.data));
+            //res.send(response.data);
+            res.redirect('signup');
         })
         .catch((error) => {
-        //console.log(error);
-        res.send(error.message);
-        console.log('No logro concetar a la direccion');
-        })
-        .then(() => {
-        // always executed
-        console.log('goal :v');
-    });
+            //console.log(error);
+            res.send(error.message);
+            console.log('No logro concetar a la direccion');
+        });
 });
 
 module.exports = router;

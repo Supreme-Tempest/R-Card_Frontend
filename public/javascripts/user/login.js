@@ -14,10 +14,10 @@ form.addEventListener('submit', function (event) {
         }
     }).then(res => res.json())
         .then(res => {
-            if (res.ok) {
+            if (res.status) {
                 console.log("se pudo perro")
             } else {
-                alert("puede que estes repitiendo nombre o te falten datos");
+                console.log("error")
             }
         })
 });
