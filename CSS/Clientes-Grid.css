@@ -1,10 +1,11 @@
 .Div-Contenedor{
     display: grid;
-    grid-template-columns: 5% 30% 10% 35% 10%;
-    grid-template-rows: 10% 50% 10% 10% 10% 10%;
+    grid-template-columns: 0% 30% 10% 50% 10%;
+    grid-template-rows: 10% 60% 10% 10% 10% 10%;
 }
 .Div-Cliente{
     overflow: scroll;
+   
     grid-column-start: 3;
     grid-column-end: 6;
     grid-row-start: 2;
@@ -12,3 +13,32 @@
 }
 
 
+.btn-agregarCliente{
+    background-color:#2285c7;
+    font-family: Fuente;
+    font-size: 14px;
+    color: rgb(255, 255, 255);   
+    width: 150px;
+    height: 40px;
+        
+}
+.Grid-Btn{
+    display: grid;
+    grid-template-columns: 5% 25% 10% 25% 12%;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 15;
+    grid-row-end: 16;
+}
+
+.Grid-Btn .btn-agregarCliente{
+  
+    grid-column-start: 4;
+}
+
+.titulo-LCliente{
+    font-family: Fuente;
+    grid-column-start: 4;
+    
+
+}
