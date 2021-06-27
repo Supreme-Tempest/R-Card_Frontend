@@ -18,7 +18,7 @@ form.addEventListener('submit', function (event) {
                 console.log("se pudo perro");
                 location.href = '/testGet'
             } else {
-                alert("puede que estes repitiendo nombre o te falten datos");
+                console.log("error")
             }
         })
 });
