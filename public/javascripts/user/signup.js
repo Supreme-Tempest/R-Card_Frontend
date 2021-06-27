@@ -5,7 +5,10 @@ form.addEventListener('submit', function (event) {
     let data = {
         username: form.username.value,
         password: form.password.value,
-        email: form.email.value
+        name: form.name.value,
+        lastname: form.lastname.value,
+        workshop: 1,
+        role: 2,
     }
     fetch('/signup', {
         method: 'POST',

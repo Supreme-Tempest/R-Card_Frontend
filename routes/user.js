@@ -24,12 +24,7 @@ router.post('/signup', function(req, res, next) {
     axios({
         method: 'post',
         url: apiOptions.server + 'auth/v1/register',
-        data: {
-        
-            username: req.body.username, 
-            password: req.body.password, 
-            email: req.body.email
-        }
+        data: req.body
     })
         .then((response) => {
         console.log(response);
