@@ -48,18 +48,18 @@
         
 
     </div>
-    <!--Div del contenedor-->
-    <div class="Div-Contenedor">
+
+    <div class="Div-Contenedor"> <!--Div del contenedor-->
         <Div class="Div-grid-Ingresos">
             <input class="Grid-CodPro Imput-css" type="text" placeholder="Codigo de producto">
-            <input class="Grid-InputNum Imput-css" type="number" placeholder="Cantidad">
+            <input class="Grid-InputNum Imput-css" type="number" placeholder="Cantidad" min="1">
 
             <p class="Grid-Error1 p-Error">El producto especificado no existe</p>
 
             <button class="Grid-BtnAgregar btn-General btn-Naranja">Agregar</button>
         </Div>
 
-        <div class="Div-Grid-Tabla ">
+        <div class="Div-Grid-Tabla "><!--Div de la tabla-->
             <table class="table-css">
                 <thead>
                     <tr>
@@ -76,111 +76,77 @@
                         <td>1</td>
                         <td>1,000</td>
                         <td>1,000</td>
-                        <td> <button>x</button></td>
+                        <td> <button class="btn-Eliminar">x</button></td>
                     </tr>
                     <tr>
                         <td>Cama</td>
                         <td>1</td>
                         <td>1,000</td>
                         <td>1,000</td>
-                        <td> <button>x</button></td>
+                        <td> <button class="btn-Eliminar">x</button></td>
                     </tr>
                     <tr>
                         <td>Cama</td>
                         <td>1</td>
                         <td>1,000</td>
                         <td>1,000</td>
-                        <td> <button>x</button></td>
+                        <td> <button class="btn-Eliminar">x</button></td>
                     </tr>
                     <tr>
                         <td>Cama</td>
                         <td>1</td>
                         <td>1,000</td>
                         <td>1,000</td>
-                        <td> <button>x</button></td>
+                        <td> <button class="btn-Eliminar">x</button></td>
                     </tr>
                     <tr>
                         <td>Cama</td>
                         <td>1</td>
                         <td>1,000</td>
                         <td>1,000</td>
-                        <td> <button>x</button></td>
+                        <td> <button class="btn-Eliminar">x</button></td>
                     </tr>
                     <tr>
                         <td>Cama</td>
                         <td>1</td>
                         <td>1,000</td>
                         <td>1,000</td>
-                        <td> <button>x</button></td>
+                        <td> <button class="btn-Eliminar">x</button></td>
                     </tr>
                     <tr>
                         <td>Cama</td>
                         <td>1</td>
                         <td>1,000</td>
                         <td>1,000</td>
-                        <td> <button>x</button></td>
+                        <td> <button class="btn-Eliminar">x</button></td>
                     </tr>
                     <tr>
                         <td>Cama</td>
                         <td>1</td>
                         <td>1,000</td>
                         <td>1,000</td>
-                        <td> <button>x</button></td>
+                        <td> <button class="btn-Eliminar">x</button></td>
                     </tr>
                     <tr>
                         <td>Cama</td>
                         <td>1</td>
                         <td>1,000</td>
                         <td>1,000</td>
-                        <td> <button>x</button></td>
+                        <td> <button class="btn-Eliminar">x</button></td>
                     </tr>
-                    <tr>
-                        <td>Cama</td>
-                        <td>1</td>
-                        <td>1,000</td>
-                        <td>1,000</td>
-                        <td> <button>x</button></td>
-                    </tr>
-                    <tr>
-                        <td>Cama</td>
-                        <td>1</td>
-                        <td>1,000</td>
-                        <td>1,000</td>
-                        <td> <button>x</button></td>
-                    </tr>
-                    <tr>
-                        <td>Cama</td>
-                        <td>1</td>
-                        <td>1,000</td>
-                        <td>1,000</td>
-                        <td> <button>x</button></td>
-                    </tr>
-                    <tr>
-                        <td>Cama</td>
-                        <td>1</td>
-                        <td>1,000</td>
-                        <td>1,000</td>
-                        <td> <button>x</button></td>
-                    </tr>
-                    <tr>
-                        <td>Cama</td>
-                        <td>1</td>
-                        <td>1,000</td>
-                        <td>1,000</td>
-                        <td> <button>x</button></td>
-                    </tr>
+                    
                 </tbody>
             </table>
         </div>
         <div class="Div-Grid-Total">
-            <p class="Grid-Total">Total</p>
-            <input class="Grid-Total2" type="text" name="inputname" value="$1000.00" disabled>
+            <p class="Grid-Total p-style">Total</p>
+            <input class="Grid-Total2 Imput-css" type="text" name="inputname" value="$1000.00" disabled>
         </div>
 
         <div class="Div-Grid-Btn">
-            <p>Error de Facturacion</p>
-            <button class="btn-General btn-Verde">Facturar</button>
-            <button class="btn-General btn-Rojo">Cancelar</button>
+            <p class="p-Error grid-p-Error">Error de Facturacion</p>
+            <button class="grid-btnVerde btn-General btn-Verde">Facturar</button>
+            <button class="grid-btnRojo btn-General btn-Rojo">Cancelar</button>
         </div>
 
     </div>
