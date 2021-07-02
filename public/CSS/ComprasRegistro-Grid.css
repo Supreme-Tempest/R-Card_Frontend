@@ -1,0 +1,79 @@
+.Div-Contenedor{
+    display: grid;
+    grid-template-columns: 10% 25% 40% 25%;
+    grid-template-rows: 10% 80% 10%;
+}
+
+.Div-grid-Ingresos{/*Area de los input para ingresar productos*/
+    display: grid;
+    grid-template-rows: 10% 5% 10% 5% 10% 5% 10% 5% 10% 5% 10% 5% 10% 5% 10% 5% 10%;
+    /**/
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.Grid-CodPro{
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.Grid-InputNum{
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+.Grid-CodPro2{
+    grid-row-start: 5;
+    grid-row-end: 6;
+}
+
+.Grid-CodPro3{
+    grid-row-start: 7;
+    grid-row-end: 8;
+}
+
+.Grid-CodPro4{
+    grid-row-start: 9;
+    grid-row-end: 10;
+}
+
+.Grid-CodPro5{
+    grid-row-start: 11;
+    grid-row-end: 12;
+}
+
+.Grid-CodPro6{
+    grid-row-start: 13;
+    grid-row-end: 14;
+}
+
+.Grid-Error1{
+    grid-row-start: 15;
+    grid-row-end: 16;
+}
+
+.botones{
+    display: grid;
+    grid-template-columns: 15% 25% 10% 25% 15%;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 17;
+    grid-row-end: 18;
+}
+
+.botones .btn-Verde{
+    background-color:#36ac55;
+    grid-column-start: 2;
+    
+}
+.botones .btn-Rojo{
+    background-color:#cd0e4d;
+    grid-column-start: 4;
+}
+
+.Imput-css{
+    width: 400px;
+    height: 40px;
+}

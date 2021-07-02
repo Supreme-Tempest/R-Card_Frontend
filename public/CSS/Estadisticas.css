@@ -1,0 +1,225 @@
+.Div-Contenedor{
+    display: grid;
+    grid-template-columns: 4% 20% 4% 20% 4% 20% 4% 20% 4%;
+    grid-template-rows: 5% 20% 5% 20% 5% 20% 25%;
+}
+
+/*Estadisticas de clientes*/
+.Grid-Clientes{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    /*Posicion dentro del contenedor*/
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+/*area de icono*/
+
+.Grid-Clientes-icon{
+    background: #32ab52;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+/*area de input*/
+
+.Grid-Clientes-input{
+    background: #ffffff;
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+
+/*------------------------------------------------*/
+/*Estadisticas de compras*/
+/*Div general*/
+.Grid-Compras{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    /*Posicion dentro del contenedor*/
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+/*area de icono*/
+
+.Grid-Compras-icon{
+    background: #ed6f25;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    
+}
+
+/*area de input*/
+
+.Grid-Compras-input{
+    background: #ffffff;
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+/*-------------------------------------------------*/
+/*Estadisticas de Ventas*/
+
+.Grid-Ventas{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    /*Posicion dentro del contenedor*/
+    grid-column-start: 6;
+    grid-column-end: 7;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+/*area de icono*/
+
+.Grid-Ventas-icon{
+    background: #f9b71f;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    
+}
+
+/*area de input*/
+
+.Grid-Ventas-input{
+    background: #ffffff;
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+/*-------------------------------------------------*/
+/*Estadisticas de Productos*/
+
+.Grid-Productos{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    /*Posicion dentro del contenedor*/
+    grid-column-start: 8;
+    grid-column-end: 9;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+/*area de icono*/
+
+.Grid-Producto-icon{
+    display: flex;
+    justify-content: center;
+    background: #6362aa;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    
+}
+
+/*area de input*/
+
+.Grid-Producto-input{
+    background: #ffffff;
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+.grid-it{
+    display: grid;
+    grid-template-rows: 10% 40% 40% 10%;
+}
+
+.img-icon{
+    display: flex;
+    justify-content: center;    
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.p-icon{
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+
+/*-------------------------------------------------*/
+/*Tabla top 3 mas vendidos*/
+
+.grid-Top-Mas{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 4;
+    grid-row-end: 5;
+}
+
+/*Tabla top 3 menos Vendidos*/
+
+.grid-Top-Menos{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 6;
+    grid-row-end: 7;
+}
+
+/*--------- Gafico --------------*/
+
+.Grid-Area-Gafica{
+    display: grid;
+    grid-template-columns: 30% 70%;
+    /**/
+    grid-column-start: 4;
+    grid-column-end: 9;
+    grid-row-start: 4;
+    grid-row-end: 7;
+}
+.Grid-Grafica-Buscador{
+    background: #000;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.grid-Grafica{
+    background: rgb(27, 185, 212);
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+/*-----------------------------------------*/
+/*------------ Formatos Especiales---------*/
+/*-----------------------------------------*/
+
+/*Img de cuadros*/
+.iconE{
+    width: 80%;
+    max-height: 50px;
+}
+
+.PETitulo{
+    font-family: Fuente;
+    margin: 0%;
+    text-align: center;
+}
+
+.General-Input{
+    display: grid;
+    grid-template-rows: 40% 20% 40%;
+}
+
+.grid-Imput-css{
+    max-width: 105px;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    text-align: center;
+}
+
+.th-n{
+    width: 40px;
+}
+
+.th-Producto{
+    width: 100px;
+}
+
+.th-Cantidad{
+    width: 100px;
+}

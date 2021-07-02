@@ -1,0 +1,109 @@
+.Div-Contenedor{
+
+    display: grid;
+    grid-template-columns: 10% 25% 40% 25%;
+    grid-template-rows: 10% 80% 10%;
+}
+
+.Div-grid-IngresarCliente{/*Area de los input para ingresar Clientes*/
+    display: grid;
+    grid-template-rows: 15% 5% 15% 5% 15% 5% 15% 5% 15% 5% 15% 5% 15% 5% 15% 5% 15%;
+    /**/
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 6;
+    width: 50%;
+    margin-bottom: 1px;
+    margin-top: 1px;
+    width: 465px;
+    height: 500px;
+    
+    
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+    
+}
+
+
+.Grid-DUI{
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.Grid-Cliente-Name{
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+.Grid-Cliente-Date{
+    grid-row-start: 5;
+    grid-row-end: 6;
+}
+
+.Grid-Cliente-Card{
+    grid-row-start: 7;
+    grid-row-end: 8;
+}
+
+.Grid-Cliente-Booking{
+    grid-row-start: 9;
+    grid-row-end: 10;
+}
+
+.Grid-Cliente-Exp{
+    grid-row-start: 11;
+    grid-row-end: 12;
+}
+
+.Grid-Cliente-PIN{
+    grid-row-start: 13;
+    grid-row-end: 14;
+}
+
+.Grid-Error1{
+    grid-row-start: 15;
+    grid-row-end: 16;
+}
+.Grid-Error1{
+    grid-row-start: 17;
+    grid-row-end: 18;
+}
+
+.botones{
+    display: grid;
+    grid-template-columns: 19% 25% 10% 25% 15%;
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 15;
+    grid-row-end: 16;
+}
+
+.botones .btn-Verde{
+    background-color:#36ac55;
+    grid-column-start: 2;
+    
+}
+.botones .btn-Rojo{
+    background-color:#cd0e4d;
+    grid-column-start: 4;
+}
+
+.Imput-css{
+    width: 400px;
+    height: 30px;
+    margin-bottom: 1px;
+   
+   
+}
+.titulo-ACliente{
+    font-family: Fuente;
+    grid-column-start: 3;
+    margin-left: 50px;
+    
+
+}

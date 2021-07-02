@@ -1,0 +1,282 @@
+@font-face {/*Fuente Personalizada*/
+    font-family: Fuente;
+    src: url("/fonts/FS\ NokioMedium.ttf") format("opentype");
+}
+
+body{
+    display: grid;
+    grid-template-columns: 10% 90%;
+    grid-template-rows: 10% 90%;
+    margin: 0em;
+}
+
+/*Formato de Botones de menu izquierdo*/
+
+.Btn-Menu{/*formato general de boton*/
+    display: grid;
+    grid-template-columns: 10% 20% 10% 50% 10%;
+    grid-template-rows: 20% 60% 20%;
+    background-color: #2d2e30;
+    height: 50px;
+}
+
+.Btn-Menu:hover{/*hover del boton para cambiar de color-------*/
+    background:#2385c7;
+}
+
+.Icon{/*iconos de los botones*/
+    max-height: 30px;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    margin: 0em;
+}
+
+.btn-name{/*Texto de los botones*/
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    color: white;
+    font-family:Fuente;
+    font-size: 100%;
+    margin: 0em;
+}
+
+/**----------------Barra Izquierda------------------**/
+.Div-Nav{
+    display: grid;
+    grid-template-rows: 10% 5% 15% 50% 20%;    
+    /*Area de grid del body*/
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    /*Disenno de vista*/
+    background-color: #2d2e30;
+    height: 100vh;/*es el 100% del alto de la pantalla*/
+}
+
+.img-Nav{
+    display: grid;
+    grid-template-rows: 25% 25% 25% 25%;
+    grid-template-columns: 10% 40% 40% 10%;
+    /*Grid de Div-Nav*/
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.Nav-Logo{
+    width: 90%;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.btn-Area{
+    grid-row-start: 3;
+    grid-row-end: 4;
+    display: flex;
+    flex-direction: column;
+}
+
+/**----------------Contenedor------------------**/
+
+.Div-Contenedor{
+    /*Area de grid*/
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    /*Disenno de vista*/
+    background-color: #ededed;
+}
+
+/**----------------Barra de Arriba------------------**/
+
+.Div-Barra{
+    display: grid;
+    grid-template-rows: 10% 40% 40% 10%;
+    grid-template-columns: 10% 40% 40% 10%;
+    /*Area de grid del body*/
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    /*Disenno de vista*/
+    background-color: #2d2e30;
+    /*justify-content: center;*/
+    
+}
+
+/*Menu desplegable*/
+
+.dropbtn {
+    background-color: #2d2e30;
+    color: #f9b321;
+    font-family: Fuente;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+  /* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    grid-row-start: 2;
+    grid-row-end: 4;
+    grid-column-start: 4;
+    grid-column-end: 5;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #2d2e30;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+  /* Links inside the dropdown */
+.dropdown-content a {
+    color: white;
+    font-family: Fuente;
+    font-size: 15px;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+  /* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #2d2e30}
+
+  /* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #2d2e30;
+}
+
+/*---------------------------------------------*/
+/*-------------Estilo de Botones---------------*/
+/*---------------------------------------------*/
+
+.btn-General {
+    /*border: none;*/
+    font-family: Fuente;
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    /*margin: 0em;*/
+    /*padding: 0px;*/
+    width: 110px;
+    height: 40px;
+    
+}
+
+.btn-General:hover{
+    border-width: 3px;
+    background:none;
+}
+
+.btn-Verde{
+    background-color:#36ac55;
+    
+}
+
+.btn-Verde:hover{
+    border-color:#36ac55;
+    color:#1f6e34;
+}
+
+.btn-Rojo{
+    background-color:#cd0e4d;
+}
+
+.btn-Rojo:hover{
+    border-color:#cd0e4d;
+    color:#700126;
+}
+
+.btn-Naranja{
+    background-color:#ed7025;
+}
+
+.btn-Naranja:hover{
+    border-color:#ed7025;
+    color:#9e4915;
+}
+
+.btn-Azul{
+    background-color:#2285c7;
+}
+
+.btn-Azul:hover{
+    border-color:#2285c7;
+    color:#084269;
+}
+
+.btn-Eliminar{
+    font-family: Fuente;
+    color: rgb(255, 255, 255);
+    background-color:#ed0000;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+
+.btn-Eliminar:hover{
+    background: none;
+    border-color:#ed0000;
+    color:#790303;
+}
+
+/*---------------------------------------------*/
+/*-------------- Formato Imputs ---------------*/
+/*---------------------------------------------*/
+
+.Imput-css{
+    font-family: Fuente;
+    font-size: 18px;
+    height: 30px;
+    width: 300px;
+    border: none;
+    outline: none
+}
+
+/*---------------------------------------------*/
+/*----------------Formato Tabla----------------*/
+/*---------------------------------------------*/
+
+/*clase para la tabla table-css*/
+
+.table-css th{/*titulos de Tabla*/
+    background-color:#2d2e30;
+    font-family: Fuente;
+    font-size: 18px;
+    font-weight: normal;
+    color:white;
+}
+
+.table-css tr td{/*celdas de la tabla*/
+    background-color:white;
+    font-family: Fuente;
+    font-size: 16px;
+    font-weight: normal;
+    color:#2d2e30;
+}
+
+/*Mensajes de Error*/
+.p-Error{
+    font-family: Fuente;
+    color: red;
+    font-size: 15px;
+}

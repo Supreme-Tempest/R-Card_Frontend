@@ -1,0 +1,115 @@
+.Div-Contenedor{
+    display: grid;
+    grid-template-columns: 10% 30% 10% 35% 10%;
+    grid-template-rows: 10% 50% 10% 10% 10% 10%;
+}
+
+.Div-grid-Ingresos{/*Area de los input para ingresar productos*/
+    display: grid;
+    grid-template-rows: 10% 5% 10% 5% 10% 5% 10% 45%;
+    /**/
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+td{
+    width: 20%;
+}
+
+.Grid-CodPro{
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.Grid-InputNum{
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+.Grid-Error1{
+    grid-row-start: 5;
+    grid-row-end: 6;
+}
+
+.Grid-BtnAgregar{
+    grid-row-start: 7;
+    grid-row-end: 8;
+}
+
+/*-------------Grid Tabla---------------*/
+
+.Div-Grid-Tabla{
+    overflow: scroll;
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.Div-Grid-Total{
+    display: grid;
+    grid-template-columns: 45% 10% 45%;
+    grid-template-rows: 25% 25% 25% 25%;
+    /*grid-template-rows: 10% 50% 10% 10% 10% 10%;*/
+    /*------------------*/
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+.Grid-Total{
+    margin: 0%;
+    display: flex;
+    justify-content: flex-end;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 4;    
+}
+
+.Grid-Total2{
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 4;
+}
+
+.Div-Grid-Btn{
+    display:grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows: 50% 50%;
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 4;
+    grid-row-end: 6;
+}
+
+.grid-p-Error{
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.grid-btnVerde{
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.grid-btnRojo{
+    grid-column-start: 4;
+    grid-column-end: 6;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.p-style{
+    margin: 0%;
+    font-family: Fuente;
+}
+
