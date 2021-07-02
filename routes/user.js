@@ -74,18 +74,6 @@ router.post('/login', function(req, res, next) {
         }
     })
         .then((response) => {
-<<<<<<< HEAD
-            //console.log(response);
-            //const { token, role, username } = req.body.token;
-            localStorage.setItem('user',JSON.stringify(response.data));
-            //res.send(response.data);
-            res.redirect('signup');
-        })
-        .catch((error) => {
-            //console.log(error);
-            res.send(error.message);
-            console.log('No logro concetar a la direccion');
-=======
         //console.log(response);
         //const { token, role, username } = req.body.token;
         localStorage.setItem('user',JSON.stringify(response.data));
@@ -102,7 +90,6 @@ router.post('/login', function(req, res, next) {
         //console.log(error);
         res.send(error.message);
         console.log('No logro concetar a la direccion');
->>>>>>> b3cfb74e1633de5b35ee727166a3a6f31170d60f
         });
 });
 
