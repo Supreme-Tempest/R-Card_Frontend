@@ -28,4 +28,8 @@ router.get('/testGet', (req, res) => {
     apiMethods.ApiGet(routes.testGet, data, res);
 });
 
+router.get('/test', (req, res) => {
+    res.render('HTML/Login')
+});
+
 module.exports = router;
