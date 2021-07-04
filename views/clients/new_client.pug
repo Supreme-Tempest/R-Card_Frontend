@@ -1,0 +1,71 @@
+<!DOCTYPE html> 
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/global.css" /><!-- referencia para el css -->
+    <link rel="stylesheet" href="/stylesheets/clients/ClienteNuevo-Grid.css" /><!-- referencia para el css -->
+    <title>Ingresar Cliente</title>
+</head>
+
+<body>
+    <!-- Div Superior -->
+    <div class="Div-Barra">
+        <div class="dropdown">
+            <button class="dropbtn">Usuario</button>
+            <div class="dropdown-content">
+                <a href="#">Cerrar Sesión</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Div del menu izquierdo -->
+    <div class="Div-Nav">
+        <div class="img-Nav">
+            <img class="Nav-Logo" src="/images/LogoDorado.png">
+        </div>
+
+        <div class="btn-Area">
+            <button class="Btn-Menu" id="Btn-Estadisticas">
+                <img class="Icon" src="/images/Estadistica.svg">
+                <P class="btn-name">Estadistica</P>
+            </button>
+            <button class="Btn-Menu" id="Btn-Clientes">
+                <img class="Icon" src="/images/Cliente.svg">
+                <P class="btn-name">Clientes</P>
+            </button>
+            <button class="Btn-Menu" id="Btn-Compras">
+                <img class="Icon" src="/images/Compras.svg">
+                <P class="btn-name">Compras</P>
+            </button>
+            <button class="Btn-Menu" id="Btn-Ventas">
+                <img class="Icon" src="/images/Ventas.svg">
+                <class class="btn-name">Ventas</class>
+            </button>
+        </div>
+    </div>
+
+    <div class="Div-Contenedor">
+        <h3 class="titulo-ACliente">Agregar Cliente</h3>
+        <Div class="Div-grid-IngresarCliente">
+            
+            
+            <input class="Grid-DUI Imput-css" type="text" placeholder="Numero de DUI">
+            <input class="Grid-Cliente-Name Imput-css" type="text" placeholder="Nombre">
+            <input class="Grid-Cliente-Date Imput-css" type="text" placeholder="Fecha de Nacimiento">
+            <input class="Grid-Cliente-Card Imput-css" type="text" placeholder="Numero de Tarjeta">
+            <input class="Grid-Cliente-Booking Imput-css" type="text" placeholder="Fecha de Contratacion">
+            <input class="Grid-Cliente-Exp Imput-css"type="text" placeholder="Fecha de vencimiento">
+            <input class="Grid-Cliente-PIN Imput-css"type="text" placeholder="Numero de PIN">
+
+            <p class="Grid-Error1 p-Error">El cliente ya existe</p>
+    <div class="botones">
+        <button class="btn-General btn-Verde">Guardar</button>
+        <button class="btn-General btn-Rojo">Cancelar</button>
+    </div>       
+        </Div>
+
+    </div>
+</body>

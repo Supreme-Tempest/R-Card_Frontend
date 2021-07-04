@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+html
+  head
+    <meta charset="utf-8">
+    <title>RCard Login</title>
+    link(rel='stylesheet' href='/stylesheets/session/login.css')
+  body
+    div(class="login-box")
+      img(src="/images/LogoNegro.png" class="avatar" alt="Avatar Image")
+      form(action="/login" method="post" name="login" class="validate-form")
+        <!-- USERNAME INPUT -->
+        <label for="username">Username</label>
+        div(class="validate-input")
+          <input type="text" class="input100" name="username" placeholder="Enter Username">
+          <span class="focus-input100"></span>
+        <!-- PASSWORD INPUT -->
+        <label for="password">Password</label>
+        div(class="validate-input")
+          <input type="password" class="input100" class="validate-input" name="password" placeholder="Enter Password">
+          <span class="focus-input100"></span>
+        <input type="submit" value="Log In">
+    <script src="../javascripts/register/main.js"></script>
+    <script src="../javascripts/user/login.js"></script>
