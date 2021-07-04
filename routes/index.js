@@ -29,7 +29,7 @@ router.get('/testGet', (req, res) => {
 });
 
 router.get('/test', (req, res) => {
-    res.render('HTML/Login')
+    res.render('clients/list_clients')
 });
 
 module.exports = router;
