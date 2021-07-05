@@ -12,22 +12,37 @@ div(class="Div-Barra")
     </div>
 
     <div class="btn-Area">
-        <button class="Btn-Menu" id="Btn-Estadisticas">
+        script.
+            function handleStatistics() {
+                window.location.href = '/diagnostics/statistics'
+            }
+        button(class="Btn-Menu" id="Btn-Estadisticas" onClick="handleStatistics()")
             <img class="Icon" src="/images/Estadistica.svg">
             <P class="btn-name">Estadistica</P>
-        </button>
-        <button class="Btn-Menu" id="Btn-Clientes">
+
+        script.
+            function handleClients() {
+                window.location.href = '/clients/list'
+            }
+        button(class="Btn-Menu" id="Btn-Clientes" onClick="handleClients()")
             <img class="Icon" src="/images/Cliente.svg">
             <P class="btn-name">Clientes</P>
-        </button>
-        <button class="Btn-Menu" id="Btn-Compras">
+            
+        script.
+            function handlePurchases() {
+                window.location.href = '/purchases/register'
+            }
+        button(class="Btn-Menu" id="Btn-Compras" onClick="handlePurchases()")
             <img class="Icon" src="/images/Compras.svg">
             <P class="btn-name">Compras</P>
-        </button>
-        <button class="Btn-Menu" id="Btn-Ventas">
+
+        script.
+            function handleSales() {
+                window.location.href = '/sales/list'
+            }
+        button(class="Btn-Menu" id="Btn-Ventas" onClick="handleSales()")
             <img class="Icon" src="/images/Ventas.svg">
-            <class class="btn-name">Ventas</class>
-        </button>
+            <p class="btn-name">Ventas</p>
     </div>
 
 </div>
