@@ -1,47 +1,10 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 html(lang="en")
-    head
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/stylesheets/global.css" />
-        <link rel="stylesheet" href="/stylesheets/clients/Clientes-Grid.css" />
-        <!-- referencia para el css -->
-        title Clientes
+    include ../tools/head.pug
+        link(rel="stylesheet" href="/stylesheets/clients/Clientes-Grid.css")
+        title="Clientes"
     body
-        <!-- Div Superior -->
-        <div class="Div-Barra">
-            <div class="dropdown">
-                <button class="dropbtn">Usuario</button>
-                <div class="dropdown-content">
-                    <a href="#">Cerrar Sesión</a>
-                </div>
-            </div>
-        </div>
-        <!-- Div del menu izquierdo -->
-        <div class="Div-Nav">
-            <div class="img-Nav">
-                <img class="Nav-Logo" src="/images/LogoDorado.png">
-            </div>
-            <div class="btn-Area">
-                <button class="Btn-Menu" id="Btn-Estadisticas">
-                    <img class="Icon" src="/images/Estadistica.svg">
-                    <P class="btn-name">Estadistica</P>
-                </button>
-                <button class="Btn-Menu" id="Btn-Clientes">
-                    <img class="Icon" src="/images/Cliente.svg">
-                    <P class="btn-name">Clientes</P>
-                </button>
-                <button class="Btn-Menu" id="Btn-Compras">
-                    <img class="Icon" src="/images/Compras.svg">
-                    <P class="btn-name">Compras</P>
-                </button>
-                <button class="Btn-Menu" id="Btn-Ventas">
-                    <img class="Icon" src="/images/Ventas.svg">
-                    <class class="btn-name">Ventas</class>
-                </button>
-            </div>
-        </div>
+        include ../tools/navigation.pug
         <!--Div del contenedor-->
         <div class="Div-Contenedor">
             <h3 class="titulo-LCliente">Listado de Clientes</h3>
