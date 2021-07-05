@@ -1,205 +1,158 @@
 <!DOCTYPE html>
-<html lang="en">
+html(lang="en")
+    include ../tools/head.pug
+        link(rel="stylesheet" href="/stylesheets/diagnostics/Estadisticas.css")
+        title="Estadistica"
+    body
+        include ../tools/navigation.pug
+        <!--Div del contenedor-->
+        <div class="Div-Contenedor">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/stylesheets/diagnostics/Estadisticas.css" />
-    <link rel="stylesheet" href="/stylesheets/global.css" /><!-- referencia para el css -->
-    <title>Estadistica</title>
-</head>
+            <div class="Grid-Clientes">
+                <!-- html estadistica Clientes-->
+                <div class="grid-it Grid-Clientes-icon">
+                    <div class="img-icon">
+                        <img class="iconE" src="/images/Cliente.svg" alt="">
+                    </div>
+                    <div class="p-icon">
+                        <p class="PETitulo">
+                            Clientes Totales
+                        </p>
+                    </div>
 
-<body>
-    <!-- Div Superior -->
-    <div class="Div-Barra">
-        <div class="dropdown">
-            <button class="dropbtn">Usuario</button>
-            <div class="dropdown-content">
-                <a href="#">Cerrar Sesión</a>
-            </div>
-        </div>
-    </div>
 
-    <!-- Div del menu izquierdo -->
-    <div class="Div-Nav">
-        <div class="img-Nav">
-            <img class="Nav-Logo" src="/images/LogoDorado.png">
-        </div>
-
-        <div class="btn-Area">
-            <button class="Btn-Menu" id="Btn-Estadisticas">
-                <img class="Icon" src="/images/Estadistica.svg">
-                <P class="btn-name">Estadistica</P>
-            </button>
-            <button class="Btn-Menu" id="Btn-Clientes">
-                <img class="Icon" src="/images/Cliente.svg">
-                <P class="btn-name">Clientes</P>
-            </button>
-            <button class="Btn-Menu" id="Btn-Compras">
-                <img class="Icon" src="/images/Compras.svg">
-                <P class="btn-name">Compras</P>
-            </button>
-            <button class="Btn-Menu" id="Btn-Ventas">
-                <img class="Icon" src="/images/Ventas.svg">
-                <class class="btn-name">Ventas</class>
-            </button>
-        </div>
-
-    </div>
-    <!--Div del contenedor-->
-    <div class="Div-Contenedor">
-
-        <div class="Grid-Clientes">
-            <!-- html estadistica Clientes-->
-            <div class="grid-it Grid-Clientes-icon">
-                <div class="img-icon">
-                    <img class="iconE" src="/images/Cliente.svg" alt="">
                 </div>
-                <div class="p-icon">
-                    <p class="PETitulo">
-                        Clientes Totales
+                <div class="General-Input Grid-Clientes-input">
+                    <input class="grid-Imput-css Imput-css" type="text" name="inputname" value="$1000.00" disabled>
+                </div>
+            </div>
+            <div class="Grid-Compras">
+                <!-- html estadistica Compras-->
+                <div class="grid-it Grid-Compras-icon">
+                    <div class="img-icon">
+                        <img class="iconE" src="/images/Compras.svg" alt="">
+                    </div>
+                    <div class="p-icon">
+                        <p class="PETitulo">
+                            Compras Totales
+                        </p>
+                    </div>
+
+
+                </div>
+                <div class="General-Input Grid-Compras-input">
+                    <input class="grid-Imput-css Imput-css" type="text" name="inputname" value="$1000.00" disabled>
+                </div>
+            </div>
+            <div class="Grid-Ventas">
+                <!-- html estadistica Ventas-->
+                <div class="grid-it Grid-Ventas-icon">
+                    <div class="img-icon">
+                        <img class="iconE" src="/images/Ventas.svg" alt="">
+                    </div>
+                    <div class="p-icon">
+                        <p class="PETitulo">
+                            Ventas Totales
+                        </p>
+                    </div>
+
+
+                </div>
+                <div class="General-Input Grid-Ventas-input">
+                    <input class="grid-Imput-css Imput-css" type="text" name="inputname" value="$1000.00" disabled>
+                </div>
+            </div>
+            <div class="Grid-Productos">
+                <!-- html estadistica Productos-->
+                <div class="grid-it Grid-Producto-icon">
+                    <div class="img-icon">
+                        <img class="iconE" src="/images/Bolso.svg" alt="">
+                    </div>
+                    <div class="p-icon">
+                        <p class="PETitulo">
+                        Productos Totales
                     </p>
+                    </div> 
                 </div>
-
-
-            </div>
-            <div class="General-Input Grid-Clientes-input">
-                <input class="grid-Imput-css Imput-css" type="text" name="inputname" value="$1000.00" disabled>
-            </div>
-        </div>
-        <div class="Grid-Compras">
-            <!-- html estadistica Compras-->
-            <div class="grid-it Grid-Compras-icon">
-                <div class="img-icon">
-                    <img class="iconE" src="/images/Compras.svg" alt="">
+                <div class="General-Input Grid-Producto-input">
+                    <input class="grid-Imput-css Imput-css" type="text" name="inputname" value="$1000.00" disabled>
                 </div>
-                <div class="p-icon">
-                    <p class="PETitulo">
-                        Compras Totales
-                    </p>
+            </div>
+            <div class="grid-Top-Mas">
+                <!-- html Tabla top mas vendidos -->
+                <table class="table-css">
+                    <tr>
+                        <th>N</th>
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                    </tr>
+                    <tr>
+                        <td class="th-n">1</td>
+                        <td  class="th-Producto">Camisas</td>
+                        <td class="th-Cantidad">500</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Zapatos</td>
+                        <td>300</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Vestidos</td>
+                        <td>96</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="grid-Top-Menos">
+                <!-- html Tabla top menos vendidos -->
+                <table class="table-css">
+                    <tr>
+                        <th>N</th>
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                    </tr>
+                    <tr>
+                        <td class="th-n">1</td>
+                        <td  class="th-Producto">Pantalones</td>
+                        <td class="th-Cantidad">2</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Collar</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Anillo</td>
+                        <td>6</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="Grid-Area-Gafica">
+                <!-- html Area Grafica -->
+                <div class="Grid-Grafica-Buscador">
+                    <nav id="menu">
+                        <ul>
+                            <li><a href="#">Enlace 2</a>
+                                <ul>
+                                    <li><a href="#">Enlace 2.1</a></li>
+                                    <li><a href="#">Enlace 2.2</a></li>
+                                    <li><a href="#">Enlace 2.3</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                    <button class="btn-General btn-Naranja ">
+                        Graficar
+                    </button>
                 </div>
+                <div class="grid-Grafica">
 
-
-            </div>
-            <div class="General-Input Grid-Compras-input">
-                <input class="grid-Imput-css Imput-css" type="text" name="inputname" value="$1000.00" disabled>
-            </div>
-        </div>
-        <div class="Grid-Ventas">
-            <!-- html estadistica Ventas-->
-            <div class="grid-it Grid-Ventas-icon">
-                <div class="img-icon">
-                    <img class="iconE" src="/images/Ventas.svg" alt="">
                 </div>
-                <div class="p-icon">
-                    <p class="PETitulo">
-                        Ventas Totales
-                    </p>
-                </div>
+            </div>
 
 
-            </div>
-            <div class="General-Input Grid-Ventas-input">
-                <input class="grid-Imput-css Imput-css" type="text" name="inputname" value="$1000.00" disabled>
-            </div>
+
         </div>
-        <div class="Grid-Productos">
-            <!-- html estadistica Productos-->
-            <div class="grid-it Grid-Producto-icon">
-                <div class="img-icon">
-                    <img class="iconE" src="/images/Bolso.svg" alt="">
-                </div>
-                <div class="p-icon">
-                    <p class="PETitulo">
-                    Productos Totales
-                </p>
-                </div> 
-            </div>
-            <div class="General-Input Grid-Producto-input">
-                <input class="grid-Imput-css Imput-css" type="text" name="inputname" value="$1000.00" disabled>
-            </div>
-        </div>
-        <div class="grid-Top-Mas">
-            <!-- html Tabla top mas vendidos -->
-            <table class="table-css">
-                <tr>
-                    <th>N</th>
-                    <th>Producto</th>
-                    <th>Cantidad</th>
-                </tr>
-                <tr>
-                    <td class="th-n">1</td>
-                    <td  class="th-Producto">Camisas</td>
-                    <td class="th-Cantidad">500</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Zapatos</td>
-                    <td>300</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Vestidos</td>
-                    <td>96</td>
-                </tr>
-            </table>
-        </div>
-
-        <div class="grid-Top-Menos">
-            <!-- html Tabla top menos vendidos -->
-            <table class="table-css">
-                <tr>
-                    <th>N</th>
-                    <th>Producto</th>
-                    <th>Cantidad</th>
-                </tr>
-                <tr>
-                    <td class="th-n">1</td>
-                    <td  class="th-Producto">Pantalones</td>
-                    <td class="th-Cantidad">2</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Collar</td>
-                    <td>3</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Anillo</td>
-                    <td>6</td>
-                </tr>
-            </table>
-        </div>
-
-        <div class="Grid-Area-Gafica">
-            <!-- html Area Grafica -->
-            <div class="Grid-Grafica-Buscador">
-                <nav id="menu">
-                    <ul>
-                        <li><a href="#">Enlace 2</a>
-                            <ul>
-                                <li><a href="#">Enlace 2.1</a></li>
-                                <li><a href="#">Enlace 2.2</a></li>
-                                <li><a href="#">Enlace 2.3</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </nav>
-                <button class="btn-General btn-Naranja ">
-                    Graficar
-                </button>
-            </div>
-            <div class="grid-Grafica">
-
-            </div>
-        </div>
-
-
-
-    </div>
-
-
-</body>
-
-</html>

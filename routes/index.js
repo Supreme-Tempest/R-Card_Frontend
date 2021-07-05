@@ -29,7 +29,7 @@ router.get('/testGet', (req, res) => {
 });
 
 router.get('/test', (req, res) => {
-    res.render('diagnostics/Estadisticas')
+    res.render('sales/sales')
 });
 
 module.exports = router;
