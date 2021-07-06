@@ -1,28 +1,42 @@
 <!DOCTYPE html>
 html(lang="en")
     include ../tools/head.pug
+    include ../imports.pug
         link(rel="stylesheet" href="/stylesheets/clients/ClienteNuevo-Grid.css")
+        link(rel="stylesheet" href="/stylesheets/")
         title="Ingresar Cliente"
     body
         include ../tools/navigation.pug
-        <div class="Div-Contenedor">
-            <h3 class="titulo-ACliente">Agregar Cliente</h3>
-            <Div class="Div-grid-IngresarCliente">
-                
-                
-                <input class="Grid-DUI Imput-css" type="text" placeholder="Numero de DUI">
-                <input class="Grid-Cliente-Name Imput-css" type="text" placeholder="Nombre">
-                <input class="Grid-Cliente-Date Imput-css" type="text" placeholder="Fecha de Nacimiento">
-                <input class="Grid-Cliente-Card Imput-css" type="text" placeholder="Numero de Tarjeta">
-                <input class="Grid-Cliente-Booking Imput-css" type="text" placeholder="Fecha de Contratacion">
-                <input class="Grid-Cliente-Exp Imput-css"type="text" placeholder="Fecha de vencimiento">
-                <input class="Grid-Cliente-PIN Imput-css"type="text" placeholder="Numero de PIN">
-
-                <p class="Grid-Error1 p-Error">El cliente ya existe</p>
-        <div class="botones">
-            <button class="btn-General btn-Verde">Guardar</button>
-            <button class="btn-General btn-Rojo">Cancelar</button>
-        </div>       
-            </Div>
-
-        </div>
+        div(class="container")
+            div(class="container p-5")
+                h3(class="text-center") Agregar Cliente
+                div(class="row")
+                    div(class="col-7")
+                        div(class="form-group")
+                            label(for="exampleInputEmail1") Numero de DUI
+                            input(type="text" class="form-control" id="dui" aria-describedby="duiHelp" placeholder="Ejemplo: 12345678-9")
+                            small(id="duiHelp" class="form-text text-muted") Debes incluir el guion 
+                        div(class="form-group")
+                            label(for="exampleInputEmail1") Nombre completo
+                            input(type="text" class="form-control" id="name" placeholder="Ingrese nombre completo")
+                        div(class="form-group")
+                            label(for="exampleInputEmail1") Año de nacimiento
+                            input(type="date" class="form-control" id="birthday")
+                    div(class="col-5")
+                        div(class="form-group")
+                            label(for="exampleInputEmail1") Numero de tarjeta
+                            input(type="text" class="form-control" id="cardNumber" placeholder="Ejemplo: 3000 7856 1234")
+                        div(class="form-group")
+                            label(for="exampleInputEmail1") Fecha de contratación
+                            input(type="date" class="form-control" id="dateConcentracion")
+                        div(class="form-group")
+                            label(for="exampleInputEmail1") Fecha de expiración
+                            input(type="date" class="form-control" id="dateExpiracion")
+                        div(class="form-group")
+                            label(for="exampleInputEmail1") PIN de tarjeta
+                            input(type="number" class="form-control" id="pin" placeholder="Ejemplo: 1234")
+                        div(class="form-group")
+                            button(class="btn btn-success") Guardar
+                            button(class="btn btn-danger") Cancelar
+            
+        
