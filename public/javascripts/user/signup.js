@@ -24,7 +24,7 @@ function onload(){
                 <option value="${element.id}">${element.name}</option>
             `
         });
-        rol.innerHTML = values;
+        rol.innerHTML = roles;
     });
 }
 
