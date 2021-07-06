@@ -35,7 +35,7 @@ router.post('/signup', function(req, res, next) {
 });
 
 router.get('/login', (req, res) => {
-    res.render('user/login')
+    res.render('login')
 });
 
 router.post('/login', function(req, res, next) {

@@ -1,7 +1,7 @@
 const Routes = {
     testPost: 'testPost',
     testGet: 'testGet',
-    workshop: 'workshop',
+    workshop: 'workshop/workshop',
 }
 
 module.exports = Routes;

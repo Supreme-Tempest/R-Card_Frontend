@@ -6,11 +6,14 @@ var workshop = document.getElementById("workshop");
 function onload(){
     fetch('/workshop',{
         method: 'GET'
-    }).then(res => res.json())
-    .then(data => {
+    }).then(res => res.json()).then(data => {
+        let values = "<option disabled selected>Selecciona una sucursal</option>";
         data.forEach(element => {
-            console.log(element)
+            values = values + `
+                <option value="${element.id}">${element.name}</option>
+            `
         });
+        workshop.innerHTML = values;
     });
 }
 
