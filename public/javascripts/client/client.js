@@ -11,8 +11,8 @@ function onload() {
         data.forEach(element => {
             values = values + `
                 <tr>
-                    <td>1234 5678 5789</td>
-                    <td>Raul Perez </td>
+                    <td>${element.number_card}</td>
+                    <td>${element.name}</td>
                     <td><button class = btn-Naranja>Editar</button>
                         <button class = btn-Rojo>Deshabilitar</button>
                     </td>
