@@ -21,7 +21,7 @@ function onload(){
         let roles = "<option disabled selected>Selecciona un rol</option>";
         data.forEach(element => {
             roles = roles + `
-                <option value="${element.id}">${element.name}</option>
+                <option value="${element.role}">${element.name}</option>
             `
         });
         rol.innerHTML = roles;
