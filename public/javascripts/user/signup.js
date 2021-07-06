@@ -1,5 +1,6 @@
 var form = (document.forms.signup);
 var role = document.getElementById("role");
+var workshop = document.getElementById("workshop");
 console.log(role);
 
 
@@ -12,7 +13,7 @@ form.addEventListener('submit', function (event) {
                 password: form.password.value,
                 name: form.name.value,
                 lastname: form.lastname.value,
-                workshop: 1,
+                workshop: parseInt(workshop.value),
                 role: parseInt(role.value),
             }
             fetch('/signup', {

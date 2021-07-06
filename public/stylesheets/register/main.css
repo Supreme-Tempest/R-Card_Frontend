@@ -239,7 +239,7 @@ iframe {
   display: -ms-flexbox;
   display: flex;
   flex-wrap: wrap;
-  padding: 7em 3em;
+  padding: 3em 3em;
 }
 
 .login100-form-title {
