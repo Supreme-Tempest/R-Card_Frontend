@@ -1,11 +1,27 @@
 const express = require('express');
 const router = express.Router();
 const axios = require('axios');
-const routes = require('./tools/routes');
-const apiMethods = require('./tools/ApiRequest');
 const apiOptions = {
     server: 'http://localhost:3000/',
 }
+
+router.get('/', (req, res) => {
+    //console.log('init test: ', localStorage.getItem('init'));
+    //console.log('token: ', localStorage.getItem('token'));
+    //console.log('username: ', localStorage.getItem('username'));
+    //console.log('user token: ', JSON.parse(localStorage.getItem('user')).token);
+    //console.log(localStorage.getItem('login'));
+    res.render('index')
+});
+
+router.get('/inicio', (req, res) => {
+    //console.log('init test: ', localStorage.getItem('init'));
+    //console.log('token: ', localStorage.getItem('token'));
+    //console.log('username: ', localStorage.getItem('username'));
+    console.log('user token: ', JSON.parse(localStorage.getItem('user')).token);
+    //console.log(localStorage.getItem('login'));
+    res.render(302,'inicio');
+});
 
 router.get('/signup', (req, res) => {
     res.render('signup')
@@ -23,6 +39,7 @@ router.post('/signup', function(req, res, next) {
         res.send(response.data);
         })
         .catch((error) => {
+        //console.log(error);
         console.log(error.response.data.error.message);
         if (error.response.data.error.message.code == 40145) {
             console.log('usuario ya existe');
@@ -35,15 +52,17 @@ router.post('/signup', function(req, res, next) {
 });
 
 router.get('/login', (req, res) => {
+    /*localStorage.setItem('login', {
+        login: 'yes',
+        item: 'yes'
+    });*/
     res.render('login')
+    //res.end();
 });
 
-router.get('/logout', function(req,res,next){
-    localStorage.setItem('user','');
-    res.render('login');
-})
-
 router.post('/login', function(req, res, next) {
+    //res.render('singup', { title: 'Register' });
+    //res.send('respond with a resource');
     console.log('login post body: ', req.body);
     axios({
         method: 'post',
@@ -54,22 +73,23 @@ router.post('/login', function(req, res, next) {
         }
     })
         .then((response) => {
+        //console.log(response);
+        //const { token, role, username } = req.body.token;
         localStorage.setItem('user',JSON.stringify(response.data));
         console.log('responce login');
+        //res.send(response.data);
+        //homeController(res);
         res.json({ok: true});
+        
+        //res.render('index');
+        //res.header({method: 'post'};)
+        //res.redirect(307,'/testPost'); // 307 reirect
         })
         .catch((error) => {
+        //console.log(error);
         res.send(error.message);
         console.log('No logro concetar a la direccion');
         });
-});
-
-router.get('/workshop', (req, res) => {
-    apiMethods.ApiGet(routes.workshop, {}, res);
-});
-
-router.get('/roles', (req, res) => {
-    apiMethods.ApiGet(routes.rol, {}, res);
 });
 
 module.exports = router;

@@ -16,7 +16,7 @@ form.addEventListener('submit', function (event) {
         .then(res => {
             if (res.ok) {
                 console.log("se pudo perro");
-                location.href = '/testGet'
+                location.href = 'diagnostics/stadistics'
             } else {
                 console.log("error")
             }

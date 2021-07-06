@@ -5,24 +5,34 @@ const apiOptions = {
     server: 'http://localhost:3000/api/',
 }
 
-const ApiPost = (route, data, res) => {
-    ApiResponce('post', route, data, res);
+const ApiPost = (route, req, res, e) => {
+    ApiResponce('post', route, req, res, e);
 }
 
-const ApiGet = (route, data, res) => {
-    ApiResponce('get', route, data, res);
+const ApiGet = (route, req, res, e) => {
+    ApiResponce('get', route, req, res, e);
 }
 
-const ApiResponce = (method, route, data, res) => {
+const ApiPut = (route, req, res, e) => {
+    ApiResponce('put', route, req, res, e);
+}
+
+const ApiDelete = (route, req, res, e) => {
+    ApiResponce('delete', route, req, res, e);
+}
+
+const ApiResponce = (method, route, req, res, e) => {
     axios({
         method: method,
         url: apiOptions.server + route,
-        data: data,
+        data: req.data,
+        query: req.query,
         headers: {
             authorization: `Bearer ${JSON.parse(localStorage.getItem('user')).token}`,
         },
     })
         .then((response) => {
+        e(response);
         res.send(response.data);
         })
         .catch((error) => {
@@ -37,4 +47,6 @@ const ApiResponce = (method, route, data, res) => {
 module.exports = {
     ApiPost: ApiPost,
     ApiGet: ApiGet,
+    ApiPut: ApiPut,
+    ApiDelete: ApiDelete,
 };

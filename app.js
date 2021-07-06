@@ -5,8 +5,12 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
 const indexRouter = require('./routes/index');
-//const usersRouter = require('./routes/users');
 const userRouter = require('./routes/user');
+const adminRouter = require('./routes/admin');
+const diagnosticsRouter = require('./routes/diagnostics');
+const purchasesRouter = require('./routes/purchases');
+const clientsRouter = require('./routes/clients');
+const salesRouter = require('./routes/sales');
 
 const app = express();
 
@@ -30,6 +34,11 @@ if (typeof localStorage === "undefined" || localStorage === null) {
 app.use('/', indexRouter);
 //app.use('/users', usersRouter);
 app.use('/', userRouter);
+app.use('/diagnostics', diagnosticsRouter);
+app.use('/admin', adminRouter);
+app.use('/purchases', purchasesRouter);
+app.use('/clients', clientsRouter);
+app.use('/sales', salesRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

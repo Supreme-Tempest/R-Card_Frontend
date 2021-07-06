@@ -1,0 +1,48 @@
+<!-- Div Superior -->
+div(class="Div-Barra")
+    div(class="dropdown")
+        button(class="dropbtn")= "Usuario"
+        div(class="dropdown-content")
+            a(href="/logout")= "Cerrar Sesión"
+
+<!-- Div del menu izquierdo -->
+<div class="Div-Nav">
+    <div class="img-Nav">
+        <img class="Nav-Logo" src="/images/LogoDorado.png">
+    </div>
+
+    <div class="btn-Area">
+        script.
+            function handleStatistics() {
+                window.location.href = '/diagnostics/stadistics'
+            }
+        button(class="Btn-Menu" id="Btn-Estadisticas" onClick="handleStatistics()")
+            <img class="Icon" src="/images/Estadistica.svg">
+            <P class="btn-name">Estadistica</P>
+
+        script.
+            function handleClients() {
+                window.location.href = '/clients/client'
+            }
+        button(class="Btn-Menu" id="Btn-Clientes" onClick="handleClients()")
+            <img class="Icon" src="/images/Cliente.svg">
+            <P class="btn-name">Clientes</P>
+            
+        script.
+            function handlePurchases() {
+                window.location.href = '/purchases/register'
+            }
+        button(class="Btn-Menu" id="Btn-Compras" onClick="handlePurchases()")
+            <img class="Icon" src="/images/Compras.svg">
+            <P class="btn-name">Compras</P>
+
+        script.
+            function handleSales() {
+                window.location.href = '/sales/list'
+            }
+        button(class="Btn-Menu" id="Btn-Ventas" onClick="handleSales()")
+            <img class="Icon" src="/images/Ventas.svg">
+            <p class="btn-name">Ventas</p>
+    </div>
+
+</div>
