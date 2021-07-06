@@ -63,4 +63,8 @@ router.get('/workshop', (req, res) => {
     apiMethods.ApiGet(routes.workshop, {}, res);
 });
 
+router.get('/roles', (req, res) => {
+    apiMethods.ApiGet(routes.rol, {}, res);
+});
+
 module.exports = router;

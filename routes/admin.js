@@ -4,7 +4,6 @@ const axios = require('axios');
 const apiOptions = {
     server: 'http://localhost:3000/',
 }
-const homeController = require('../controllers/home');
 
 router.get('/', (req, res) => {
     //console.log('init test: ', localStorage.getItem('init'));
