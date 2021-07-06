@@ -3,6 +3,9 @@ var role = document.getElementById("role");
 var workshop = document.getElementById("workshop");
 console.log(role);
 
+fetch('/workshop',{
+    method: 'GET'})
+
 
 form.addEventListener('submit', function (event) {
     event.preventDefault();
