@@ -6,9 +6,9 @@ var workshop = document.getElementById("workshop");
 function onload(){
     fetch('/workshop',{
         method: 'GET'
-    }).then(res=> res.json())
+    }).then(res => res.json())
     .then(data => {
-        data.array.forEach(element => {
+        data.forEach(element => {
             console.log(element)
         });
     });
