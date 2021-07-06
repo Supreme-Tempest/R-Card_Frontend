@@ -3,7 +3,6 @@ const router = express.Router();
 const axios = require('axios');
 const routes = require('./tools/routes');
 const apiMethods = require('./tools/ApiRequest');
-const User = require('../../R-card BackEnd/models/users/user');
 const apiOptions = {
     server: 'http://localhost:3000/',
 }
