@@ -3,40 +3,44 @@ html(lang="en")
     include ../tools/head.pug
     include ../imports.pug
         link(rel="stylesheet" href="/stylesheets/clients/ClienteNuevo-Grid.css")
-        link(rel="stylesheet" href="/stylesheets/")
         title="Ingresar Cliente"
     body
         include ../tools/navigation.pug
         div(class="container")
             div(class="container p-5")
                 h3(class="text-center") Agregar Cliente
-                div(class="row")
-                    div(class="col-7")
+                form(class="row" role='form' method='POST' action='/clients/clients' name="newclient")
+                    div(class="col-1")
+                    div(class="col-5" )
                         div(class="form-group")
-                            label(for="exampleInputEmail1") Numero de DUI
-                            input(type="text" class="form-control" id="dui" aria-describedby="duiHelp" placeholder="Ejemplo: 12345678-9")
+                            label(for="newclient") Numero de DUI
+                            input(type="text" class="form-control validate-input" id="dui" aria-describedby="duiHelp" placeholder="Ejemplo: 12345678-9")
                             small(id="duiHelp" class="form-text text-muted") Debes incluir el guion 
                         div(class="form-group")
-                            label(for="exampleInputEmail1") Nombre completo
+                            label(for="newclient") Nombre completo
                             input(type="text" class="form-control" id="name" placeholder="Ingrese nombre completo")
                         div(class="form-group")
-                            label(for="exampleInputEmail1") Año de nacimiento
+                            label(for="newclient") Año de nacimiento
                             input(type="date" class="form-control" id="birthday")
                     div(class="col-5")
                         div(class="form-group")
-                            label(for="exampleInputEmail1") Numero de tarjeta
+                            label(for="newclient") Numero de tarjeta
                             input(type="text" class="form-control" id="cardNumber" placeholder="Ejemplo: 3000 7856 1234")
                         div(class="form-group")
-                            label(for="exampleInputEmail1") Fecha de contratación
+                            label(for="newclient") Fecha de contratación
                             input(type="date" class="form-control" id="dateConcentracion")
                         div(class="form-group")
-                            label(for="exampleInputEmail1") Fecha de expiración
+                            label(for="newclient") Fecha de expiración
                             input(type="date" class="form-control" id="dateExpiracion")
                         div(class="form-group")
-                            label(for="exampleInputEmail1") PIN de tarjeta
-                            input(type="number" class="form-control" id="pin" placeholder="Ejemplo: 1234")
-                        div(class="form-group")
-                            button(class="btn btn-success") Guardar
-                            button(class="btn btn-danger") Cancelar
+                            label(for="newclient") PIN de tarjeta
+                            input(type="password" pattern="[0-9]*" inputmode="numeric" class="form-control" id="pin" placeholder="Ejemplo: 1234")
+                        div(class="form-group row")
+                            div(class="col-6")
+                            div(class="col-6 btn-toolbar")
+                                input.btn.btn-success(type="submit" value="Guardar")  
+                                button.btn.btn-danger Cancelar 
+                    div(class="col-1")
+        <script src="../../../javascripts/client/newclient.js"></script>
             
         
