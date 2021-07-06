@@ -10,25 +10,18 @@ html(lang="en")
             h3(class="titulo-LCliente")= "Listado de Clientes"
             div(class="Div-Cliente")
                 table(class="table-css" id="table_client")
-                thead 
-                    <tr>
-                        <th >Numero de Tarjeta</th>
-                        <th>Cliente</th>
-                        <th>Opciones</th>
-                    </tr>
-                tbody(id="tbody_client") 
-                    <tr>
-                        <td>1234 5678 5789</td>
-                        <td>Cristian Mauricio Alfaro Contreras </td>
-                        <td><button class = btn-Naranja>Editar</button>
-                            <button class = btn-Rojo>Deshabilitar</button>
-                        </td>
-                        
-                    </tr>
-                </table>
-                <div class="Grid-Btn">
-                    <a href="/clients/new" class="btn-agregarCliente" >Agregar Cliente</a>
-                </div>
-            </div>
-        </div>
-        <script src="../../../javascripts/client/client.js"></script>
+                    thead 
+                        tr
+                            th= "Numero de Tarjeta"
+                            th= "Cliente"
+                            th= "Opciones"
+                    tbody(id="tbody_client") 
+                        tr
+                            td= "1234 5678 5789"
+                            td= "Cristian Mauricio Alfaro Contreras"
+                            td
+                                button(class = btn-Naranja)= "Editar"
+                                button(class = btn-Rojo)= "Deshabilitar"
+                div(class="Grid-Btn")
+                    a(href="/clients/new" class="btn-agregarCliente")= "Agregar Cliente"
+        script(src="../../../javascripts/client/client.js")
