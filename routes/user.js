@@ -3,6 +3,7 @@ const router = express.Router();
 const axios = require('axios');
 const routes = require('./tools/routes');
 const apiMethods = require('./tools/ApiRequest');
+const User = require('../../R-card BackEnd/models/users/user');
 const apiOptions = {
     server: 'http://localhost:3000/',
 }
@@ -37,6 +38,11 @@ router.post('/signup', function(req, res, next) {
 router.get('/login', (req, res) => {
     res.render('login')
 });
+
+router.get('/logout', function(req,res,next){
+    localStorage.setItem('user','');
+    res.render('login');
+})
 
 router.post('/login', function(req, res, next) {
     console.log('login post body: ', req.body);

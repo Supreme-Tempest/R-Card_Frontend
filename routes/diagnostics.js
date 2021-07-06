@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/statistics', (req, res) => {
+router.get('/stadistics', (req, res) => {
     res.render('diagnostic/stadistics')
 });
 
