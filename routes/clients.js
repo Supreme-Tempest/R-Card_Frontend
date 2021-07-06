@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/list', (req, res) => {
+router.get('/client_list', (req, res) => {
     apiMethods.ApiGet(routes.client, {}, res);
 }); 
 

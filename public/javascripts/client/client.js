@@ -3,7 +3,7 @@ console.log(table_client);
 onload();
 
 function onload() {
-    fetch('list', {
+    fetch('/clients/client_list', {
         method: 'GET'
     }).then(res => res.json()).then(data => {
         let values = "";
