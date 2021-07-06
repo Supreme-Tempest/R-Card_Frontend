@@ -1,7 +1,18 @@
+onload();
 var form = (document.forms.signup);
 var role = document.getElementById("role");
 var workshop = document.getElementById("workshop");
-console.log(role);
+
+function onload(){
+    fetch('/workshop',{
+        method: 'GET'
+    }).then(res=> res.json())
+    .then(data => {
+        data.array.forEach(element => {
+            console.log(element)
+        });
+    });
+}
 
 
 form.addEventListener('submit', function (event) {
