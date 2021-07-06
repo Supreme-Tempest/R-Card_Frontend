@@ -3,7 +3,8 @@ const Routes = {
     testGet: 'testGet', 
     workshop: 'workshop/workshop',
     rol: 'users/roles',
-    client: 'clients/clients'
+    client: 'clients/clients',
+    clientPage: 'clients/clientsPaginate',
 }
 
 module.exports = Routes;
