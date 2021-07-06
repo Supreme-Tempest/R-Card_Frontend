@@ -1,6 +1,6 @@
 onload();
 var form = (document.forms.signup);
-var role = document.getElementById("role");
+var rol = document.getElementById("rol");
 var workshop = document.getElementById("workshop");
 
 function onload(){
@@ -14,6 +14,17 @@ function onload(){
             `
         });
         workshop.innerHTML = values;
+    });
+    fetch('/roles',{
+        method: 'GET'
+    }).then(res => res.json()).then(data => {
+        let roles = "<option disabled selected>Selecciona un rol</option>";
+        data.forEach(element => {
+            roles = roles + `
+                <option value="${element.id}">${element.name}</option>
+            `
+        });
+        rol.innerHTML = roles;
     });
 }
 
