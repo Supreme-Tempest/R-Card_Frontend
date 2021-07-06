@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="/public/CSS/Empleados.css" />
+    <link rel="stylesheet" href="/public/CSS/global.css" /><!-- referencia para el css -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Div Superior -->
+    <div class="Div-Barra">
+        <div class="dropdown">
+            <button class="dropbtn">Usuario</button>
+            <div class="dropdown-content">
+                <a href="#">Cerrar Sesión</a>
+            </div>
+        </div>
+    </div>
+    <!-- Div del menu izquierdo -->
+    <div class="Div-Nav">
+        <div class="img-Nav">
+            <img class="Nav-Logo" src="/public/IMG/LogoDorado.png">
+        </div>
+        <div class="btn-Area">
+            <button class="Btn-Menu" id="Btn-Estadisticas">
+                <img class="Icon" src="/public/IMG/Estadistica.svg">
+                <P class="btn-name">Estadistica</P>
+            </button>
+            <button class="Btn-Menu" id="Btn-Clientes">
+                <img class="Icon" src="/public/IMG/Cliente.svg">
+                <P class="btn-name">Clientes</P>
+            </button>
+            <button class="Btn-Menu" id="Btn-Compras">
+                <img class="Icon" src="/public/IMG/Compras.svg">
+                <P class="btn-name">Compras</P>
+            </button>
+            <button class="Btn-Menu" id="Btn-Ventas">
+                <img class="Icon" src="/public/IMG/Ventas.svg">
+                <class class="btn-name">Ventas</class>
+            </button>
+            <button class="Btn-Menu" id="Btn-Empleados">
+                <img class="Icon" src="/public/IMG/Cliente.svg">
+                <class class="btn-name">Empleados</class>
+            </button>
+        </div>
+    </div>
+    <!--Div del contenedor-->
+    <div class="Div-Contenedor">
+        <!-- Ingreso de Empleados -->
+        <div class="Ingreso">
+            <div class="Form-Ingreso ET">
+                <H1>Ingreso de Empleados</H1>
+                <p>Carnet</p>
+                <input type="number" class="Imput-css">
+                <p>Nombre de Empleado</p>
+                <input type="text" class="Imput-css">
+                <p>DUI</p>
+                <input type="number" class="Imput-css">
+                <p>Fecha de Nacimiento</p>
+                <input type="date" class="Imput-css">
+                <p>Puesto</p>
+                <input type="text" class="Imput-css">
+                <p>Contacto de Emegencia</p>
+                <input type="text" class="Imput-css">
+                <p>Numero de Emergencia</p>
+                <input type="number" class="Imput-css">
+                <p>Fecha de Contratacion</p>
+                <input type="date" class="Imput-css">
+                <p>Fecha de Baja</p>
+                <input type="date" class="Imput-css">
+            </div>
+            <div class="div-btn-Ingresar">
+                <!--Botones de ingreso-->
+                <p class="p-Exito">Proceso Exitoso</p>
+                <p class="p-Error">Proceso Fallido!</p>
+                <button class="btn-General btn-Verde">
+                    Agregar
+                </button>
+                <button class="btn-General btn-Rojo">
+                    Cancelar
+                </button>
+            </div>
+        </div>
+        <!-- Buscador de Empleados -->
+        <div class="C-BuscarE">
+            <div class="C-BuscarE-Select">
+                <!--Menu Desplegable-->
+                <select name="Filtro" class="Select-css">
+                    <option>Nombre</option>
+                    <option>Carnet</option>
+                </select>
+            </div>
+            <div class="C-BuscarE-Text">
+                <!--Input de Buscador-->
+                <Input class="Input-cssE">
+                </Input>
+            </div>
+            <div class="C-BuscarE-Btn">
+                <!--Btn Buscar-->
+                <button class="btn-General btn-Naranja ">Buscar</button>
+            </div>
+        </div>
+        <!-- Lista de Empleados -->
+        <div class="C-TablaE ET">
+            <table class="table-css">
+                <thead>
+                    <tr>
+                        <th colspan="3">Lista de Empleado</th>
+                    </tr>
+                    <tr>
+                        <th class="tg-b1">
+                            Carnet
+                        </th>
+                        <th class="tg-b2">
+                            Nombre
+                        </th>
+                        <th class="tg-b3">
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="tg-b1">
+                            00422347
+                        </td>
+                        <td class="tg-b2">
+                            Juan Perez
+                        </td>
+                        <td class="tg-b3">
+                            <button class="btn-General btn-Azul">Ver</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tg-b1">
+                            00422347
+                        </td>
+                        <td class="tg-b2">
+                            Juan Perez
+                        </td>
+                        <td class="tg-b3">
+                            <button class="btn-General btn-Azul">Ver</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tg-b1">
+                            00422347
+                        </td>
+                        <td class="tg-b2">
+                            Juan Perez
+                        </td>
+                        <td class="tg-b3">
+                            <button class="btn-General btn-Azul">Ver</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tg-b1">
+                            00422347
+                        </td>
+                        <td class="tg-b2">
+                            Juan Perez
+                        </td>
+                        <td class="tg-b3">
+                            <button class="btn-General btn-Azul">Ver</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tg-b1">
+                            00422347
+                        </td>
+                        <td class="tg-b2">
+                            Juan Perez
+                        </td>
+                        <td class="tg-b3">
+                            <button class="btn-General btn-Azul">Ver</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tg-b1">
+                            00422347
+                        </td>
+                        <td class="tg-b2">
+                            Juan Perez
+                        </td>
+                        <td class="tg-b3">
+                            <button class="btn-General btn-Azul">Ver</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tg-b1">
+                            00422347
+                        </td>
+                        <td class="tg-b2">
+                            Juan Perez
+                        </td>
+                        <td class="tg-b3">
+                            <button class="btn-General btn-Azul">Ver</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tg-b1">
+                            00422347
+                        </td>
+                        <td class="tg-b2">
+                            Juan Perez
+                        </td>
+                        <td class="tg-b3">
+                            <button class="btn-General btn-Azul">Ver</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tg-b1">
+                            00422347
+                        </td>
+                        <td class="tg-b2">
+                            Juan Perez
+                        </td>
+                        <td class="tg-b3">
+                            <button class="btn-General btn-Azul">Ver</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tg-b1">
+                            00422347
+                        </td>
+                        <td class="tg-b2">
+                            Juan Perez
+                        </td>
+                        <td class="tg-b3">
+                            <button class="btn-General btn-Azul">Ver</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tg-b1">
+                            00422347
+                        </td>
+                        <td class="tg-b2">
+                            Juan Perez
+                        </td>
+                        <td class="tg-b3">
+                            <button class="btn-General btn-Azul">Ver</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tg-b1">
+                            00422347
+                        </td>
+                        <td class="tg-b2">
+                            Juan Perez
+                        </td>
+                        <td class="tg-b3">
+                            <button class="btn-General btn-Azul">Ver</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- Informacion de Empleados -->
+        <div class="C-InformacionE">
+            <div class="Div-TIE">
+                <table class="table-css table-IE">
+                    <thead>
+                        <tr>
+                            <th colspan="2">Informacion de Empleado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Carnet:</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Nombre:</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>DUI:</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Fecha de Nacimiento:</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Puesto:</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Contacto de Emergencia:</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Numero de Emergencia:</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Fecha de Contratacion:</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Fecha de Baja:</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="p-Exito">Proceso Exitoso</p>
+                <p class="p-Error">Proceso Fallido!</p>
+            </div>
+            <div class="Div-btn-TIE">
+                <button class="btn-General btn-Rojo bnt-TIE"> Dar de Baja</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

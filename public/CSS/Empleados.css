@@ -1,0 +1,144 @@
+/*Alineacion de las tablas*/
+
+tbody tr td {
+  text-align: center;
+  vertical-align: top;
+}
+.ET {
+  overflow-y: scroll;
+}
+
+/*formato de los titulos*/
+.Form-Ingreso p {
+  margin: 0%;
+  font-family: Fuente;
+  color: rgb(0, 0, 0);
+  font-size: 15px;
+}
+
+h1 {
+  font-family: Fuente;
+  color: rgb(0, 0, 0);
+  font-size: 15px;
+}
+
+/*Grid del contenedor*/
+
+.Div-Contenedor {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 10% 15% 25% 20% 20% 10%;
+  max-height: 1fr;
+}
+
+.Ingreso {
+  /*-------------------------------Ingreso de Empleados*/
+  display: grid;
+  grid-template-columns: 10% 80% 10%;
+  grid-template-rows: 80% 20%;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 6;
+}
+
+.Ingreso .Form-Ingreso {
+  /*Formulario de Ingreso*/
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.Ingreso .div-btn-Ingresar {
+  /*btn de ingreso*/
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+.C-BuscarE {
+  /*----------------------------Buscador de Empleados*/
+  display: grid;
+  grid-template-columns: 25% 50% 25%;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 2;
+}
+
+.C-BuscarE .C-BuscarE-Select {
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+.Select-css {
+  font-family: Fuente;
+  font-size: 15px;
+  color: #fff;
+  background: #eabe3f;
+  width: 110px;
+  height: 40px;
+}
+
+.Input-cssE {
+  font-family: Fuente;
+  font-size: 18px;
+  height: 40px;
+  width: 100%;
+  border: none;
+  outline: none;
+}
+
+.C-TablaE {
+  /*-----------------------------Listados de Empleados*/
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 3;
+  grid-row-end: 6;
+}
+
+.tg-b1 {
+  width: 25%;
+}
+
+.tg-b2 {
+  width: 40%;
+}
+
+.tg-b3 {
+  width: 25%;
+}
+
+.C-InformacionE {
+  /*-----------------------tabla de informacionde Empleados*/
+  display: grid;
+  grid-template-columns: 10% 80% 20%;
+  grid-template-rows: 80% 20%;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 6;
+}
+
+.table-IE td {
+  width: 200px;
+  height: 35px;
+}
+
+.Div-TIE {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.Div-btn-TIE {
+  display: flex;
+  justify-content: flex-end;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
