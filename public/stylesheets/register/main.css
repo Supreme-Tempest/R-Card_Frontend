@@ -241,7 +241,9 @@ iframe {
   flex-wrap: wrap;
   padding: 3em 3em;
 }
-
+.login101-form{
+  padding: 13em 3em;
+}
 .login100-form-title {
   font-family: Poppins-Regular;
   font-size: 20px;
