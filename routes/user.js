@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const axios = require('axios');
+const routes = require('./tools/routes');
+const apiMethods = require('./tools/ApiRequest');
 const apiOptions = {
     server: 'http://localhost:3000/',
 }
@@ -55,6 +57,10 @@ router.post('/login', function(req, res, next) {
         res.send(error.message);
         console.log('No logro concetar a la direccion');
         });
+});
+
+router.get('/workshop', (req, res) => {
+    apiMethods.ApiGet(routes.workshop, data, res);
 });
 
 module.exports = router;

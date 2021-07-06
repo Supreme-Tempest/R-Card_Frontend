@@ -13,6 +13,14 @@ const ApiGet = (route, data, res) => {
     ApiResponce('get', route, data, res);
 }
 
+const ApiPut = (route, data, res) => {
+    ApiResponce('put', route, data, res);
+}
+
+const ApiDelete = (route, data, res) => {
+    ApiResponce('delete', route, data, res);
+}
+
 const ApiResponce = (method, route, data, res) => {
     axios({
         method: method,
@@ -37,4 +45,6 @@ const ApiResponce = (method, route, data, res) => {
 module.exports = {
     ApiPost: ApiPost,
     ApiGet: ApiGet,
+    ApiPut: ApiPut,
+    ApiDelete: ApiDelete,
 };
