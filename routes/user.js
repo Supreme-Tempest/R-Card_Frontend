@@ -60,7 +60,7 @@ router.post('/login', function(req, res, next) {
 });
 
 router.get('/workshop', (req, res) => {
-    apiMethods.ApiGet(routes.workshop, data, res);
+    apiMethods.ApiGet(routes.workshop, {}, res);
 });
 
 module.exports = router;
