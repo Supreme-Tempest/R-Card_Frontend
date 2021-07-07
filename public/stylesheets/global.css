@@ -1,6 +1,6 @@
 @font-face {/*Fuente Personalizada*/
     font-family: Fuente;
-    src: url("/fonts/FS\ NokioMedium.ttf") format("opentype");
+    src: url("/public/fonts/FS\ NokioMedium.ttf") format("opentype");
 }
 
 body{
@@ -17,7 +17,8 @@ body{
     grid-template-columns: 10% 20% 10% 50% 10%;
     grid-template-rows: 20% 60% 20%;
     background-color: #2d2e30;
-    height: 50px;
+    height: 60px;
+    margin-top: 10px;
 }
 
 .Btn-Menu:hover{/*hover del boton para cambiar de color-------*/
@@ -138,7 +139,8 @@ body{
     display: none;
     position: absolute;
     background-color: #2d2e30;
-    min-width: 160px;
+    min-width: 130px;
+    max-width: 150px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
@@ -249,7 +251,7 @@ body{
     height: 30px;
     width: 300px;
     border: none;
-    outline: none
+    outline: none;
 }
 
 /*---------------------------------------------*/
@@ -276,7 +278,19 @@ body{
 
 /*Mensajes de Error*/
 .p-Error{
+    margin: 0%;
     font-family: Fuente;
     color: red;
     font-size: 15px;
 }
+
+/*Mensaje de Exito*/
+.p-Exito{
+    margin: 0%;
+    font-family: Fuente;
+    color: rgb(7, 196, 0);
+    font-size: 15px;
+}
+
+
+

@@ -3,7 +3,7 @@ div(class="Div-Barra")
     div(class="dropdown")
         button(class="dropbtn")= "Usuario"
         div(class="dropdown-content")
-            a(href="#")= "Cerrar Sesión"
+            a(href="/logout")= "Cerrar Sesión"
 
 <!-- Div del menu izquierdo -->
 <div class="Div-Nav">
@@ -14,7 +14,7 @@ div(class="Div-Barra")
     <div class="btn-Area">
         script.
             function handleStatistics() {
-                window.location.href = '/diagnostics/statistics'
+                window.location.href = '/diagnostics/stadistics'
             }
         button(class="Btn-Menu" id="Btn-Estadisticas" onClick="handleStatistics()")
             <img class="Icon" src="/images/Estadistica.svg">
@@ -22,7 +22,7 @@ div(class="Div-Barra")
 
         script.
             function handleClients() {
-                window.location.href = '/clients/list'
+                window.location.href = '/clients/client'
             }
         button(class="Btn-Menu" id="Btn-Clientes" onClick="handleClients()")
             <img class="Icon" src="/images/Cliente.svg">

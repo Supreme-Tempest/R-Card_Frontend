@@ -239,9 +239,11 @@ iframe {
   display: -ms-flexbox;
   display: flex;
   flex-wrap: wrap;
-  padding: 7em 3em;
+  padding: 3em 3em;
 }
-
+.login101-form{
+  padding: 13em 3em;
+}
 .login100-form-title {
   font-family: Poppins-Regular;
   font-size: 20px;
@@ -285,6 +287,11 @@ iframe {
   color: #666666;
   line-height: 1.2;
   padding: 0 25px;
+}
+
+.select-input100{
+  height: 3em;
+  border: 1px solid #e6e6e6;
 }
 
 input.input100 {

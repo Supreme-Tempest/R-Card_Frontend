@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const axios = require('axios');
+const routes = require('./tools/routes');
+const apiMethods = require('./tools/ApiRequest');
 const apiOptions = {
     server: 'http://localhost:3000/',
 }
@@ -33,8 +35,13 @@ router.post('/signup', function(req, res, next) {
 });
 
 router.get('/login', (req, res) => {
-    res.render('user/login')
+    res.render('login')
 });
+
+router.get('/logout', function(req,res,next){
+    localStorage.setItem('user','');
+    res.render('login');
+})
 
 router.post('/login', function(req, res, next) {
     console.log('login post body: ', req.body);
@@ -55,6 +62,14 @@ router.post('/login', function(req, res, next) {
         res.send(error.message);
         console.log('No logro concetar a la direccion');
         });
+});
+
+router.get('/workshop', (req, res) => {
+    apiMethods.ApiGet(routes.workshop, {}, res);
+});
+
+router.get('/roles', (req, res) => {
+    apiMethods.ApiGet(routes.rol, {}, res);
 });
 
 module.exports = router;
