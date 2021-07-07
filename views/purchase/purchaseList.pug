@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+html(lang="en")
+    title="Productos"
+    body
+        include ../tools/navigation.pug
+        div(class="container-fluid pt-5")
+            h3(class="text-center") Productos
+            div.p-5.row
+                div(class="container col-7 card")
+                    
+                    table(class="table table-striped" id="table_products")
+                        thead
+                            tr
+                                th(scope="col") Codigo
+                                th(scope="col") Producto
+                                th(scope="col") Marca
+                                th(scope="col") Stock
+                                th(scope="col") Precio
+                                th(scope="col") Detalle
+                                th(scope="col") Opciones
+                        tbody(id="tbody_products") 
+                            tr
+                                td 1234 5678 5789
+                                td Pantalon
+                                td Polo
+                                td 40
+                                td $ 79.99
+                                td talla 32-34
+                                td
+                                    div.btn-toolbar
+                                        button.btn.btn-success Editar
+                div.container.col-5                       
+                    h3(class="text-center") Registrar Producto
+                    form(class="row" role='form' method='POST' action='/clients/clients' name="registerPurchase")
+                        div(class="col-6" )
+                            div(class="form-group")
+                                label(for="registerPurchase") Codigo de producto
+                                input(type="text" class="form-control validate-input" id="product-Codigo" aria-describedby="duiHelp" placeholder="Ejemplo: 00001")
+                            div(class="form-group")
+                                label(for="registerPurchase") Cantidad 
+                                input(type="number" class="form-control" id="product-cantidad" placeholder="Ingres la cantidad de producto")
+                            div(class="form-group")
+                                label(for="registerPurchase") Precio Unitario
+                                input(type="text" class="form-control" id="product-precioUnitario" placeholder="Ingrese el presio unitario")
+                        div(class="col-6")
+                            div(class="form-group")
+                                label(for="registerPurchase") Costo total
+                                input(type="number" class="form-control" id="product-costoTotal" placeholder="Ingrese el costo total")
+                            div(class="form-group")
+                                label(for="registerPurchase") Precio de Venta
+                                input(type="number" class="form-control" id="product-PrecioVenta" placeholder="Ingrese el precio de venta")
+                            div(class="form-group")
+                                label(for="registerPurchase") Fecha de Compra
+                                input(type="date"   class="form-control" id="total-compra" )
+                            div(class="form-group")
+                                input.btn.btn-primary.btn-block(type="submit"  value="Guardar")
+        script(src="../../../javascripts/client/client.js")

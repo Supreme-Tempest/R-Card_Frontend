@@ -6,7 +6,7 @@ router.get('/new', (req, res) => {
 });
 
 router.get('/register', (req, res) => {
-    res.render('purchase/registerPurchase')
+    res.render('purchase/purchaseList')
 });
 
 module.exports = router;
