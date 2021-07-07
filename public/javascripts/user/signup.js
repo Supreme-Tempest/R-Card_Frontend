@@ -18,6 +18,7 @@ function onload(){
     fetch('/roles',{
         method: 'GET'
     }).then(res => res.json()).then(data => {
+        console.log(data);
         let roles = "<option disabled selected>Selecciona un rol</option>";
         data.forEach(element => {
             roles = roles + `
