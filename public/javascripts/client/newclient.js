@@ -3,14 +3,14 @@ var form = (document.forms.newclient);
 form.addEventListener('submit', function (event) {
     event.preventDefault();
         let data = {
-            number_card: form.username.value,
-            password: form.password.value,
+            number_card: form.number_card.value,
+            dui: form.dui.value,
             name: form.name.value,
-            lastname: form.lastname.value,
-            workshop: parseInt(workshop.value),
-            role: parseInt(role.value),
+            creation_date: form.creation_date.value,
+            birthday: form.birthday.value,
+            state: true,
         }
-        fetch('/client/clients', {
+        fetch('/clients/clients', {
                 method: 'POST',
                 body: JSON.stringify(data),
                 headers: {
