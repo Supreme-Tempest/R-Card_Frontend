@@ -1,23 +1,37 @@
 <!DOCTYPE html>
 html(lang="en")
-    include ../tools/head.pug
-        link(rel="stylesheet" href="/stylesheets/purchases/ComprasNuevo-Grid.css")
-        title="Compras"
+    title="Nueva Compra"
     body
         include ../tools/navigation.pug
-        <div class="Div-Contenedor">
-            <Div class="Div-grid-Ingresos">
-                <input class="Grid-CodPro Imput-css" type="text" placeholder="Codigo de producto">
-                <input class="Grid-InputNum Imput-css" type="text" placeholder="Nombre">
-                <input class="Grid-CodPro2 Imput-css" type="text" placeholder="Marca">
-                <input class="Grid-CodPro3 Imput-css" type="text" placeholder="Distintivo">
-                <input class="Grid-CodPro4 Imput-css" type="text" placeholder="Existencia">
-                <input class="Grid-CodPro5 Imput-css" type="text" placeholder="Precio de venta">
-                <p class="Grid-Error1 p-Error">El producto ya existe</p>
-        <div class="botones">
-            <button class="btn-General btn-Verde">Guardar</button>
-            <button class="btn-General btn-Rojo">Cancelar</button>
-        </div>       
-            </Div>
-
-        </div>
+        div(class="container")
+            div(class="container p-5")
+                h3(class="text-center") Nueva Producto
+                form(class="row" role='form' method='POST' action='/clients/clients' name="newPurchase")
+                    div(class="col-1")
+                    div(class="col-5" )
+                        div(class="form-group")
+                            label(for="newPurchase") Codigo de producto
+                            input(type="text" class="form-control validate-input" id="product-Cod" aria-describedby="duiHelp" placeholder="Ejemplo: 00001")
+                        div(class="form-group")
+                            label(for="newPurchase") Nombre 
+                            input(type="text" class="form-control" id="product-name" placeholder="Ingrese el nombre del producto")
+                        div(class="form-group")
+                            label(for="newPurchase") Marca
+                            input(type="text" class="form-control" id="product-marc" placeholder="Ingrese la marca")
+                    div(class="col-5")
+                        div(class="form-group")
+                            label(for="newPurchase") Distintivo
+                            input(type="text" class="form-control" id="product-distintivo" placeholder="Ingrese el nombre del producto")
+                        div(class="form-group")
+                            label(for="newPurchase") Existencia
+                            input(type="text" class="form-control" id="product-existecia" placeholder="Unidades disponibles")
+                        div(class="form-group")
+                            label(for="newPurchase") Total de compra
+                            input(type="text"  inputmode="numeric" class="form-control" id="total-compra" placeholder="$0.00")
+                        div(class="form-group row")
+                            div(class="col-6")
+                            div(class="col-6 btn-toolbar")
+                                input.btn.btn-success(type="submit" value="Guardar")  
+                                button.btn.btn-danger Cancelar 
+                    div(class="col-1")
+        <script src="../../../javascripts/purchase/newclient.js"></script>
