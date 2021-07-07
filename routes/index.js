@@ -8,4 +8,10 @@ router.get('/', (req, res) => {
     res.render('login')
 });
 
+router.get('/test', (req, res) => {
+    //console.log('user token: ', JSON.parse(localStorage.getItem('user')).token);
+    res.render('tools/Empleados')
+});
+
+
 module.exports = router;
