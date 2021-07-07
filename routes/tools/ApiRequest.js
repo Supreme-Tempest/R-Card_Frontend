@@ -33,13 +33,15 @@ const ApiResponce = (method, route, req, res, e) => {
     })
         .then((response) => {
             //console.log('responce', response);
-            if (response.data.code === 4012) {
-                console.log('responce', response.data);
-            }
             if (e) {
                 e(response.data);
             }
-        res.send(response.data);
+            if (response.data.code === 4012) {
+                console.log('responce', response.data);
+                //res.redirect('/logout');
+            } else {
+                res.send(response.data);
+            }
         })
         .catch((error) => {
         res.send(error.message);
