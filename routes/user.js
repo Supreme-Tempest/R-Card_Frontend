@@ -71,7 +71,7 @@ router.post('/login', function(req, res, next) {
 
 router.get('/workshop', (req, res) => {
     apiMethods.ApiGet(routes.workshop, {}, res, (e) => {
-        console.log("responce rol", e)
+        console.log("responce workshop", e.data)
     });
 });
 
