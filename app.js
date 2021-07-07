@@ -11,6 +11,7 @@ const diagnosticsRouter = require('./routes/diagnostics');
 const purchasesRouter = require('./routes/purchases');
 const clientsRouter = require('./routes/clients');
 const salesRouter = require('./routes/sales');
+const middleware = require('./middleware');
 
 const app = express();
 
@@ -31,6 +32,7 @@ if (typeof localStorage === "undefined" || localStorage === null) {
 
 //localStorage.setItem('init', 'yes init :v');
 
+middleware(app);
 app.use('/', indexRouter);
 //app.use('/users', usersRouter);
 app.use('/', userRouter);
