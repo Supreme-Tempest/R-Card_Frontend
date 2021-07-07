@@ -116,3 +116,11 @@
     -ms-flex-pack: start;
         justify-content: space-around;
   }
+  
+  .navbar-collapse {
+    -ms-flex-preferred-size: 10%;
+        flex-basis: 10%;
+    -ms-flex-align: center;
+        align-items: center;
+  }
+  

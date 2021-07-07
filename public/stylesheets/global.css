@@ -16,13 +16,13 @@ body{
     display: grid;
     grid-template-columns: 10% 20% 10% 50% 10%;
     grid-template-rows: 20% 60% 20%;
-    background-color: #2d2e30;
+    background-color: #343a40;
     height: 60px;
-    margin-top: 10px;
+    border: none;
 }
 
 .Btn-Menu:hover{/*hover del boton para cambiar de color-------*/
-    background:#2385c7;
+    background:#505050;
 }
 
 .Icon{/*iconos de los botones*/
@@ -39,7 +39,7 @@ body{
     grid-column-end: 5;
     grid-row-start: 2;
     grid-row-end: 3;
-    color: white;
+    color: rgb(170, 170, 170);
     font-family:Fuente;
     font-size: 100%;
     margin: 0em;
@@ -55,7 +55,7 @@ body{
     grid-row-start: 1;
     grid-row-end: 3;
     /*Disenno de vista*/
-    background-color: #2d2e30;
+    background-color: #343a40;
     height: 100vh;/*es el 100% del alto de la pantalla*/
 }
 
@@ -291,6 +291,5 @@ body{
     color: rgb(7, 196, 0);
     font-size: 15px;
 }
-
 
 

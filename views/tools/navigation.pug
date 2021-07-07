@@ -1,48 +1,57 @@
+include ../tools/head.pug
+include ../imports.pug
+link(rel="stylesheet" href="/stylesheets/clients/ClienteNuevo-Grid.css")
 <!-- Div Superior -->
-div(class="Div-Barra")
-    div(class="dropdown")
-        button(class="dropbtn")= "Usuario"
-        div(class="dropdown-content")
-            a(href="/logout")= "Cerrar Sesión"
+nav(class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between")
+    <a class="navbar-brand" href="#">
+        
+    </a>
+    div(class="collapse navbar-collapse" id="navbarNavDropdown")
+        <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+                a(class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Usuario
+                div(class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink")
+                    a(class="dropdown-item" href="/logout") Cerrar Sesion
+
 
 <!-- Div del menu izquierdo -->
-<div class="Div-Nav">
-    <div class="img-Nav">
-        <img class="Nav-Logo" src="/images/LogoDorado.png">
+    <div class="Div-Nav">
+        <div class="img-Nav" href="#">
+            <img class="Nav-Logo" src="/images/LogoDorado.png">
+        </div>
+    
+        <div class="btn-Area">
+            script.
+                function handleStatistics() {
+                    window.location.href = '/diagnostics/stadistics'
+                }
+            button(class="Btn-Menu" id="Btn-Estadisticas" onClick="handleStatistics()")
+                <img class="Icon" src="/images/Estadistica.svg">
+                <P class="btn-name">Estadistica</P>
+    
+            script.
+                function handleClients() {
+                    window.location.href = '/clients/client'
+                }
+            button(class="Btn-Menu" id="Btn-Clientes" onClick="handleClients()")
+                <img class="Icon" src="/images/Cliente.svg">
+                <P class="btn-name">Clientes</P>
+                
+            script.
+                function handlePurchases() {
+                    window.location.href = '/purchases/register'
+                }
+            button(class="Btn-Menu" id="Btn-Compras" onClick="handlePurchases()")
+                <img class="Icon" src="/images/Compras.svg">
+                <P class="btn-name">Compras</P>
+    
+            script.
+                function handleSales() {
+                    window.location.href = '/sales/list'
+                }
+            button(class="Btn-Menu" id="Btn-Ventas" onClick="handleSales()")
+                <img class="Icon" src="/images/Ventas.svg">
+                <p class="btn-name">Ventas</p>
+        </div>
+    
     </div>
-
-    <div class="btn-Area">
-        script.
-            function handleStatistics() {
-                window.location.href = '/diagnostics/stadistics'
-            }
-        button(class="Btn-Menu" id="Btn-Estadisticas" onClick="handleStatistics()")
-            <img class="Icon" src="/images/Estadistica.svg">
-            <P class="btn-name">Estadistica</P>
-
-        script.
-            function handleClients() {
-                window.location.href = '/clients/client'
-            }
-        button(class="Btn-Menu" id="Btn-Clientes" onClick="handleClients()")
-            <img class="Icon" src="/images/Cliente.svg">
-            <P class="btn-name">Clientes</P>
-            
-        script.
-            function handlePurchases() {
-                window.location.href = '/purchases/register'
-            }
-        button(class="Btn-Menu" id="Btn-Compras" onClick="handlePurchases()")
-            <img class="Icon" src="/images/Compras.svg">
-            <P class="btn-name">Compras</P>
-
-        script.
-            function handleSales() {
-                window.location.href = '/sales/list'
-            }
-        button(class="Btn-Menu" id="Btn-Ventas" onClick="handleSales()")
-            <img class="Icon" src="/images/Ventas.svg">
-            <p class="btn-name">Ventas</p>
-    </div>
-
-</div>
