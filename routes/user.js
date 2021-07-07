@@ -65,11 +65,16 @@ router.post('/login', function(req, res, next) {
 });
 
 router.get('/workshop', (req, res) => {
-    apiMethods.ApiGet(routes.workshop, {}, res);
+    apiMethods.ApiGet(routes.workshop, {}, res, (e) => {
+        console.log("responce rol", e.data)
+    });
 });
 
 router.get('/roles', (req, res) => {
-    apiMethods.ApiGet(routes.rol, {}, res);
+    apiMethods.ApiGet(routes.rol, {}, res, (e) => {
+        console.log("responce rol", e.data)
+    } 
+    );
 });
 
 module.exports = router;
