@@ -10,6 +10,11 @@ router.get('/client_list', (req, res) => {
     apiMethods.ApiGet(routes.client, {}, res);
 }); 
 
+router.post('/clients', (req, res) => {
+    console.log(req);
+    apiMethods.ApiPost(routes.client, req, res);
+}); 
+
 router.get('/clientPage', (req, res) => {
     req.query = {
         page: 1,
