@@ -32,12 +32,18 @@ const ApiResponce = (method, route, req, res, e) => {
         },
     })
         .then((response) => {
-        e(response);
+            //console.log('responce', response);
+            if (response.data.code === 4012) {
+                console.log('responce', response.data);
+            }
+            if (e) {
+                e(response.data);
+            }
         res.send(response.data);
         })
         .catch((error) => {
         res.send(error.message);
-        console.log('No logro concetar a la direccion');
+        console.log('No logro concetar a la direccion', error.message);
         })
         .then(() => {
         console.log('goal :v');
