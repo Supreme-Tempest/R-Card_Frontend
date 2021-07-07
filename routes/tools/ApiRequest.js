@@ -25,7 +25,7 @@ const ApiResponce = (method, route, req, res, e) => {
     axios({
         method: method,
         url: apiOptions.server + route,
-        data: req.data,
+        data: req.body,
         query: req.query,
         headers: {
             authorization: `Bearer ${JSON.parse(localStorage.getItem('user')).token}`,
