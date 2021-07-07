@@ -34,8 +34,13 @@ router.post('/signup', function(req, res, next) {
         });
 });
 
+router.login = (req, res) =>{
+    console.log('login render');
+    res.render('login');
+}
+
 router.get('/login', (req, res) => {
-    res.render('login')
+    router.login(req, res);
 });
 
 router.get('/logout', function(req,res,next){
@@ -66,13 +71,13 @@ router.post('/login', function(req, res, next) {
 
 router.get('/workshop', (req, res) => {
     apiMethods.ApiGet(routes.workshop, {}, res, (e) => {
-        console.log("responce rol", e.data)
+        console.log("responce rol", e)
     });
 });
 
 router.get('/roles', (req, res) => {
     apiMethods.ApiGet(routes.rol, {}, res, (e) => {
-        console.log("responce rol", e.data)
+        console.log("responce rol", e)
     } 
     );
 });
