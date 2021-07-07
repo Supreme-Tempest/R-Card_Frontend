@@ -16,7 +16,7 @@ router.post('/clients', (req, res) => {
 }); 
 
 router.get('/clientPage', (req, res) => {
-    req.query = {
+    req.body = {
         page: 1,
         size: 3,
     }
