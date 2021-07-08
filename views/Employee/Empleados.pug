@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+html(lang="en")
+    include ../tools/head.pug
+        link(rel="stylesheet" href="/stylesheets/employee/Empleados.css")
+        title="Empleados"
+    body
+        include ../tools/navigation.pug
+        <!--Div del contenedor-->
+        <div class="Div-Contenedor">
+            <div class="TituloC">
+                <p>Lista de Empleados</p>
+            </div>
+            
+            <!-- Buscador de Empleados -->
+            <div class="C-BuscarE">
+                <div class="C-BuscarE-Select">
+                    <!--Menu Desplegable-->
+                    <select id="Select-FiltroBuscador" name="Filtro" class="Select-css">
+                        <option id="Option01-FiltroBuscador">Nombre</option>
+                        <option id="Option02-FiltroBuscador">Carnet</option>
+                    </select>
+                </div>
+                <div class="C-BuscarE-Text">
+                    <!--Input de Buscador-->
+                    <input id="Inp-BuscadorEmpleado" type="text" class="Input-cssE">
+                </div>
+                <div class="C-BuscarE-Btn">
+                    <!--Btn Buscar-->
+                    <button id="btn-BuscadorEmpleado" class="btn-General btn-Naranja ">Buscar</button>
+                </div>
+            </div>
+
+            <!-- Lista de Empleados -->
+            <div class="C-TablaE ET">
+                <table class="table-css">
+                    <thead>
+                        <tr>
+                            <th colspan="3">Lista de Empleado</th>
+                        </tr>
+                        <tr>
+                            <th class="tg-b1">Carnet</th>
+                            <th class="tg-b2">Nombre</th>
+                            <th class="tg-b3"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="tg-b1">00422347</td>
+                            <td class="tg-b2">Juan Perez</td>
+                            <td class="tg-b3">
+                                script.
+                                    function handleEmployeeI() { window.location.href = '/Employees/EmployeeI' }
+                                <button class="btn-General btn-Azul" id="Btn-EmpleadoInfo1" onClick="handleEmployeeI()"> ver </button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="tg-b1">00422347</td>
+                            <td class="tg-b2">Juan Rafael Gomez Perez</td>
+                            <td class="tg-b3">
+                                script.
+                                    function handleEmployeeI() { window.location.href = '/Employees/EmployeeI' }
+                                <button class="btn-General btn-Azul" id="Btn-EmpleadoInfo2" onClick="handleEmployeeI()"> ver </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="C-BtnNE">
+                script.
+                    function handleEmployeeN() {
+                        window.location.href = '/Employees/EmployeeC'
+                    }
+                <button class="btn-General btn-Azul" id="Btn-NEmpleadoInfo" onClick="handleEmployeeN()"> Nuevo Empleado </button>
+            </div>
+        </div>
+    </body>
+    </html>

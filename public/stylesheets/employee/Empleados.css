@@ -1,34 +1,68 @@
 /*Alineacion de las tablas*/
 
-tbody tr td {
+thead tr th {
   text-align: center;
   vertical-align: top;
 }
+
+tbody tr td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+
+
 .ET {
+  display: flex;
+  justify-content: center;
   overflow-y: scroll;
 }
 
 /*formato de los titulos*/
 .Form-Ingreso p {
-  margin: 0%;
-  font-family: Fuente;
+  margin: 5px;
+  font-family: "Roboto", sans-serif;
   color: rgb(0, 0, 0);
   font-size: 15px;
 }
 
-h1 {
-  font-family: Fuente;
-  color: rgb(0, 0, 0);
-  font-size: 15px;
-}
+
 
 /*Grid del contenedor*/
 
 .Div-Contenedor {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 10% 15% 25% 20% 20% 10%;
+  grid-template-columns: 30% 40% 30%;
+  grid-template-rows: 10% 20% 60% 10%;
   max-height: 1fr;
+}
+
+.Div-Contenedor1 {
+  display: grid;
+  grid-template-columns: 30% 40% 30%;
+  grid-template-rows: 10% 20% 60% 10%;
+  max-height: 1fr;
+}
+
+.Div-Contenedor1 h1{
+  text-align: center;
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+
+.TituloC {
+  display: flex;
+  justify-content: center;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.TituloC p {
+  font-family: "Roboto", sans-serif;
+  color: rgb(0, 0, 0);
+  font-size: 2em;
 }
 
 .Ingreso {
@@ -36,14 +70,16 @@ h1 {
   display: grid;
   grid-template-columns: 10% 80% 10%;
   grid-template-rows: 80% 20%;
-  grid-column-start: 1;
-  grid-column-end: 2;
+  grid-column-start: 2;
+  grid-column-end: 3;
   grid-row-start: 2;
-  grid-row-end: 6;
+  grid-row-end: 5;
 }
 
 .Ingreso .Form-Ingreso {
   /*Formulario de Ingreso*/
+  display: flex;
+  flex-direction: column;
   grid-column-start: 2;
   grid-column-end: 3;
   grid-row-start: 1;
@@ -52,8 +88,27 @@ h1 {
 
 .Ingreso .div-btn-Ingresar {
   /*btn de ingreso*/
+  display: grid;
+  grid-template-columns: 20% 40% 40%;
+  grid-template-rows: 40% 40%;
   grid-column-start: 2;
   grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+.btnIMSM{
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.btnIbtn{
+  display: grid;
+  grid-template-columns: repeat(2,50%);
+  grid-column-start: 2;
+  grid-column-end: 4;
   grid-row-start: 2;
   grid-row-end: 3;
 }
@@ -61,7 +116,7 @@ h1 {
 .C-BuscarE {
   /*----------------------------Buscador de Empleados*/
   display: grid;
-  grid-template-columns: 25% 50% 25%;
+  grid-template-columns: 15% 70% 15%;
   grid-column-start: 2;
   grid-column-end: 3;
   grid-row-start: 2;
@@ -69,26 +124,37 @@ h1 {
 }
 
 .C-BuscarE .C-BuscarE-Select {
+  display: flex;
+  justify-content: center;
   grid-column-start: 1;
   grid-column-end: 2;
 }
 
+.C-BuscarE-Btn{
+  display: flex;
+  justify-content: center;
+}
+
 .Select-css {
-  font-family: Fuente;
+  font-family: "Roboto", sans-serif;
   font-size: 15px;
   color: #fff;
-  background: #eabe3f;
+  background: #2285c7;
   width: 110px;
   height: 40px;
 }
 
 .Input-cssE {
-  font-family: Fuente;
+  font-family: "Roboto", sans-serif;
   font-size: 18px;
   height: 40px;
   width: 100%;
-  border: none;
+  font-size: 18px;
+  border: 0.05em solid;
+  border-radius: 3px;
+  border-color: #cccccc;
   outline: none;
+  height: 2em;
 }
 
 .C-TablaE {
@@ -96,42 +162,58 @@ h1 {
   grid-column-start: 2;
   grid-column-end: 3;
   grid-row-start: 3;
-  grid-row-end: 6;
+  grid-row-end: 4;
 }
 
 .tg-b1 {
-  width: 25%;
+  width: 8em;
 }
 
 .tg-b2 {
-  width: 40%;
+  width: 30em;
 }
 
 .tg-b3 {
-  width: 25%;
+  width: 8em;
+}
+
+.C-BtnNE{
+  display: flex;
+  justify-content: center;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 4;
+  grid-row-end: 5;
 }
 
 .C-InformacionE {
   /*-----------------------tabla de informacionde Empleados*/
   display: grid;
-  grid-template-columns: 10% 80% 20%;
+  grid-template-columns: 20% 60% 20%;
   grid-template-rows: 80% 20%;
-  grid-column-start: 3;
-  grid-column-end: 4;
+  grid-column-start: 2;
+  grid-column-end: 3;
   grid-row-start: 2;
-  grid-row-end: 6;
+  grid-row-end: 4;
+}
+
+
+.Div-TIE {
+  display: flex;
+  justify-content: center;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.table-IE{
+  margin: 0em;
 }
 
 .table-IE td {
   width: 200px;
   height: 35px;
-}
-
-.Div-TIE {
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row-start: 1;
-  grid-row-end: 2;
 }
 
 .Div-btn-TIE {
@@ -142,3 +224,5 @@ h1 {
   grid-row-start: 2;
   grid-row-end: 3;
 }
+
+
