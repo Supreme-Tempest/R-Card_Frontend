@@ -24,14 +24,14 @@ router.get('/productPage', (req, res) => {
 
 router.get('/productType', (req, res) => {
     console.log('productType router', 'pre body');
-    apiMethods.ApiGet(routes.productPage, req, res, (e) => {
+    apiMethods.ApiGet(routes.productType, req, res, (e) => {
         console.log("responce", e);
     });
 }); 
 
 router.get('/productIdentificative', (req, res) => {
     console.log('productIdentificative router', 'pre body');
-    apiMethods.ApiGet(routes.productPage, req, res, (e) => {
+    apiMethods.ApiGet(routes.productIdentificative, req, res, (e) => {
         console.log("responce", e);
     });
 }); 
