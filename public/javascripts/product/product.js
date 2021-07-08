@@ -1,6 +1,6 @@
 var table_product = document.getElementById("tbody_products");
-var product_type = document.getElementById("product-type");
-var product_identificative = document.getElementById("product-identificative");
+var product_type = document.getElementById("product_type");
+var product_identificative = document.getElementById("product_identificative");
 var form = (document.forms.registerProduct);
 var type = document.getElementById("product_type");
 var identificative = document.getElementById("product_identificative");
@@ -68,30 +68,26 @@ function productIdentificative() {
 
 form.addEventListener('submit', function (event) {
     event.preventDefault();
-    if (form.username.value != "" && form.name.value != "" && form.lastname.value != "" && form.password.value != "") {
-        if (form.password.value == form.validated_password.value) {
-            let data = {
-                name: form.product_name.value,
-                brand: form.product_brand.value,
-                stock: form.product_stock.value,
-                price: form.product_price.value,
-                type_id: parseInt(type.value),
-                identificative_id: parseInt(identificative.value),
-            }
-            console.log(data);
-            /*fetch('/signup', {
-                    method: 'POST',
-                    body: JSON.stringify(data),
-                    headers: {
-                        'Content-Type': 'application/json'
-                    }
-                }).then(res => res.json())
-                .then(res => {
-                    if (res.ok) {
-                    } else {
-                        alert("puede que estes repitiendo nombre o te falten datos");
-                    }
-                })*/
+        let data = {
+            name: form.product_name.value,
+            brand: form.product_brand.value,
+            stock: form.product_stock.value,
+            price: form.product_price.value,
+            productType: parseInt(type.value),
+            identificative: parseInt(identificative.value),
         }
-    }
-});
+        console.log(data);
+        fetch('/products/product', {
+                method: 'POST',
+                body: JSON.stringify(data),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }).then(res => res.json())
+            .then(res => {
+                if (res.ok) {
+                } else {
+                    alert("puede que estes repitiendo nombre o te falten datos");
+                }
+            })
+        });

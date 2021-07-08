@@ -6,7 +6,7 @@ const Routes = {
     client: 'clients/clients',
     clientPage: 'clients/clientsPaginate',
     productPage: 'products/productsPaginate',
-    product: 'products/products',
+    product: 'products/product',
     productType: 'products/type',
     productIdentificative: 'products/identificative',
 }
