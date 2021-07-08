@@ -26,9 +26,12 @@ html(lang="en")
                                     <span class="sr-only">Previous</span>
                                 </a>
                             </li>
-                            <li class="page-item"><a class="page-link" href="#" id="prevPage">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#" id="Page">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#" id="nextPage">3</a></li>
+                            li(class="page-item")
+                                button(class="page-link" id="prevPage") 1
+                            li(class="page-item")
+                                button(class="page-link" id="page") 2
+                            li(class="page-item")
+                                button(class="page-link" id="nextPage") 3
                             <li class="page-item">
                                 <a class="page-link" href="#" aria-label="Next" id="endPage">
                                     <span aria-hidden="true">&raquo;</span>

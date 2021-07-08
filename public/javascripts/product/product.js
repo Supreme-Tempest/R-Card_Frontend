@@ -4,17 +4,17 @@ var product_identificative = document.getElementById("product_identificative");
 var form = (document.forms.registerProduct);
 var type = document.getElementById("product_type");
 var identificative = document.getElementById("product_identificative");
-var prev = document.getElementById("prevPage");
-var next = document.getElementById("nextPage");
-var current = document.getElementById("Page");
-var last = document.getElementById("endPage");
-var first = document.getElementById("startPage");
+let prev = document.getElementById("prevPage");
+let next = document.getElementById("nextPage");
+let center = document.getElementById("page");
+let last = document.getElementById("endPage");
+let first = document.getElementById("startPage");
 
 console.log(table_product);
-console.log(current);
+console.log(center);
 
 let page = {
-    page: 4,
+    page: 1,
     size: 5,
 }
 
@@ -34,17 +34,19 @@ function onload(page) {
     }).then(res => res.json()).then(data => {
         let values = "";
         console.log(data);
+        console.log("hola buenas");
+        console.log(center);
         if(data.data.current == 1){
             prev.innerText = data.data.current;
-            current.innerText = data.data.next;
+            center.innerText = data.data.next;
             next.innerText = data.data.next + 1;
         } else if(data.data.current == data.data.pages){
             prev.innerText = data.data.preview - 1;
-            current.innerText = data.data.preview;
+            center.innerText = data.data.preview;
             next.innerText = data.data.current;
         }else{
             prev.innerText = data.data.preview;
-            current.innerText = data.data.current;
+            center.innerText = data.data.current;
             next.innerText = data.data.next;
         }
         data.data.data.forEach(element => {
@@ -76,7 +78,7 @@ function productType() {
         });
         product_type.innerHTML = values;
     });
-}
+};
 
 function productIdentificative() { 
     fetch('/products/productIdentificative', {
@@ -92,7 +94,7 @@ function productIdentificative() {
         });
         product_identificative.innerHTML = values;
     });
-}
+};
 
 
 form.addEventListener('submit', function (event) {
@@ -121,8 +123,17 @@ form.addEventListener('submit', function (event) {
                     
                 }
             })
-        });
+});
 
 type.addEventListener('click', (event) => {
     productIdentificative();
+});
+
+
+center.addEventListener('click', (event) => {
+    page = {
+        page: 1,
+        size: 5,
+    };
+    onload(page);
 });
