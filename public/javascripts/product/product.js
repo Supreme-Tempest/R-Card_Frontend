@@ -4,18 +4,49 @@ var product_identificative = document.getElementById("product_identificative");
 var form = (document.forms.registerProduct);
 var type = document.getElementById("product_type");
 var identificative = document.getElementById("product_identificative");
+var prev = document.getElementById("prevPage");
+var next = document.getElementById("nextPage");
+var current = document.getElementById("Page");
+var last = document.getElementById("endPage");
+var first = document.getElementById("startPage");
 
 console.log(table_product);
-onload();
+console.log(current);
+
+let page = {
+    page: 4,
+    size: 5,
+}
+
+onload(page);
 productType();
-productIdentificative();
 
 
-function onload() { 
+
+function onload(page) { 
+    
     fetch('/products/productPage', {
-        method: 'GET'
+        method: 'POST',
+        body: JSON.stringify(page),
+        headers: {
+            'Content-Type': 'application/json'
+        }
     }).then(res => res.json()).then(data => {
         let values = "";
+        console.log(data);
+        if(data.data.current == 1){
+            prev.innerText = data.data.current;
+            current.innerText = data.data.next;
+            next.innerText = data.data.next + 1;
+        } else if(data.data.current == data.data.pages){
+            prev.innerText = data.data.preview - 1;
+            current.innerText = data.data.preview;
+            next.innerText = data.data.current;
+        }else{
+            prev.innerText = data.data.preview;
+            current.innerText = data.data.current;
+            next.innerText = data.data.next;
+        }
         data.data.data.forEach(element => {
             values = values + `
                 <tr> 
@@ -38,9 +69,7 @@ function productType() {
         method: 'GET'
     }).then(res => res.json()).then(data => {
         let values = "<option disabled selected>Tipo de producto</option>";
-        console.log(data); 
         data.forEach(element => {
-            console.log(element);
             values = values + `
                 <option value="${element.id}">${element.name}</option>
             `
@@ -54,12 +83,12 @@ function productIdentificative() {
         method: 'GET'
     }).then(res => res.json()).then(data => {
         let values = "<option disabled selected>Identificativo</option>";
-        console.log(data); 
         data.forEach(element => {
-            console.log(element);
-            values = values + `
+            if(element.type_id == type.value){
+                values = values + `
                 <option value="${element.id}">${element.name}</option>
             `
+            }
         });
         product_identificative.innerHTML = values;
     });
@@ -76,7 +105,6 @@ form.addEventListener('submit', function (event) {
             productType: parseInt(type.value),
             identificative: parseInt(identificative.value),
         }
-        console.log(data);
         fetch('/products/product', {
                 method: 'POST',
                 body: JSON.stringify(data),
@@ -85,9 +113,16 @@ form.addEventListener('submit', function (event) {
                 }
             }).then(res => res.json())
             .then(res => {
-                if (res.ok) {
+                console.log(res)
+                if (res.success) {
+                    alert("Producto agregado con exito");
+                    form.reset();
                 } else {
-                    alert("puede que estes repitiendo nombre o te falten datos");
+                    
                 }
             })
         });
+
+type.addEventListener('click', (event) => {
+    productIdentificative();
+});
