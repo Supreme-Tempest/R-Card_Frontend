@@ -5,7 +5,7 @@ console.log(table_product);
 onload();
 
 function onload() { 
-    fetch('/product/productPage', {
+    fetch('/products/productPage', {
         method: 'GET'
     }).then(res => res.json()).then(data => {
         let values = "";
@@ -29,7 +29,7 @@ function onload() {
 }
 
 function productType() { 
-    fetch('/product/productType', {
+    fetch('/products/productType', {
         method: 'GET'
     }).then(res => res.json()).then(data => {
         let values = "";
