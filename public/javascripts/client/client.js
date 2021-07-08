@@ -13,8 +13,8 @@ function onload() {
                 <tr>
                     <td>${element.card}</td>
                     <td>${element.name}</td>
-                    <td><button class = btn btn-success>Editar</button>
-                        <button class = btn btn-danger>Deshabilitar</button>
+                    <td><button class = "btn btn-success">Editar</button>
+                        <button class = "btn btn-danger">Deshabilitar</button>
                     </td>
                 </tr>
             `
