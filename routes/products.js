@@ -2,9 +2,6 @@ const express = require('express');
 const router = express.Router();
 const routes = require('./tools/routes');
 const apiMethods = require('./tools/ApiRequest');
-const apiOptions = {
-    server: 'http://localhost:3000/',
-}
 
 router.get('/new', (req, res) => {
     res.render('purchase/newPurchase')
@@ -20,6 +17,20 @@ router.get('/productPage', (req, res) => {
         page: 1,
         size: 5,
     }
+    apiMethods.ApiGet(routes.productPage, req, res, (e) => {
+        console.log("responce", e);
+    });
+}); 
+
+router.get('/productType', (req, res) => {
+    console.log('productType router', 'pre body');
+    apiMethods.ApiGet(routes.productPage, req, res, (e) => {
+        console.log("responce", e);
+    });
+}); 
+
+router.get('/productIdentificative', (req, res) => {
+    console.log('productIdentificative router', 'pre body');
     apiMethods.ApiGet(routes.productPage, req, res, (e) => {
         console.log("responce", e);
     });

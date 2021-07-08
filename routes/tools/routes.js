@@ -6,6 +6,8 @@ const Routes = {
     client: 'clients/clients',
     clientPage: 'clients/clientsPaginate',
     productPage: 'products/productsPaginate',
+    productType: 'products/type',
+    productIdentificativo: 'products/identificative',
 }
 
 module.exports = Routes;
