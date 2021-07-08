@@ -58,3 +58,37 @@ form.addEventListener('submit', function (event) {
         }
     }
 });
+
+function onload(page) { 
+    
+    fetch('/products/productPage', {
+        method: 'POST',
+        body: JSON.stringify(page),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }).then(res => res.json()).then(data => {
+        let values = "";
+        console.log(data);
+        prev.style.display = 'block'
+        next.style.display = 'block'
+        lastpage = data.data.pages
+        data.data.preview != null ? prev.innerText = data.data.preview : prev.style.display = 'none';
+        center.innerText = data.data.current;
+        data.data.next != null ? next.innerText = data.data.next : next.style.display = 'none';
+        /*data.data.data.forEach(element => {
+            values = values + `
+                <tr> 
+                    <td>${element.id}</td>
+                    <td>${element.name}</td>
+                    <td>${element.brand}</td>
+                    <td>${element.stock}</td>
+                    <td>${element.price}</td>
+                    <td>${element.type.name}|${element.identificative.name}</td>
+                    <td><button class = "btn btn-success">E</button></td>
+                </tr>
+            `
+        });*/
+        table_product.innerHTML = values;
+    });
+}
