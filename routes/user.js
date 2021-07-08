@@ -84,4 +84,12 @@ router.get('/roles', (req, res) => {
     );
 });
 
+router.post('/userPage', (req, res) => {
+    console.log("Se pudo stark");
+    //console.log(req.body);
+    apiMethods.ApiPost(routes.userPage, req, res, (e) => {
+        //console.log("responce", e);
+    });
+});
+
 module.exports = router;

@@ -1,7 +1,15 @@
-onload();
+
 var form = (document.forms.signup);
 var rol = document.getElementById("rol");
 var workshop = document.getElementById("workshop");
+
+let page = {
+    page: 1,
+    size: 5,
+}
+
+onload();
+onloadclient(page);
 
 function onload(){
     fetch('/workshop',{
@@ -59,9 +67,9 @@ form.addEventListener('submit', function (event) {
     }
 });
 
-function onload(page) { 
-    
-    fetch('/products/productPage', {
+function onloadclient(page) { 
+     
+    fetch('/userPage', {
         method: 'POST',
         body: JSON.stringify(page),
         headers: {
@@ -70,7 +78,7 @@ function onload(page) {
     }).then(res => res.json()).then(data => {
         let values = "";
         console.log(data);
-        prev.style.display = 'block'
+        /*prev.style.display = 'block'
         next.style.display = 'block'
         lastpage = data.data.pages
         data.data.preview != null ? prev.innerText = data.data.preview : prev.style.display = 'none';
@@ -88,7 +96,7 @@ function onload(page) {
                     <td><button class = "btn btn-success">E</button></td>
                 </tr>
             `
-        });*/
-        table_product.innerHTML = values;
+        });
+        table_product.innerHTML = values;*/
     });
 }
