@@ -1,6 +1,6 @@
 var table_product = document.getElementById("tbody_products");
-var product_type = document.getElementById("product_type");
-var product_identificative = document.getElementById("product_identificative");
+//var product_type = document.getElementById("product_type");
+//var product_identificative = document.getElementById("product_identificative");
 var form = (document.forms.registerProduct);
 var type = document.getElementById("product_type");
 var identificative = document.getElementById("product_identificative");
@@ -36,7 +36,7 @@ function onload(page) {
         console.log(data);
         prev.style.display = 'block'
         next.style.display = 'block'
-        lastpage = data.pages
+        lastpage = data.data.pages
         data.data.preview != null ? prev.innerText = data.data.preview : prev.style.display = 'none';
         center.innerText = data.data.current;
         data.data.next != null ? next.innerText = data.data.next : next.style.display = 'none';
@@ -68,7 +68,7 @@ function productType() {
                 <option value="${element.id}" typeid="${element.type_id}">${element.name}</option>
             `
         });
-        product_type.innerHTML = values;
+        type.innerHTML = values;
     });
 };
 
@@ -78,15 +78,15 @@ function productIdentificative() {
     }).then(res => res.json()).then(data => {
         let values = "<option disabled selected>Identificativo</option>";
         console.log("identificatives", data);
-        console.log("typeid", type.typeid);///F
+        //console.log("typeid", type.options[type.selectedIndex].getAttribute('typeid'));
         data.forEach(element => {
-            if(element.type_id == type.typeid){ ///****AIIIIUUUDAAAAA ;v */
+            if(element.type_id == type.options[type.selectedIndex].getAttribute('typeid')){ 
                 values = values + `
                 <option value="${element.id}">${element.name}</option>
             `
             }
         });
-        product_identificative.innerHTML = values;
+        identificative.innerHTML = values;
     });
 };
 
