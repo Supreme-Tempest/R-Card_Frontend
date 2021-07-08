@@ -4,6 +4,12 @@
     grid-template-rows: 5% 20% 5% 20% 5% 20% 25%;
 }
 
+.Imput-cssS{
+    background: none;
+    border:none;
+
+}
+
 /*Estadisticas de clientes*/
 .Grid-Clientes{
     display: grid;
@@ -226,8 +232,11 @@
 
 .PETitulo{
     font-family:'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: large;
     margin: 0%;
     text-align: center;
+    color: #fff;
 }
 
 .General-Input{
@@ -243,13 +252,35 @@
 }
 
 .th-n{
-    width: 40px;
+    width: 10%;
 }
 
 .th-Producto{
-    width: 100px;
+    width: 80%;
 }
 
 .th-Cantidad{
-    width: 100px;
+    width: 20%;
+}
+
+.subT{
+    font-family:'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 1.5em;
+    margin: 5%;
+    text-align: center;
+    color: red;
+}
+
+.GraTitulo{
+    font-family:'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 1.5em;
+    margin: 0%;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.8);
+    grid-column-start: 4;
+    grid-column-end: 7;
+    grid-row-start: 1;
+    grid-row-end: 2;
 }
