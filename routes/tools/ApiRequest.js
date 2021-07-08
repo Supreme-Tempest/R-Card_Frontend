@@ -4,6 +4,7 @@ const axios = require('axios');
 const apiOptions = {
     server: 'http://localhost:3000/api/',
 }
+const login = require('../user');
 
 const ApiPost = (route, req, res, e) => {
     ApiResponce('post', route, req, res, e);
@@ -22,24 +23,32 @@ const ApiDelete = (route, req, res, e) => {
 }
 
 const ApiResponce = (method, route, req, res, e) => {
+    console.log('apiRespone','pre-token');
+    if (localStorage.getItem('user') == '') {
+        console.log('apiRespone','no session');
+        login.login(req, res);
+        return
+    }
+    console.log('apiRespone','pre-axios');
     axios({
         method: method,
         url: apiOptions.server + route,
         data: req.body,
-        query: req.query,
         headers: {
             authorization: `Bearer ${JSON.parse(localStorage.getItem('user')).token}`,
         },
     })
         .then((response) => {
-            //console.log('responce', response);
-            if (response.data.code === 4012) {
-                console.log('responce', response.data);
-            }
+            console.log('responce', response);
             if (e) {
                 e(response.data);
             }
-        res.send(response.data);
+            if (response.data.code === 4012) {
+                console.log('responce', response.data);
+                //res.redirect('/logout');
+            } else {
+                res.send(response.data);
+            }
         })
         .catch((error) => {
         res.send(error.message);

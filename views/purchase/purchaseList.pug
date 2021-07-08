@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+html(lang="en")
+    title="Productos"
+    body
+        include ../tools/navigation.pug
+        div(class="container-fluid pt-5")
+            h3(class="text-center") Productos
+            div.p-5.row
+                div(class="container col-8 ")
+                    table(class="table table-striped" id="table_products")
+                        thead
+                            tr
+                                th(scope="col") Codigo
+                                th(scope="col") Producto
+                                th(scope="col") Marca
+                                th(scope="col") Stock
+                                th(scope="col") Precio
+                                th(scope="col") Detalle
+                                th(scope="col") 
+                        tbody(id="tbody_products")
+                div.container.col-4.card.p-3                       
+                    h3(class="text-center") Registrar Producto
+                    form(class="row" role='form' method='POST' action='/clients/clients' name="registerPurchase")
+                        div(class="col-6" )
+                            div(class="form-group")
+                                label(for="registerPurchase") Nombre de producto 
+                                input(type="text" class="form-control" id="product-name" placeholder="Nombre del producto")
+                            div(class="form-group")
+                                label(for="registerPurchase") Precio de venta
+                                input(type="number" class="form-control" id="product-price" placeholder="Ej: $ 10.00")
+                            div(class="form-group")
+                                label(for="registerPurchase") Tipo de producto
+                                select(id="product-type" class="form-control")
+                                    option(disabled selected) Seleccione tipo
+                                    option(value="1") Camisa
+                        div(class="col-6")
+                            div(class="form-group")
+                                label(for="registerPurchase") Marca
+                                input(type="text" class="form-control" id="product-brand" placeholder="Ingrese el costo total")
+                            div(class="form-group")
+                                label(for="registerPurchase") Cantidad
+                                input(type="number" class="form-control" id="product-stock" placeholder="Cantidad a ingresar")
+                            div(class="form-group")
+                                label(for="registerPurchase") Identificativo
+                                select(id="product-identificative" class="form-control")
+                                    option(disabled selected) Seleccione identificativo
+                                    option(value="1") Talla M
+                            div(class="form-group")
+                                input.btn.btn-primary.btn-block(type="submit"  value="Guardar")
+        script(src="../../../javascripts/product/product.js")
