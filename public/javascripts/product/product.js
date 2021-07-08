@@ -9,6 +9,7 @@ let next = document.getElementById("nextPage");
 let center = document.getElementById("page");
 let last = document.getElementById("endPage");
 let first = document.getElementById("startPage");
+let productId = 1; // aqui poner id de  producto a editar  ;v
 var lastpage;
 console.log(table_product);
 console.log(center);
@@ -94,6 +95,7 @@ function productIdentificative() {
 form.addEventListener('submit', function (event) {
     event.preventDefault();
         let data = {
+            id: productId,
             name: form.product_name.value,
             brand: form.product_brand.value,
             stock: form.product_stock.value,
@@ -101,8 +103,12 @@ form.addEventListener('submit', function (event) {
             productType: parseInt(type.value),
             identificative: parseInt(identificative.value),
         }
+        let method = 'POST';
+        if (productId) {
+            method = 'PUT';
+        }
         fetch('/products/product', {
-                method: 'POST',
+                method: method,
                 body: JSON.stringify(data),
                 headers: {
                     'Content-Type': 'application/json'
