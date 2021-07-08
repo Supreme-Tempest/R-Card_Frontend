@@ -6,8 +6,7 @@ html(lang="en")
         div(class="container-fluid pt-5")
             h3(class="text-center") Productos
             div.p-5.row
-                div(class="container col-7 card")
-                    
+                div(class="container col-7 ")
                     table(class="table table-striped" id="table_products")
                         thead
                             tr
@@ -29,29 +28,33 @@ html(lang="en")
                                 td
                                     div.btn-toolbar
                                         button.btn.btn-success Editar
-                div.container.col-5                       
+                div.container.col-5.card.p-3                       
                     h3(class="text-center") Registrar Producto
                     form(class="row" role='form' method='POST' action='/clients/clients' name="registerPurchase")
                         div(class="col-6" )
                             div(class="form-group")
-                                label(for="registerPurchase") Codigo de producto
-                                input(type="text" class="form-control validate-input" id="product-Codigo" aria-describedby="duiHelp" placeholder="Ejemplo: 00001")
+                                label(for="registerPurchase") Nombre de producto 
+                                input(type="text" class="form-control" id="product-name" placeholder="Nombre del producto")
                             div(class="form-group")
-                                label(for="registerPurchase") Cantidad 
-                                input(type="number" class="form-control" id="product-cantidad" placeholder="Ingres la cantidad de producto")
+                                label(for="registerPurchase") Precio de venta
+                                input(type="number" class="form-control" id="product-price" placeholder="Ej: $ 10.00")
                             div(class="form-group")
-                                label(for="registerPurchase") Precio Unitario
-                                input(type="text" class="form-control" id="product-precioUnitario" placeholder="Ingrese el presio unitario")
+                                label(for="registerPurchase") Tipo de producto
+                                select(id="product-type" class="form-control")
+                                    option(disabled selected) Seleccione tipo
+                                    option(value="1") Camisa
                         div(class="col-6")
                             div(class="form-group")
-                                label(for="registerPurchase") Costo total
-                                input(type="number" class="form-control" id="product-costoTotal" placeholder="Ingrese el costo total")
+                                label(for="registerPurchase") Marca
+                                input(type="text" class="form-control" id="product-brand" placeholder="Ingrese el costo total")
                             div(class="form-group")
-                                label(for="registerPurchase") Precio de Venta
-                                input(type="number" class="form-control" id="product-PrecioVenta" placeholder="Ingrese el precio de venta")
+                                label(for="registerPurchase") Cantidad
+                                input(type="number" class="form-control" id="product-stock" placeholder="Cantidad a ingresar")
                             div(class="form-group")
-                                label(for="registerPurchase") Fecha de Compra
-                                input(type="date"   class="form-control" id="total-compra" )
+                                label(for="registerPurchase") Identificativo
+                                select(id="product-identificative" class="form-control")
+                                    option(disabled selected) Seleccione identificativo
+                                    option(value="1") Talla M
                             div(class="form-group")
                                 input.btn.btn-primary.btn-block(type="submit"  value="Guardar")
         script(src="../../../javascripts/product/product.js")
