@@ -34,20 +34,12 @@ function onload(page) {
     }).then(res => res.json()).then(data => {
         let values = "";
         console.log(data);
-        lastpage = data.data.pages;
-        if(data.data.current == 1){
-            prev.innerText = data.data.current;
-            center.innerText = data.data.next;
-            next.innerText = data.data.next + 1;
-        } else if(data.data.current == data.data.pages){
-            prev.innerText = data.data.preview - 1;
-            center.innerText = data.data.preview;
-            next.innerText = data.data.current;
-        }else{
-            prev.innerText = data.data.preview;
-            center.innerText = data.data.current;
-            next.innerText = data.data.next;
-        }
+        prev.style.display = 'block'
+        next.style.display = 'block'
+        lastpage = data.pages
+        data.data.preview != null ? prev.innerText = data.data.preview : prev.style.display = 'none';
+        center.innerText = data.data.current;
+        data.data.next != null ? next.innerText = data.data.next : next.style.display = 'none';
         data.data.data.forEach(element => {
             values = values + `
                 <tr> 
