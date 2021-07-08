@@ -11,7 +11,7 @@ const ApiPost = (route, req, res, e) => {
 }
 
 const ApiGet = (route, req, res, e) => {
-    console.log('apiGet: ', 'pre-responce');
+    //console.log('apiGet: ', 'pre-responce');
     ApiResponce('get', route, req, res, e);
 }
 
