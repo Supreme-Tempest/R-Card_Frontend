@@ -29,6 +29,13 @@ router.post('/product', (req, res) => {
     });
 }); 
 
+router.put('/product', (req, res) => {
+    console.log('product put router', 'pre body');
+    apiMethods.ApiPut(routes.product, req, res, (e) => {
+        console.log("responce", e);
+    });
+}); 
+
 router.get('/productType', (req, res) => {
     console.log('productType router', 'pre body');
     apiMethods.ApiGet(routes.productType, req, res, (e) => {
