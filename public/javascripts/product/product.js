@@ -1,9 +1,11 @@
 var table_product = document.getElementById("tbody_products");
+var product_type = document.getElementById("product-type");
+
 console.log(table_product);
 onload();
 
 function onload() { 
-    fetch('/purchases/productPage', {
+    fetch('/product/productPage', {
         method: 'GET'
     }).then(res => res.json()).then(data => {
         let values = "";
@@ -11,7 +13,7 @@ function onload() {
         data.data.data.forEach(element => {
             console.log(element);
             values = values + `
-                <tr>
+                <tr> 
                     <td>${element.id}</td>
                     <td>${element.name}</td>
                     <td>${element.brand}</td>
@@ -23,6 +25,22 @@ function onload() {
             `
         });
         table_product.innerHTML = values;
+    });
+}
+
+function productType() { 
+    fetch('/product/productType', {
+        method: 'GET'
+    }).then(res => res.json()).then(data => {
+        let values = "";
+        console.log(data); 
+        data.forEach(element => {
+            console.log(element);
+            values = values + `
+                <option value="${element.id}">${element.name}</option>
+            `
+        });
+        product_type.innerHTML = values;
     });
 }
 
