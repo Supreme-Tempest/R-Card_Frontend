@@ -295,3 +295,7 @@ body{
 }
 
 
+.btn-toolbar{
+    justify-content: space-evenly;
+}
+

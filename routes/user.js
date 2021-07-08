@@ -70,14 +70,16 @@ router.post('/login', function(req, res, next) {
 });
 
 router.get('/workshop', (req, res) => {
-    apiMethods.ApiGet(routes.workshop, {}, res, (e) => {
-        console.log("responce workshop", e.data)
+    console.log('pre-workshop-apimethod');
+    apiMethods.ApiGet(routes.workshop, req, res, (e) => {
+        console.log("responce workshop", e);
     });
 });
 
 router.get('/roles', (req, res) => {
-    apiMethods.ApiGet(routes.rol, {}, res, (e) => {
-        console.log("responce rol", e)
+    console.log('pre-roles-apimethod');
+    apiMethods.ApiGet(routes.rol, req, res, (e) => {
+        console.log("responce rol", e);
     } 
     );
 });
