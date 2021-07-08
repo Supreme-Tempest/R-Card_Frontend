@@ -18,8 +18,8 @@ router.post('/clients', (req, res) => {
 router.get('/clientPage', (req, res) => {
     console.log('clientpage router', 'pre body');
     req.body = {
-        page: 2,
-        size: 3,
+        page: 1,
+        size: 5,
     }
     apiMethods.ApiGet(routes.clientPage, req, res, (e) => {
         console.log("responce", e);

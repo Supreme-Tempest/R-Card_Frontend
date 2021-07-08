@@ -6,52 +6,66 @@ html(lang="en")
         div(class="container-fluid pt-5")
             h3(class="text-center") Productos
             div.p-5.row
-                div(class="container col-7 card")
-                    
+                div(class="container col-8 ")
                     table(class="table table-striped" id="table_products")
                         thead
-                            tr
+                            tr 
                                 th(scope="col") Codigo
                                 th(scope="col") Producto
                                 th(scope="col") Marca
                                 th(scope="col") Stock
                                 th(scope="col") Precio
                                 th(scope="col") Detalle
-                                th(scope="col") Opciones
-                        tbody(id="tbody_products") 
-                            tr
-                                td 1234 5678 5789
-                                td Pantalon
-                                td Polo
-                                td 40
-                                td $ 79.99
-                                td talla 32-34
-                                td
-                                    div.btn-toolbar
-                                        button.btn.btn-success Editar
-                div.container.col-5                       
+                                th(scope="col") 
+                        tbody(id="tbody_products")
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Previous" id="startPage">
+                                    <span aria-hidden="true">&laquo;</span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                            </li>
+                            li(class="page-item")
+                                button(class="page-link" id="prevPage") 1
+                            li(class="page-item")
+                                button(class="page-link" id="page") 2
+                            li(class="page-item")
+                                button(class="page-link" id="nextPage") 3
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Next" id="endPage">
+                                    <span aria-hidden="true">&raquo;</span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                div.container.col-4.card.p-3                       
                     h3(class="text-center") Registrar Producto
-                    form(class="row" role='form' method='POST' action='/clients/clients' name="registerPurchase")
+                    form(class="row" role='form' method='POST' action='/products/product' name="registerProduct")
                         div(class="col-6" )
                             div(class="form-group")
-                                label(for="registerPurchase") Codigo de producto
-                                input(type="text" class="form-control validate-input" id="product-Codigo" aria-describedby="duiHelp" placeholder="Ejemplo: 00001")
+                                label(for="registerPurchase") Nombre de producto 
+                                input(type="text" class="form-control" id="product_name" placeholder="Nombre del producto")
                             div(class="form-group")
-                                label(for="registerPurchase") Cantidad 
-                                input(type="number" class="form-control" id="product-cantidad" placeholder="Ingres la cantidad de producto")
+                                label(for="registerPurchase") Precio de venta
+                                input(type="number" class="form-control" id="product_price" placeholder="Ej: $ 10.00")
                             div(class="form-group")
-                                label(for="registerPurchase") Precio Unitario
-                                input(type="text" class="form-control" id="product-precioUnitario" placeholder="Ingrese el presio unitario")
+                                label(for="registerPurchase") Tipo de producto
+                                select(id="product_type" class="form-control")
+                                    option(disabled selected) Seleccione tipo
+                                    option(value="1") Camisa
                         div(class="col-6")
                             div(class="form-group")
-                                label(for="registerPurchase") Costo total
-                                input(type="number" class="form-control" id="product-costoTotal" placeholder="Ingrese el costo total")
+                                label(for="registerPurchase") Marca
+                                input(type="text" class="form-control" id="product_brand" placeholder="Ingrese el costo total")
                             div(class="form-group")
-                                label(for="registerPurchase") Precio de Venta
-                                input(type="number" class="form-control" id="product-PrecioVenta" placeholder="Ingrese el precio de venta")
+                                label(for="registerPurchase") Cantidad
+                                input(type="number" class="form-control" id="product_stock" placeholder="Cantidad a ingresar")
                             div(class="form-group")
-                                label(for="registerPurchase") Fecha de Compra
-                                input(type="date"   class="form-control" id="total-compra" )
+                                label(for="registerPurchase") Identificativo
+                                select(id="product_identificative" class="form-control")
+                                    option(disabled selected) Seleccione identificativo
                             div(class="form-group")
-                                input.btn.btn-primary.btn-block(type="submit"  value="Guardar")
+                                input.btn.btn-primary.btn-block(type="submit" value="Guardar")
         script(src="../../../javascripts/product/product.js")

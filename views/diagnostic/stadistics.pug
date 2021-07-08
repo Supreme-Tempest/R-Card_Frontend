@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 html(lang="en")
     include ../tools/head.pug
-        link(rel="stylesheet" href="/stylesheets/global.css")
+        <!--link(rel="stylesheet" href="/stylesheets/global.css")-->
         link(rel="stylesheet" href="/stylesheets/diagnostics/Estadisticas.css")
         title="Estadistica"
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@latest/dist/Chart.min.js"></script>
+        
     body
         include ../tools/navigation.pug
         <!--Div del contenedor-->
+        
         <div class="Div-Contenedor">
-
+            <p class="GraTitulo" >Estadisticas</p>
             <div class="Grid-Clientes">
                 <!-- html estadistica Clientes-->
                 <div class="grid-it Grid-Clientes-icon">
@@ -16,15 +19,11 @@ html(lang="en")
                         <img class="iconE" src="/images/Cliente.svg" alt="">
                     </div>
                     <div class="p-icon">
-                        <p class="PETitulo">
-                            Clientes Totales
-                        </p>
+                        <p class="PETitulo"> Clientes Totales </p>
                     </div>
-
-
                 </div>
                 <div class="General-Input Grid-Clientes-input">
-                    <input class="grid-Imput-css Imput-css" type="text" name="inputname" value="$1000.00" disabled>
+                    <input id="Graf-Inp-Cliente" class="grid-Imput-css Imput-cssS" type="text" name="inputname" value="$1000.00" disabled>
                 </div>
             </div>
             <div class="Grid-Compras">
@@ -34,15 +33,11 @@ html(lang="en")
                         <img class="iconE" src="/images/Compras.svg" alt="">
                     </div>
                     <div class="p-icon">
-                        <p class="PETitulo">
-                            Compras Totales
-                        </p>
+                        <p class="PETitulo"> Compras Totales </p>
                     </div>
-
-
                 </div>
                 <div class="General-Input Grid-Compras-input">
-                    <input class="grid-Imput-css Imput-css" type="text" name="inputname" value="$1000.00" disabled>
+                    <input id="Graf-Inp-Compras" class="grid-Imput-css Imput-cssS" type="text" name="inputname" value="$1000.00" disabled>
                 </div>
             </div>
             <div class="Grid-Ventas">
@@ -52,15 +47,11 @@ html(lang="en")
                         <img class="iconE" src="/images/Ventas.svg" alt="">
                     </div>
                     <div class="p-icon">
-                        <p class="PETitulo">
-                            Ventas Totales
-                        </p>
+                        <p class="PETitulo"> Ventas Totales</p>
                     </div>
-
-
                 </div>
                 <div class="General-Input Grid-Ventas-input">
-                    <input class="grid-Imput-css Imput-css" type="text" name="inputname" value="$1000.00" disabled>
+                    <input id="Graf-Inp-Ventas" class="grid-Imput-css Imput-cssS" type="text" name="inputname" value="$1000.00" disabled>
                 </div>
             </div>
             <div class="Grid-Productos">
@@ -70,18 +61,17 @@ html(lang="en")
                         <img class="iconE" src="/images/Bolso.svg" alt="">
                     </div>
                     <div class="p-icon">
-                        <p class="PETitulo">
-                        Productos Totales
-                    </p>
+                        <p class="PETitulo"> Productos Totales</p>
                     </div> 
                 </div>
                 <div class="General-Input Grid-Producto-input">
-                    <input class="grid-Imput-css Imput-css" type="text" name="inputname" value="$1000.00" disabled>
+                    <input id="Graf-Inp-Productos" class="grid-Imput-css Imput-cssS" type="text" name="inputname" value="$1000.00" disabled>
                 </div>
             </div>
             <div class="grid-Top-Mas">
                 <!-- html Tabla top mas vendidos -->
-                <table class="table-css">
+                <h3 class="subT" >Top 3 productos Mas Vendidos</h3>
+                <table id="Graf-Table-MasVendidos" class="table-css">
                     <tr>
                         <th>N</th>
                         <th>Producto</th>
@@ -89,7 +79,7 @@ html(lang="en")
                     </tr>
                     <tr>
                         <td class="th-n">1</td>
-                        <td  class="th-Producto">Camisas</td>
+                        <td class="th-Producto">Camisas</td>
                         <td class="th-Cantidad">500</td>
                     </tr>
                     <tr>
@@ -107,7 +97,8 @@ html(lang="en")
 
             <div class="grid-Top-Menos">
                 <!-- html Tabla top menos vendidos -->
-                <table class="table-css">
+                <h3 class="subT" >Top 3 productos Menos Vendidos</h3>
+                <table id="Graf-Table-MenosVendidos" class="table-css">
                     <tr>
                         <th>N</th>
                         <th>Producto</th>
@@ -134,26 +125,21 @@ html(lang="en")
             <div class="Grid-Area-Gafica">
                 <!-- html Area Grafica -->
                 <div class="Grid-Grafica-Buscador">
-                    <nav id="menu">
-                        <ul>
-                            <li><a href="#">Enlace 2</a>
-                                <ul>
-                                    <li><a href="#">Enlace 2.1</a></li>
-                                    <li><a href="#">Enlace 2.2</a></li>
-                                    <li><a href="#">Enlace 2.3</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </nav>
-                    <button class="btn-General btn-Naranja ">
-                        Graficar
-                    </button>
+                    <div class="C-Filtro-Select">
+                    <!--Menu Desplegable-->
+                        <select id="Select-FiltroBuscador" name="Filtro" class="Select-css">
+                            <option id="Option01-FiltroBuscador">Ventas Por Mes</option>
+                            <option id="Option02-FiltroBuscador">Ventas por Anno</option>
+                        </select>
+                    </div>
+                    <div class="btn-filtroC">
+                    <button onClick="btnGraficar()" class="btn-General btn-Naranja btn-filtro">Graficar</button>
+                    </div>
                 </div>
+                <!-- Div de la grafica -->
                 <div class="grid-Grafica">
-
+                    <canvas id="grafica"></canvas>
                 </div>
             </div>
-
-
-
         </div>
+        <script src="/javascripts/diagnostics/StadisticGraf.js"></script>

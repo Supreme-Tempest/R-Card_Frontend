@@ -14,7 +14,7 @@ function onload(){
             `
         });
         workshop.innerHTML = values;
-    });
+    }); 
     fetch('/roles',{
         method: 'GET'
     }).then(res => res.json()).then(data => {

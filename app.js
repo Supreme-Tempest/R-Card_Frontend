@@ -8,9 +8,10 @@ const indexRouter = require('./routes/index');
 const userRouter = require('./routes/user');
 const adminRouter = require('./routes/admin');
 const diagnosticsRouter = require('./routes/diagnostics');
-const purchasesRouter = require('./routes/purchases');
+const productRouter = require('./routes/products');
 const clientsRouter = require('./routes/clients');
 const salesRouter = require('./routes/sales');
+const EmployeeRouter =require('./routes/Employees');
 const middleware = require('./middleware');
 
 const app = express();
@@ -38,9 +39,10 @@ app.use('/', indexRouter);
 app.use('/', userRouter);
 app.use('/diagnostics', diagnosticsRouter);
 app.use('/admin', adminRouter);
-app.use('/purchases', purchasesRouter);
+app.use('/products', productRouter);
 app.use('/clients', clientsRouter);
 app.use('/sales', salesRouter);
+app.use('/Employees',EmployeeRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
