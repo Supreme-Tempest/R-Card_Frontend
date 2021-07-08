@@ -39,7 +39,7 @@ app.use('/', indexRouter);
 app.use('/', userRouter);
 app.use('/diagnostics', diagnosticsRouter);
 app.use('/admin', adminRouter);
-app.use('/product', productRouter);
+app.use('/products', productRouter);
 app.use('/clients', clientsRouter);
 app.use('/sales', salesRouter);
 app.use('/Employees',EmployeeRouter);
