@@ -9,7 +9,7 @@
 * Node JS
 * JavaScrip
 * Chart.js
-*Pug  y CSS
+* Pug y CSS
 
 
 ## Licencia 📄
