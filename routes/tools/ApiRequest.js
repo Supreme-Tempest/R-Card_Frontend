@@ -4,13 +4,14 @@ const axios = require('axios');
 const apiOptions = {
     server: 'http://localhost:3000/api/',
 }
-const login = require('../user');
+//const login = require('../user');
 
 const ApiPost = (route, req, res, e) => {
     ApiResponce('post', route, req, res, e);
 }
 
 const ApiGet = (route, req, res, e) => {
+    console.log('apiGet: ', 'pre-responce');
     ApiResponce('get', route, req, res, e);
 }
 
@@ -26,7 +27,7 @@ const ApiResponce = (method, route, req, res, e) => {
     console.log('apiRespone','pre-token');
     if (localStorage.getItem('user') == '') {
         console.log('apiRespone','no session');
-        login.login(req, res);
+        res.redirect('/login');
         return
     }
     console.log('apiRespone','pre-axios');
