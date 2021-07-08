@@ -9,7 +9,7 @@ let next = document.getElementById("nextPage");
 let center = document.getElementById("page");
 let last = document.getElementById("endPage");
 let first = document.getElementById("startPage");
-
+var lastpage;
 console.log(table_product);
 console.log(center);
 
@@ -34,8 +34,7 @@ function onload(page) {
     }).then(res => res.json()).then(data => {
         let values = "";
         console.log(data);
-        console.log("hola buenas");
-        console.log(center);
+        lastpage = data.data.pages;
         if(data.data.current == 1){
             prev.innerText = data.data.current;
             center.innerText = data.data.next;
@@ -129,11 +128,48 @@ type.addEventListener('click', (event) => {
     productIdentificative();
 });
 
+function hola(){
+}
 
-center.addEventListener('click', (event) => {
+var nextpage = (event) => {
+    page = {
+        page: next.textContent,
+        size: 5,
+    };
+    onload(page);
+}
+
+var prevpage = (event) => {
+    page = {
+        page: prev.textContent,
+        size: 5,
+    };
+    onload(page);
+}
+
+var centerpage = (event) => {
+    page = {
+        page: center.textContent,
+        size: 5,
+    };
+    onload(page);
+}
+var firstpagination = (event) => {
     page = {
         page: 1,
         size: 5,
     };
     onload(page);
-});
+}
+var lastpagination = (event) => {
+    page = {
+        page: lastpage,
+        size: 5,
+    };
+    onload(page);
+}
+center.addEventListener('click', centerpage);
+next.addEventListener('click', nextpage);
+prev.addEventListener('click', prevpage);
+first.addEventListener('click', firstpagination);
+last.addEventListener('click', lastpagination);
