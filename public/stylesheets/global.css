@@ -37,7 +37,7 @@ body{
     grid-row-start: 2;
     grid-row-end: 3;
     color: rgb(170, 170, 170);
-    font-family:'Roboto', sans-serif;;
+    font-family:'Roboto', sans-serif;
     font-size: 100%;
     margin: 0em;
 }
@@ -104,9 +104,7 @@ body{
     grid-row-start: 1;
     grid-row-end: 2;
     /*Disenno de vista*/
-    background-color: #2d2e30;
-    /*justify-content: center;*/
-    
+    background-color: #2d2e30;    
 }
 
 /*Menu desplegable*/

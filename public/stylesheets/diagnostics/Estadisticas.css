@@ -4,6 +4,12 @@
     grid-template-rows: 5% 20% 5% 20% 5% 20% 25%;
 }
 
+.Imput-cssS{
+    background: none;
+    border:none;
+
+}
+
 /*Estadisticas de clientes*/
 .Grid-Clientes{
     display: grid;
@@ -173,13 +179,43 @@
     grid-row-end: 7;
 }
 .Grid-Grafica-Buscador{
-    background: #000;
+    display: grid;
+    grid-template-rows: 5% 10% 5% 10% 70%;
+    grid-template-columns: 5% 90% 5%;
     grid-column-start: 1;
     grid-column-end: 2;
 }
 
+.C-Filtro-Select{
+    display: flex;
+    justify-content:center;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.btn-filtroC{
+    display: flex;
+    justify-content:center;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 4;
+    grid-row-end: 5;
+}
+
+.Select-css {
+    font-family: "Roboto", sans-serif;
+    font-size: 1.5em;
+    color: #fff;
+    background: #0000006b;
+    border-radius: 0.2em;
+    width: 90%;
+    height: 40px;
+    color: rgba(rgb(160, 50, 50));
+}
+
 .grid-Grafica{
-    background: rgb(27, 185, 212);
     grid-column-start: 2;
     grid-column-end: 3;
 }
@@ -195,9 +231,12 @@
 }
 
 .PETitulo{
-    font-family: Fuente;
+    font-family:'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: large;
     margin: 0%;
     text-align: center;
+    color: #fff;
 }
 
 .General-Input{
@@ -213,13 +252,35 @@
 }
 
 .th-n{
-    width: 40px;
+    width: 10%;
 }
 
 .th-Producto{
-    width: 100px;
+    width: 80%;
 }
 
 .th-Cantidad{
-    width: 100px;
+    width: 20%;
+}
+
+.subT{
+    font-family:'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 1.5em;
+    margin: 5%;
+    text-align: center;
+    color: red;
+}
+
+.GraTitulo{
+    font-family:'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 1.5em;
+    margin: 0%;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.8);
+    grid-column-start: 4;
+    grid-column-end: 7;
+    grid-row-start: 1;
+    grid-row-end: 2;
 }
