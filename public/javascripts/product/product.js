@@ -17,8 +17,8 @@ function onload() {
                     <td>${element.brand}</td>
                     <td>${element.stock}</td>
                     <td>${element.price}</td>
-                    <td>Detalle</td>
-                    <td><button class = "btn btn-success">Editar</button></td>
+                    <td>${element.type.name}|${element.identificative.name}</td>
+                    <td><button class = "btn btn-success">E</button></td>
                 </tr>
             `
         });

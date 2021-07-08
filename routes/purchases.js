@@ -18,7 +18,7 @@ router.get('/productPage', (req, res) => {
     console.log('productpage router', 'pre body');
     req.body = {
         page: 1,
-        size: 3,
+        size: 5,
     }
     apiMethods.ApiGet(routes.productPage, req, res, (e) => {
         console.log("responce", e);

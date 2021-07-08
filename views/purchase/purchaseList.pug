@@ -6,7 +6,7 @@ html(lang="en")
         div(class="container-fluid pt-5")
             h3(class="text-center") Productos
             div.p-5.row
-                div(class="container col-7 ")
+                div(class="container col-8 ")
                     table(class="table table-striped" id="table_products")
                         thead
                             tr
@@ -16,19 +16,9 @@ html(lang="en")
                                 th(scope="col") Stock
                                 th(scope="col") Precio
                                 th(scope="col") Detalle
-                                th(scope="col") Opciones
-                        tbody(id="tbody_products") 
-                            tr
-                                td 1234 5678 5789
-                                td Pantalon
-                                td Polo
-                                td 40
-                                td $ 79.99
-                                td talla 32-34
-                                td
-                                    div.btn-toolbar
-                                        button.btn.btn-success Editar
-                div.container.col-5.card.p-3                       
+                                th(scope="col") 
+                        tbody(id="tbody_products")
+                div.container.col-4.card.p-3                       
                     h3(class="text-center") Registrar Producto
                     form(class="row" role='form' method='POST' action='/clients/clients' name="registerPurchase")
                         div(class="col-6" )
