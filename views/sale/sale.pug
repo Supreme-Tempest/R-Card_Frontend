@@ -7,12 +7,12 @@ html(lang="en")
         include ../tools/navigation.pug
         <div class="Div-Contenedor"> <!--Div del contenedor-->
             <Div class="Div-grid-Ingresos">
-                <input class="Grid-CodPro Imput-css" type="text" placeholder="Codigo de producto">
-                <input class="Grid-InputNum Imput-css" type="number" placeholder="Cantidad" min="1">
+                <input id="Input-Sales-codProduct" class="Grid-CodPro Imput-css" type="text" placeholder="Codigo de producto">
+                <input id="Input-Sales-CantProduct" class="Grid-InputNum Imput-css" type="number" placeholder="Cantidad" min="1">
 
-                <p class="Grid-Error1 p-Error">El producto especificado no existe</p>
+                <p id="P-Sales-Error-Producto" class="Grid-Error1 p-Error">El producto especificado no existe</p>
 
-                <button class="Grid-BtnAgregar btn-General btn-Naranja">Agregar</button>
+                <button id="btn-add-ProList" class="Grid-BtnAgregar btn-General btn-Naranja">Agregar</button>
             </Div>
 
             <div class="Div-Grid-Tabla "><!--Div de la tabla-->
@@ -28,81 +28,124 @@ html(lang="en")
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Cama</td>
-                            <td>1</td>
-                            <td>1,000</td>
-                            <td>1,000</td>
-                            <td> <button class="btn-Eliminar">x</button></td>
+                            <td class="td-01">Cama</td>
+                            <td class="td-02">1</td>
+                            <td class="td-03">1,000</td>
+                            <td class="td-04">1,000</td>
+                            <td class="td-05"> <button id="Btn=Eliminar-Venta1" class="btn-Eliminar">x</button></td>
                         </tr>
                         <tr>
-                            <td>Cama</td>
-                            <td>1</td>
-                            <td>1,000</td>
-                            <td>1,000</td>
-                            <td> <button class="btn-Eliminar">x</button></td>
+                            <td class="td-01">Cama</td>
+                            <td class="td-02">1</td>
+                            <td class="td-03">1,000</td>
+                            <td class="td-04">1,000</td>
+                            <td class="td-05"> <button id="Btn=Eliminar-Venta1" class="btn-Eliminar">x</button></td>
                         </tr>
                         <tr>
-                            <td>Cama</td>
-                            <td>1</td>
-                            <td>1,000</td>
-                            <td>1,000</td>
-                            <td> <button class="btn-Eliminar">x</button></td>
+                            <td class="td-01">Cama</td>
+                            <td class="td-02">1</td>
+                            <td class="td-03">1,000</td>
+                            <td class="td-04">1,000</td>
+                            <td class="td-05"> <button id="Btn=Eliminar-Venta1" class="btn-Eliminar">x</button></td>
                         </tr>
                         <tr>
-                            <td>Cama</td>
-                            <td>1</td>
-                            <td>1,000</td>
-                            <td>1,000</td>
-                            <td> <button class="btn-Eliminar">x</button></td>
+                            <td class="td-01">Cama</td>
+                            <td class="td-02">1</td>
+                            <td class="td-03">1,000</td>
+                            <td class="td-04">1,000</td>
+                            <td class="td-05"> <button id="Btn=Eliminar-Venta1" class="btn-Eliminar">x</button></td>
                         </tr>
                         <tr>
-                            <td>Cama</td>
-                            <td>1</td>
-                            <td>1,000</td>
-                            <td>1,000</td>
-                            <td> <button class="btn-Eliminar">x</button></td>
+                            <td class="td-01">Cama</td>
+                            <td class="td-02">1</td>
+                            <td class="td-03">1,000</td>
+                            <td class="td-04">1,000</td>
+                            <td class="td-05"> <button id="Btn=Eliminar-Venta1" class="btn-Eliminar">x</button></td>
                         </tr>
                         <tr>
-                            <td>Cama</td>
-                            <td>1</td>
-                            <td>1,000</td>
-                            <td>1,000</td>
-                            <td> <button class="btn-Eliminar">x</button></td>
+                            <td class="td-01">Cama</td>
+                            <td class="td-02">1</td>
+                            <td class="td-03">1,000</td>
+                            <td class="td-04">1,000</td>
+                            <td class="td-05"> <button id="Btn=Eliminar-Venta1" class="btn-Eliminar">x</button></td>
                         </tr>
                         <tr>
-                            <td>Cama</td>
-                            <td>1</td>
-                            <td>1,000</td>
-                            <td>1,000</td>
-                            <td> <button class="btn-Eliminar">x</button></td>
+                            <td class="td-01">Cama</td>
+                            <td class="td-02">1</td>
+                            <td class="td-03">1,000</td>
+                            <td class="td-04">1,000</td>
+                            <td class="td-05"> <button id="Btn=Eliminar-Venta1" class="btn-Eliminar">x</button></td>
                         </tr>
                         <tr>
-                            <td>Cama</td>
-                            <td>1</td>
-                            <td>1,000</td>
-                            <td>1,000</td>
-                            <td> <button class="btn-Eliminar">x</button></td>
+                            <td class="td-01">Cama</td>
+                            <td class="td-02">1</td>
+                            <td class="td-03">1,000</td>
+                            <td class="td-04">1,000</td>
+                            <td class="td-05"> <button id="Btn=Eliminar-Venta1" class="btn-Eliminar">x</button></td>
                         </tr>
                         <tr>
-                            <td>Cama</td>
-                            <td>1</td>
-                            <td>1,000</td>
-                            <td>1,000</td>
-                            <td> <button class="btn-Eliminar">x</button></td>
+                            <td class="td-01">Cama</td>
+                            <td class="td-02">1</td>
+                            <td class="td-03">1,000</td>
+                            <td class="td-04">1,000</td>
+                            <td class="td-05"> <button id="Btn=Eliminar-Venta1" class="btn-Eliminar">x</button></td>
                         </tr>
+                        <tr>
+                            <td class="td-01">Cama</td>
+                            <td class="td-02">1</td>
+                            <td class="td-03">1,000</td>
+                            <td class="td-04">1,000</td>
+                            <td class="td-05"> <button id="Btn=Eliminar-Venta1" class="btn-Eliminar">x</button></td>
+                        </tr>
+                        <tr>
+                            <td class="td-01">Cama</td>
+                            <td class="td-02">1</td>
+                            <td class="td-03">1,000</td>
+                            <td class="td-04">1,000</td>
+                            <td class="td-05"> <button id="Btn=Eliminar-Venta1" class="btn-Eliminar">x</button></td>
+                        </tr>
+                        <tr>
+                            <td class="td-01">Cama</td>
+                            <td class="td-02">1</td>
+                            <td class="td-03">1,000</td>
+                            <td class="td-04">1,000</td>
+                            <td class="td-05"> <button id="Btn=Eliminar-Venta1" class="btn-Eliminar">x</button></td>
+                        </tr>
+                        <tr>
+                            <td class="td-01">Cama</td>
+                            <td class="td-02">1</td>
+                            <td class="td-03">1,000</td>
+                            <td class="td-04">1,000</td>
+                            <td class="td-05"> <button id="Btn=Eliminar-Venta1" class="btn-Eliminar">x</button></td>
+                        </tr>
+                        <tr>
+                            <td class="td-01">Cama</td>
+                            <td class="td-02">1</td>
+                            <td class="td-03">1,000</td>
+                            <td class="td-04">1,000</td>
+                            <td class="td-05"> <button id="Btn=Eliminar-Venta1" class="btn-Eliminar">x</button></td>
+                        </tr>
+                        <tr>
+                            <td class="td-01">Cama</td>
+                            <td class="td-02">1</td>
+                            <td class="td-03">1,000</td>
+                            <td class="td-04">1,000</td>
+                            <td class="td-05"> <button id="Btn=Eliminar-Venta1" class="btn-Eliminar">x</button></td>
+                        </tr>
+                        
                         
                     </tbody>
                 </table>
             </div>
             <div class="Div-Grid-Total">
                 <p class="Grid-Total p-style">Total</p>
-                <input class="Grid-Total2 Imput-css" type="text" name="inputname" value="$1000.00" disabled>
+                <input id="Input-Sales-Factura-Total" class="Grid-Total2 Imput-css" type="text" name="inputname" value="$1000.00" disabled>
             </div>
 
             <div class="Div-Grid-Btn">
-                <p class="p-Error grid-p-Error">Error de Facturacion</p>
-                <button class="grid-btnVerde btn-General btn-Verde">Facturar</button>
-                <button class="grid-btnRojo btn-General btn-Rojo">Cancelar</button>
+                <p id="P-Sales-Error-Facturar" class="p-Error grid-p-Error">Error de Facturacion</p>
+                <button id="Btn-Sales-Facturar" class="grid-btnVerde btn-General btn-Verde">Facturar</button>
+                <button id="Btn-Sales-CAncelar" class="grid-btnRojo btn-General btn-Rojo">Cancelar</button>
             </div>
 
         </div>

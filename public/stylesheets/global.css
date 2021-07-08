@@ -1,7 +1,4 @@
-@font-face {/*Fuente Personalizada*/
-    font-family: Fuente;
-    src: url("/public/fonts/FS\ NokioMedium.ttf") format("opentype");
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
 
 body{
     display: grid;
@@ -40,7 +37,7 @@ body{
     grid-row-start: 2;
     grid-row-end: 3;
     color: rgb(170, 170, 170);
-    font-family:Fuente;
+    font-family:'Roboto', sans-serif;;
     font-size: 100%;
     margin: 0em;
 }
@@ -92,7 +89,7 @@ body{
     grid-row-start: 2;
     grid-row-end: 3;
     /*Disenno de vista*/
-    background-color: #ededed;
+    background-color: #ffffff;
 }
 
 /**----------------Barra de Arriba------------------**/
@@ -117,7 +114,7 @@ body{
 .dropbtn {
     background-color: #2d2e30;
     color: #f9b321;
-    font-family: Fuente;
+    font-family: 'Roboto', sans-serif;;
     padding: 16px;
     font-size: 16px;
     border: none;
@@ -148,7 +145,7 @@ body{
   /* Links inside the dropdown */
 .dropdown-content a {
     color: white;
-    font-family: Fuente;
+    font-family: 'Roboto', sans-serif;;
     font-size: 15px;
     padding: 12px 16px;
     text-decoration: none;
@@ -174,12 +171,13 @@ body{
 
 .btn-General {
     /*border: none;*/
-    font-family: Fuente;
-    font-size: 14px;
+    font-family: 'Roboto', sans-serif;;
+    font-size: 1em;
+    border-radius: 9px;
     color: rgb(255, 255, 255);
     /*margin: 0em;*/
     /*padding: 0px;*/
-    width: 110px;
+    width: 75%;
     height: 40px;
     
 }
@@ -227,7 +225,7 @@ body{
 }
 
 .btn-Eliminar{
-    font-family: Fuente;
+    font-family: 'Roboto', sans-serif;;
     color: rgb(255, 255, 255);
     background-color:#ed0000;
     width: 30px;
@@ -246,12 +244,15 @@ body{
 /*---------------------------------------------*/
 
 .Imput-css{
-    font-family: Fuente;
+    font-family: 'Roboto', sans-serif;;
     font-size: 18px;
     height: 30px;
     width: 300px;
-    border: none;
+    border:0.05em solid;
+    border-radius: 3px;
+    border-color:#cccccc ;
     outline: none;
+    height: 2em;
 }
 
 /*---------------------------------------------*/
@@ -261,16 +262,19 @@ body{
 /*clase para la tabla table-css*/
 
 .table-css th{/*titulos de Tabla*/
-    background-color:#2d2e30;
-    font-family: Fuente;
+    font-family: 'Roboto', sans-serif;;
+    border-top: 0.05em solid;
+    border-color: #cccccc ;
     font-size: 18px;
-    font-weight: normal;
-    color:white;
+    font-weight:bold;
+    color:#000000;
 }
 
 .table-css tr td{/*celdas de la tabla*/
-    background-color:white;
-    font-family: Fuente;
+    background-color:#eeeeee;
+    border-top: 0.05em solid;
+    border-color: #cccccc ;
+    font-family: 'Roboto', sans-serif;;
     font-size: 16px;
     font-weight: normal;
     color:#2d2e30;
@@ -279,7 +283,7 @@ body{
 /*Mensajes de Error*/
 .p-Error{
     margin: 0%;
-    font-family: Fuente;
+    font-family: 'Roboto', sans-serif;;
     color: red;
     font-size: 15px;
 }
@@ -287,7 +291,7 @@ body{
 /*Mensaje de Exito*/
 .p-Exito{
     margin: 0%;
-    font-family: Fuente;
+    font-family: 'Roboto', sans-serif;;
     color: rgb(7, 196, 0);
     font-size: 15px;
 }
