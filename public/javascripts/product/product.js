@@ -62,9 +62,10 @@ function productType() {
         method: 'GET'
     }).then(res => res.json()).then(data => {
         let values = "<option disabled selected>Tipo de producto</option>";
+        console.log("productType", data);
         data.forEach(element => {
             values = values + `
-                <option value="${element.id}">${element.name}</option>
+                <option value="${element.id}" typeId="${element.type_id}">${element.name}</option>
             `
         });
         product_type.innerHTML = values;
@@ -77,7 +78,7 @@ function productIdentificative() {
     }).then(res => res.json()).then(data => {
         let values = "<option disabled selected>Identificativo</option>";
         data.forEach(element => {
-            if(element.type_id == type.value){
+            if(element.type_id == type.typeId){ ///****AIIIIUUUDAAAAA ;v */
                 values = values + `
                 <option value="${element.id}">${element.name}</option>
             `

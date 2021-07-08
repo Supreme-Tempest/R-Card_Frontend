@@ -47,4 +47,10 @@ router.get('/productIdentificative', (req, res) => {
     });
 }); 
 
+router.get('/productIdentificativeType', (req, res) => {
+    apiMethods.ApiGet(routes.productIdentificativeType, req, res, (e) => {
+        //console.log("responce", e);
+    });
+});
+
 module.exports = router;

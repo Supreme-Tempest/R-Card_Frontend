@@ -9,6 +9,7 @@ const Routes = {
     product: 'products/product',
     productType: 'products/type',
     productIdentificative: 'products/identificative',
+    productIdentificativeType: 'products/identificative_type',
 }
 
 module.exports = Routes;
