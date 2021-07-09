@@ -43,7 +43,7 @@ html(lang="en")
                         </ul>
                     </nav>
                 div.container.col-5.card.p-3                       
-                    h3(class="text-center") Agregar nuevo empleado
+                    h3(class="text-center" name="labelNewProduct" id="labelNewProduct") Agregar nuevo empleado
                     form(class="row" role='form'  action="/signup" method="post" name="signup")
                         div(class="col-12" )
                             div(class="form-group")
@@ -74,5 +74,6 @@ html(lang="en")
                                 input(type="password" class="form-control" name="validated_password" placeholder="Confirme contraseña")
                             div(class="form-group")
                                 input.btn.btn-primary.btn-block(type="submit" value="Guardar")
-    script(src="../javascripts/tools/paginate.js")
-    script(src="../javascripts/user/signup.js")
+                                input(type="button" value="Cancelar" class="btn btn-secondary btn-block" id="cancelarUpdate" name="cancelarUpdate")
+    <script src="../javascripts/user/signup.js"></script>
+    script(src="../../../javascripts/tools/paginate.js")

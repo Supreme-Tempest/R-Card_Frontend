@@ -3,8 +3,8 @@ var table_product = document.getElementById("tbody_products");
 //var product_identificative = document.getElementById("product_identificative");
 var form = (document.forms.registerProduct);
 var type = document.getElementById("product_type");
-var cancel = document.getElementById("cancelarUpdate");
-let labelNewProduct = document.getElementById('labelNewProduct');
+const cancel = document.getElementById("cancelarUpdate");
+const labelNewProduct = document.getElementById('labelNewProduct');
 var identificative = document.getElementById("product_identificative");
 
 let productId = null; // aqui poner id de  producto a editar  ;v

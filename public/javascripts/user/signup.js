@@ -6,6 +6,10 @@ var table_employee = document.getElementById("table_employee");
 var myRoleLevelAccess = document.getElementById("myRolLevelAcess").textContent;
 var tbody_products = document.getElementById("tbody_products");
 
+const cancel = document.getElementById("cancelarUpdate");
+const labelNewProduct = document.getElementById('labelNewProduct');
+let userId = null;
+
 
 let page = {
     page: 1,
@@ -16,7 +20,7 @@ onloadRegister();
 onload(page);
 
 function onloadRegister(){
-    console.log("sho mero", myRoleLevelAccess);
+    //console.log("sho mero", myRoleLevelAccess);
     fetch('/workshop',{
         method: 'GET'
     }).then(res => res.json()).then(data => {
@@ -74,6 +78,13 @@ form.addEventListener('submit', function (event) {
     }
 });
 
+cancel.addEventListener('click', ()=> {
+    userId = null;
+    $("#cancelarUpdate").hide();
+    labelNewProduct.innerText= "Agregar nuevo empleado";
+    //alert("Cancel update");
+})
+
 function onload(page) { 
     fetch('/userPage', {
         method: 'POST',
@@ -91,16 +102,36 @@ function onload(page) {
                     <td>${element.username}</td>
                     <td>${element.name}</td>
                     <td>${element.lastname}</td>
-                    <td>${element.role.name}</td>
-                    <td>${element.workshop.name}</td>
+                    <td roleid="${element.role.role}">${element.role.name}</td>
+                    <td workshopid="${element.workshop.id}">${element.workshop.name}</td>
                     <td>
                         ${element.role.levelaccess < myRoleLevelAccess ? 
-                            '<button class = "btn btn-success">E</button>' : ''
+                            '<button class = "btn btn-success" name="edit">E</button>' : ''
                         }
                     </td>
                 </tr>
             `
         });
         tbody_products.innerHTML = values;
+        $("#cancelarUpdate").hide();
+        let btn_update = document.getElementsByName('edit');
+        btn_update.forEach(element => {
+            element.addEventListener("click", function (event) {
+                event.preventDefault();
+                fila = element.parentNode.parentNode.childNodes;
+                
+                userId = fila[1].innerText;
+                form.username.value = fila[1].innerText;
+                form.name.value = fila[3].innerText;
+                form.lastname.value = fila[5].innerText;
+                rol.value = fila[7].getAttribute("roleid");
+                workshop.value = fila[9].getAttribute("workshopid");
+                //console.log('rol',fila[9].getAttribute("workshopid"));
+                //console.log('fila',fila);
+                labelNewProduct.innerText= "Actualizar Empleado";
+                $("#cancelarUpdate").show();
+                //console.log('fila',fila[11].getAttribute("typeid"));
+            });
+        });
     });
 }
