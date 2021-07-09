@@ -60,26 +60,19 @@ html(lang="en")
                                     th Total de ventas: 15
                                     th Total de productos: 20
                                 tr
-                    div.row.card    
-                        <div class="Grid-Area-Gafica">
-                            <!-- html Area Grafica -->
-                            <div class="Grid-Grafica-Buscador">
-                                <div class="C-Filtro-Select">
-                                <!--Menu Desplegable-->
-                                    <select id="Select-FiltroBuscador" name="Filtro" class="btn btn-secondary">
-                                        <option id="Option01-FiltroBuscador">Ventas Por Mes</option>
-                                        <option id="Option02-FiltroBuscador">Ventas por Anno</option>
-                                    </select>
-                                </div>
-                                <div class="btn-filtroC">
-                                <button onClick="btnGraficar()" class="btn btn-success">Graficar</button>
-                                </div>
-                            </div>
-                            <!-- Div de la grafica -->
-                            <div class="grid-Grafica">
-                                <canvas id="grafica"></canvas>
-                            </div>
-                        </div>
+                    div.row.card 
+                        div.container
+                            div.h75
+                                div.row.p-2
+                                    div.form-group.col-10
+                                        <select id="Select-FiltroBuscador" name="Filtro" class="form-control">
+                                            <option id="Option01-FiltroBuscador">Ventas Por Mes</option>
+                                            <option id="Option02-FiltroBuscador">Ventas por Año</option>
+                                        </select>
+                                    div.form-group.col-2
+                                        button.btn-block.btn.btn-success(onClick="btnGraficar()") Graficar
+                                div.container
+                                    canvas#grafica
                         
     <script src="https://cdn.jsdelivr.net/npm/chart.js@latest/dist/Chart.min.js"></script>
     <script src="/javascripts/diagnostics/StadisticGraf.js"></script>
