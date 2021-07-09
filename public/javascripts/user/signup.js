@@ -62,8 +62,13 @@ form.addEventListener('submit', function (event) {
                 workshop: parseInt(workshop.value),
                 role: rol.value,
             }
+            let method = 'POST';
+            if (userId) {
+                method = 'PUT';
+                console.log("method user: ", 'PUT');
+            }
             fetch('/signup', {
-                    method: 'POST',
+                    method: method,
                     body: JSON.stringify(data),
                     headers: {
                         'Content-Type': 'application/json'

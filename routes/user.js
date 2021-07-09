@@ -13,26 +13,10 @@ router.get('/signup', (req, res) => {
 
 router.post('/signup', (req, res, next) => {
     apiMethods.ApiPost(routes.users, req, res);
-    /*console.log(req.body);
-    axios({
-        method: 'post',
-        url: apiOptions.server + 'auth/v1/register',
-        data: req.body
-    })
-        .then((response) => {
-        console.log(response);
-        res.send(response.data);
-        })
-        .catch((error) => {
-        console.log(error.response.data.error.message);
-        if (error.response.data.error.message.code == 40145) {
-            console.log('usuario ya existe');
-        }
-        if (error.response.data.error.message.code == 40146) {
-            console.log('email ya existe');
-        }
-        console.log('No logro concetar a la direccion');
-        });*/
+});
+
+router.put('/signup', (req, res, next) => {
+    apiMethods.ApiPut(routes.users, req, res);
 });
 
 router.login = (req, res) =>{
