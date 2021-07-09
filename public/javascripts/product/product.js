@@ -12,7 +12,7 @@ var lastpage;
 console.log(table_product);
 console.log(center);
 
-let page = {
+let page = { 
     page: 1,
     size: 5,
 }
@@ -125,6 +125,7 @@ function productIdentificative(e) {
 cancel.addEventListener('click', ()=> {
     productId = null;
     $("#cancelarUpdate").hide();
+    form.reset();
     labelNewProduct.innerText= "Registrar Producto";
     //alert("Cancel update");
 })

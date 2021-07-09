@@ -100,7 +100,7 @@ function onloadclient(page) {
         data.data.data.forEach(element => {
             //console.log("eleemtne user", element.role.levelaccess);
             values = values + `
-                <tr> 
+                <tr>  
                     <td>${element.username}</td>
                     <td>${element.name}</td>
                     <td>${element.lastname}</td>
