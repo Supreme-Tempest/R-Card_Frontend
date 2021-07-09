@@ -1,151 +1,80 @@
 <!DOCTYPE html>
 html(lang="en")
-    include ../tools/head.pug
-        link(rel="stylesheet" href="/stylesheets/sales/Ventas-Grid.css")
-        title="Ventas"
+    title="Ventas"
     body
         include ../tools/navigation.pug
-        <div class="Div-Contenedor"> <!--Div del contenedor-->
-            <Div class="Div-grid-Ingresos">
-                <input id="Input-Sales-codProduct" class="Grid-CodPro Imput-css" type="text" placeholder="Codigo de producto">
-                <input id="Input-Sales-CantProduct" class="Grid-InputNum Imput-css" type="number" placeholder="Cantidad" min="1">
-
-                <p id="P-Sales-Error-Producto" class="Grid-Error1 p-Error">El producto especificado no existe</p>
-
-                <button id="btn-add-ProList" class="Grid-BtnAgregar btn-General btn-Naranja">Agregar</button>
-            </Div>
-
-            <div class="Div-Grid-Tabla "><!--Div de la tabla-->
-                <table class="table-css">
-                    <thead>
-                        <tr>
-                            <th>Producto</th>
-                            <th>Cantidad</th>
-                            <th>Precio</th>
-                            <th>Sub-Total</th>
-                            <th>Eliminar</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="td-01">Cama</td>
-                            <td class="td-02">1</td>
-                            <td class="td-03">1,000</td>
-                            <td class="td-04">1,000</td>
-                            <td class="td-05"> <button id="Btn=Eliminar-Venta1" class="btn-Eliminar">x</button></td>
-                        </tr>
-                        <tr>
-                            <td class="td-01">Cama</td>
-                            <td class="td-02">1</td>
-                            <td class="td-03">1,000</td>
-                            <td class="td-04">1,000</td>
-                            <td class="td-05"> <button id="Btn=Eliminar-Venta1" class="btn-Eliminar">x</button></td>
-                        </tr>
-                        <tr>
-                            <td class="td-01">Cama</td>
-                            <td class="td-02">1</td>
-                            <td class="td-03">1,000</td>
-                            <td class="td-04">1,000</td>
-                            <td class="td-05"> <button id="Btn=Eliminar-Venta1" class="btn-Eliminar">x</button></td>
-                        </tr>
-                        <tr>
-                            <td class="td-01">Cama</td>
-                            <td class="td-02">1</td>
-                            <td class="td-03">1,000</td>
-                            <td class="td-04">1,000</td>
-                            <td class="td-05"> <button id="Btn=Eliminar-Venta1" class="btn-Eliminar">x</button></td>
-                        </tr>
-                        <tr>
-                            <td class="td-01">Cama</td>
-                            <td class="td-02">1</td>
-                            <td class="td-03">1,000</td>
-                            <td class="td-04">1,000</td>
-                            <td class="td-05"> <button id="Btn=Eliminar-Venta1" class="btn-Eliminar">x</button></td>
-                        </tr>
-                        <tr>
-                            <td class="td-01">Cama</td>
-                            <td class="td-02">1</td>
-                            <td class="td-03">1,000</td>
-                            <td class="td-04">1,000</td>
-                            <td class="td-05"> <button id="Btn=Eliminar-Venta1" class="btn-Eliminar">x</button></td>
-                        </tr>
-                        <tr>
-                            <td class="td-01">Cama</td>
-                            <td class="td-02">1</td>
-                            <td class="td-03">1,000</td>
-                            <td class="td-04">1,000</td>
-                            <td class="td-05"> <button id="Btn=Eliminar-Venta1" class="btn-Eliminar">x</button></td>
-                        </tr>
-                        <tr>
-                            <td class="td-01">Cama</td>
-                            <td class="td-02">1</td>
-                            <td class="td-03">1,000</td>
-                            <td class="td-04">1,000</td>
-                            <td class="td-05"> <button id="Btn=Eliminar-Venta1" class="btn-Eliminar">x</button></td>
-                        </tr>
-                        <tr>
-                            <td class="td-01">Cama</td>
-                            <td class="td-02">1</td>
-                            <td class="td-03">1,000</td>
-                            <td class="td-04">1,000</td>
-                            <td class="td-05"> <button id="Btn=Eliminar-Venta1" class="btn-Eliminar">x</button></td>
-                        </tr>
-                        <tr>
-                            <td class="td-01">Cama</td>
-                            <td class="td-02">1</td>
-                            <td class="td-03">1,000</td>
-                            <td class="td-04">1,000</td>
-                            <td class="td-05"> <button id="Btn=Eliminar-Venta1" class="btn-Eliminar">x</button></td>
-                        </tr>
-                        <tr>
-                            <td class="td-01">Cama</td>
-                            <td class="td-02">1</td>
-                            <td class="td-03">1,000</td>
-                            <td class="td-04">1,000</td>
-                            <td class="td-05"> <button id="Btn=Eliminar-Venta1" class="btn-Eliminar">x</button></td>
-                        </tr>
-                        <tr>
-                            <td class="td-01">Cama</td>
-                            <td class="td-02">1</td>
-                            <td class="td-03">1,000</td>
-                            <td class="td-04">1,000</td>
-                            <td class="td-05"> <button id="Btn=Eliminar-Venta1" class="btn-Eliminar">x</button></td>
-                        </tr>
-                        <tr>
-                            <td class="td-01">Cama</td>
-                            <td class="td-02">1</td>
-                            <td class="td-03">1,000</td>
-                            <td class="td-04">1,000</td>
-                            <td class="td-05"> <button id="Btn=Eliminar-Venta1" class="btn-Eliminar">x</button></td>
-                        </tr>
-                        <tr>
-                            <td class="td-01">Cama</td>
-                            <td class="td-02">1</td>
-                            <td class="td-03">1,000</td>
-                            <td class="td-04">1,000</td>
-                            <td class="td-05"> <button id="Btn=Eliminar-Venta1" class="btn-Eliminar">x</button></td>
-                        </tr>
-                        <tr>
-                            <td class="td-01">Cama</td>
-                            <td class="td-02">1</td>
-                            <td class="td-03">1,000</td>
-                            <td class="td-04">1,000</td>
-                            <td class="td-05"> <button id="Btn=Eliminar-Venta1" class="btn-Eliminar">x</button></td>
-                        </tr>
-                        
-                        
-                    </tbody>
-                </table>
-            </div>
-            <div class="Div-Grid-Total">
-                <p class="Grid-Total p-style">Total</p>
-                <input id="Input-Sales-Factura-Total" class="Grid-Total2 Imput-css" type="text" name="inputname" value="$1000.00" disabled>
-            </div>
-
-            <div class="Div-Grid-Btn">
-                <p id="P-Sales-Error-Facturar" class="p-Error grid-p-Error">Error de Facturacion</p>
-                <button id="Btn-Sales-Facturar" class="grid-btnVerde btn-General btn-Verde">Facturar</button>
-                <button id="Btn-Sales-CAncelar" class="grid-btnRojo btn-General btn-Rojo">Cancelar</button>
-            </div>
-
-        </div>
+        div(class="container-fluid pt-4")
+            h3(class="text-center") Ventas
+            div.p-5.row
+                div(class="container col-8 ")
+                    table(class="table table-striped" id="table_sales")
+                        thead
+                            tr 
+                                th(scope="col") Producto
+                                th(scope="col") Cantidad
+                                th(scope="col") Precio
+                                th(scope="col") Sub-Total
+                                th(scope="col") Eliminar
+                        tbody(id="tbody_products")
+                            tr
+                                td( class="td-01") Cama
+                                td( class="td-02") 1
+                                td( class="td-02") 1,000
+                                td( class="td-02") 1,000
+                                td(class="td-05")
+                                        button(type="button" class="btn btn-danger") X
+                                
+                            tr
+                                td( class="td-01") Televisor
+                                td( class="td-02") 1
+                                td( class="td-02") 2,000
+                                td( class="td-02") 2,000
+                                td(class="td-05")
+                                        button(type="button" class="btn btn-danger") X
+                                
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Previous" id="startPage">
+                                    <span aria-hidden="true">&laquo;</span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                            </li>
+                            li(class="page-item")
+                                button(class="page-link" id="prevPage") 1
+                            li(class="page-item")
+                                button(class="page-link" id="page") 2
+                            li(class="page-item")
+                                button(class="page-link" id="nextPage") 3
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Next" id="endPage">
+                                    <span aria-hidden="true">&raquo;</span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </nav>
+                div.container.col-4.card.p-3                   
+                    h3(class="text-center") Agregar
+                    form(class="row" role='form' method='POST' action='/sales/sale' name="sales")
+                        div(class="col-6" )
+                            div(class="form-group")
+                                label( for="sale") Codigo de producto 
+                                input(type="text" class="form-control" id="sale_cod" placeholder="Codigo")
+                        div(class="col-6")
+                            div(class="form-group")
+                                label(for="sale") Cantidad
+                                input(type="text" class="form-control" id="sale_cantidad" placeholder="Cantidad")    
+                            div(class="form-group")
+                                input.btn.btn-primary.btn-block(type="submit" value="Agregar")
+                div.container.col-3.card.p-3                   
+                    label( width="20px") Total
+                                input(type="text" class="form-control" id="sale_Total" value="$3,000")    
+                    form(class="row" role='form' method='POST' action='/sales/sale' name="sales")
+                        div(class="col-6")
+                            div(class="form-group")
+                                input.btn.btn-success.btn-block(type="submit" value="Factura")
+                        div(class="col-6")  
+                            div(class="form-group")
+                                input.btn.btn-danger.btn-block(type="submit" value="Cancelar")

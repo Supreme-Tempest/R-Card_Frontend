@@ -5,7 +5,7 @@ function GetEtiquetas(t){
     if (t=="Ventas Por Mes"){
         return ["Enero", "Febrero", "Marzo", "Abril"];
     }else{
-        if (t=="Ventas por Anno"){
+        if (t=="Ventas por Año"){
             return ["2018", "2019", "2020", "2021"];
         }
     }
@@ -16,7 +16,7 @@ function GetData(t){
     if (t=="Ventas Por Mes"){
         return [500, 700, 400, 80];
     }else{
-        if (t=="Ventas por Anno"){
+        if (t=="Ventas por Año"){
             return [2000, 3000, 1500, 600];
         }
     }
