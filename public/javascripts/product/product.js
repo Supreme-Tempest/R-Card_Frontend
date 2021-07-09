@@ -7,7 +7,7 @@ const cancel = document.getElementById("cancelarUpdate");
 const labelNewProduct = document.getElementById('labelNewProduct');
 var identificative = document.getElementById("product_identificative");
 
-let productId = 1; // aqui poner id de  producto a editar  ;v
+let productId = null; // aqui poner id de  producto a editar  ;v
 var lastpage;
 console.log(table_product);
 console.log(center);
