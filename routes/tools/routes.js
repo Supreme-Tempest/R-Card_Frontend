@@ -1,7 +1,7 @@
 const Routes = {
     testPost: 'testPost',
     testGet: 'testGet', 
-    workshop: 'workshop/workshop',
+    workshop: 'workshop/workshopPagine',
     rol: 'users/roles',
     client: 'clients/clients',
     clientPage: 'clients/clientsPaginate',
