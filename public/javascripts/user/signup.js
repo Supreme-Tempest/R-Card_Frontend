@@ -59,7 +59,7 @@ form.addEventListener('submit', function (event) {
                 name: form.name.value,
                 lastname: form.lastname.value,
                 workshop: parseInt(workshop.value),
-                role: parseInt(role.value),
+                role: role.value,
             }
             fetch('/signup', {
                     method: 'POST',
