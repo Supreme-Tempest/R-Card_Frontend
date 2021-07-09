@@ -299,3 +299,7 @@ body{
     justify-content: space-evenly;
 }
 
+.img-sizing{
+    width: 75%;
+    height: 50%;
+}
