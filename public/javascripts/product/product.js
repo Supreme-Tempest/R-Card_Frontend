@@ -3,6 +3,8 @@ var table_product = document.getElementById("tbody_products");
 //var product_identificative = document.getElementById("product_identificative");
 var form = (document.forms.registerProduct);
 var type = document.getElementById("product_type");
+var cancel = document.getElementById("cancelarUpdate");
+let labelNewProduct = document.getElementById('labelNewProduct');
 var identificative = document.getElementById("product_identificative");
 
 let productId = 1; // aqui poner id de  producto a editar  ;v
@@ -39,21 +41,40 @@ function onload(page) {
                     <td>${element.brand}</td>
                     <td>${element.stock}</td>
                     <td>${element.price}</td>
-                    <td>${element.type.name}|${element.identificative.name}</td>
+                    <td 
+                        typeid="${element.type.id}" 
+                        identificativeid="${element.identificative.id}"
+                    >
+                        ${element.type.name}|${element.identificative.name}
+                    </td>
                     <td><button class ="btn btn-success" name="edit">E</button></td>
                 </tr>
             `
         });
+        $("#cancelarUpdate").hide();
         table_product.innerHTML = values;
         let btn_update = document.getElementsByName('edit');
         btn_update.forEach(element => {
             element.addEventListener("click", function (event) {
                 event.preventDefault();
                 fila = element.parentNode.parentNode.childNodes;
-                form.product_name.value = fila[3].textContent;
-                form.product_brand.value = fila[5].textContent;
-                form.product_stock.value = fila[7].textContent;
-                form.product_price.value = fila[9].textContent;
+                productId = fila[1].innerText;
+                form.product_name.value = fila[3].innerText;
+                form.product_brand.value = fila[5].innerText;
+                form.product_stock.value = fila[7].innerText;
+                form.product_price.value = fila[9].innerText;
+                if ( fila[11].getAttribute("typeid") != type.value){
+                    productIdentificative(()=>{
+                        identificative.value = fila[11].getAttribute("identificativeid");
+                    })
+                } else {
+                    identificative.value = fila[11].getAttribute("identificativeid");
+                }
+                type.value = fila[11].getAttribute("typeid");
+                //console.log('label',label);
+                labelNewProduct.innerText= "Actualizar Producto";
+                $("#cancelarUpdate").show();
+                //console.log('fila',fila[11].getAttribute("typeid"));
             });
         });
     });
@@ -75,7 +96,7 @@ function productType() {
     });
 };
 
-function productIdentificative() { 
+function productIdentificative(e) { 
     let mydata = {type: type.options[type.selectedIndex].getAttribute('typeid')}
     console.log("my data", mydata);
     fetch('/products/productIdentificative', {
@@ -95,8 +116,18 @@ function productIdentificative() {
 
         });
         identificative.innerHTML = values;
+        if (e) {
+            e();
+        }
     });
 };
+
+cancel.addEventListener('click', ()=> {
+    productId = null;
+    $("#cancelarUpdate").hide();
+    labelNewProduct.innerText= "Registrar Producto";
+    //alert("Cancel update");
+})
 
 
 form.addEventListener('submit', function (event) {
@@ -132,6 +163,6 @@ form.addEventListener('submit', function (event) {
         })
 });
 
-type.addEventListener('click', (event) => {
+type.addEventListener('change', (event) => {
     productIdentificative();
 });
