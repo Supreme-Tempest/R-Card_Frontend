@@ -3,6 +3,8 @@ var table_product = document.getElementById("tbody_products");
 //var product_identificative = document.getElementById("product_identificative");
 var form = (document.forms.registerProduct);
 var type = document.getElementById("product_type");
+var cancel = document.getElementById("cancelarUpdate");
+let labelNewProduct = document.getElementById('labelNewProduct');
 var identificative = document.getElementById("product_identificative");
 
 let productId = 1; // aqui poner id de  producto a editar  ;v
@@ -49,6 +51,7 @@ function onload(page) {
                 </tr>
             `
         });
+        $("#cancelarUpdate").hide();
         table_product.innerHTML = values;
         let btn_update = document.getElementsByName('edit');
         btn_update.forEach(element => {
@@ -68,6 +71,9 @@ function onload(page) {
                     identificative.value = fila[11].getAttribute("identificativeid");
                 }
                 type.value = fila[11].getAttribute("typeid");
+                //console.log('label',label);
+                labelNewProduct.innerText= "Actualizar Producto";
+                $("#cancelarUpdate").show();
                 //console.log('fila',fila[11].getAttribute("typeid"));
             });
         });
@@ -115,6 +121,13 @@ function productIdentificative(e) {
         }
     });
 };
+
+cancel.addEventListener('click', ()=> {
+    productId = null;
+    $("#cancelarUpdate").hide();
+    labelNewProduct.innerText= "Registrar Producto";
+    //alert("Cancel update");
+})
 
 
 form.addEventListener('submit', function (event) {
