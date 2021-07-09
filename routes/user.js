@@ -69,7 +69,7 @@ router.post('/login', function(req, res, next) {
         });
 });
 
-router.get('/workshop', (req, res) => {
+router.post('/workshop', (req, res) => {
     console.log('pre-workshop-apimethod');
     apiMethods.ApiGet(routes.workshop, req, res, (e) => {
         console.log("responce workshop", e);
