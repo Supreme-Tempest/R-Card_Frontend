@@ -21,12 +21,11 @@ html(lang="en")
                     </div>
                     <div class="p-icon">
                         <p class="PETitulo"> Clientes Totales </p>
+                        <input id="Graf-Inp-Cliente" class="grid-Imput-css Imput-cssS" type="text" name="inputname" value="$1000.00" disabled>
                     </div>
                 </div>
-                <div class="General-Input Grid-Clientes-input">
-                    <input id="Graf-Inp-Cliente" class="grid-Imput-css Imput-cssS" type="text" name="inputname" value="$1000.00" disabled>
-                </div>
             </div>
+
             <div class="Grid-Compras">
                 <!-- html estadistica Compras-->
                 <div class="grid-it Grid-Compras-icon">
@@ -35,12 +34,11 @@ html(lang="en")
                     </div>
                     <div class="p-icon">
                         <p class="PETitulo"> Compras Totales </p>
+                        <input id="Graf-Inp-Compras" class="grid-Imput-css Imput-cssS" type="text" name="inputname" value="$1000.00" disabled>
                     </div>
                 </div>
-                <div class="General-Input Grid-Compras-input">
-                    <input id="Graf-Inp-Compras" class="grid-Imput-css Imput-cssS" type="text" name="inputname" value="$1000.00" disabled>
-                </div>
             </div>
+
             <div class="Grid-Ventas">
                 <!-- html estadistica Ventas-->
                 <div class="grid-it Grid-Ventas-icon">
@@ -49,12 +47,11 @@ html(lang="en")
                     </div>
                     <div class="p-icon">
                         <p class="PETitulo"> Ventas Totales</p>
+                        <input id="Graf-Inp-Ventas" class="grid-Imput-css Imput-cssS" type="text" name="inputname" value="$1000.00" disabled>
                     </div>
                 </div>
-                <div class="General-Input Grid-Ventas-input">
-                    <input id="Graf-Inp-Ventas" class="grid-Imput-css Imput-cssS" type="text" name="inputname" value="$1000.00" disabled>
-                </div>
             </div>
+
             <div class="Grid-Productos">
                 <!-- html estadistica Productos-->
                 <div class="grid-it Grid-Producto-icon">
@@ -63,15 +60,14 @@ html(lang="en")
                     </div>
                     <div class="p-icon">
                         <p class="PETitulo"> Productos Totales</p>
+                        <input id="Graf-Inp-Productos" class="grid-Imput-css Imput-cssS" type="text" name="inputname" value="$1000.00" disabled>
                     </div> 
                 </div>
-                <div class="General-Input Grid-Producto-input">
-                    <input id="Graf-Inp-Productos" class="grid-Imput-css Imput-cssS" type="text" name="inputname" value="$1000.00" disabled>
-                </div>
             </div>
+
             <div class="grid-Top-Mas">
                 <!-- html Tabla top mas vendidos -->
-                <h3 class="subT" >Top 3 productos Mas Vendidos</h3>
+                <h3 class="h3" >Top 3 productos Mas Vendidos</h3>
                 <table id="Graf-Table-MasVendidos" class="table-css">
                     <tr>
                         <th>N</th>
@@ -98,7 +94,7 @@ html(lang="en")
 
             <div class="grid-Top-Menos">
                 <!-- html Tabla top menos vendidos -->
-                <h3 class="subT" >Top 3 productos Menos Vendidos</h3>
+                <p class="h3" >Top 3 productos Menos Vendidos</p>
                 <table id="Graf-Table-MenosVendidos" class="table-css">
                     <tr>
                         <th>N</th>
@@ -128,13 +124,13 @@ html(lang="en")
                 <div class="Grid-Grafica-Buscador">
                     <div class="C-Filtro-Select">
                     <!--Menu Desplegable-->
-                        <select id="Select-FiltroBuscador" name="Filtro" class="Select-css">
+                        <select id="Select-FiltroBuscador" name="Filtro" class="btn btn-secondary">
                             <option id="Option01-FiltroBuscador">Ventas Por Mes</option>
                             <option id="Option02-FiltroBuscador">Ventas por Anno</option>
                         </select>
                     </div>
                     <div class="btn-filtroC">
-                    <button onClick="btnGraficar()" class="btn-General btn-Naranja btn-filtro">Graficar</button>
+                    <button onClick="btnGraficar()" class="btn btn-success">Graficar</button>
                     </div>
                 </div>
                 <!-- Div de la grafica -->

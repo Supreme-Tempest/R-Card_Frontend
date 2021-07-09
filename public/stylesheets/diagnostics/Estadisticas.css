@@ -245,10 +245,13 @@
 }
 
 .grid-Imput-css{
-    max-width: 105px;
+    
+    max-width: 150px;
     grid-row-start: 2;
     grid-row-end: 3;
     text-align: center;
+    color:#fff;
+    font-weight: bold;
 }
 
 .th-n{
@@ -284,3 +287,4 @@
     grid-row-start: 1;
     grid-row-end: 2;
 }
+
