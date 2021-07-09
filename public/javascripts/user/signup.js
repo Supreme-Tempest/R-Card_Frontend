@@ -91,6 +91,7 @@ cancel.addEventListener('click', ()=> {
     $("#cancelarUpdate").hide();
     form.reset();
     labelNewProduct.innerText= "Agregar nuevo empleado";
+    document.getElementById("username").readOnly = false;
     //alert("Cancel update");
 })
 
@@ -139,6 +140,7 @@ function onload(page) {
                 //console.log('fila',fila);
                 labelNewProduct.innerText= "Actualizar Empleado";
                 $("#cancelarUpdate").show();
+                document.getElementById("username").readOnly = true;
                 //console.log('fila',fila[11].getAttribute("typeid"));
             });
         });
