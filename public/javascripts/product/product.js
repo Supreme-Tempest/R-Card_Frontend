@@ -10,7 +10,7 @@ var lastpage;
 console.log(table_product);
 console.log(center);
 
-let page = {
+let page = { 
     page: 1,
     size: 5,
 }
@@ -66,17 +66,17 @@ function productType() {
 
 function productIdentificative() { 
     fetch('/products/productIdentificative', {
-        method: 'GET'
+        method: 'POST',
+        type: type.options[type.selectedIndex].getAttribute('typeid')
     }).then(res => res.json()).then(data => {
         let values = "<option disabled selected>Identificativo</option>";
         console.log("identificatives", data);
         //console.log("typeid", type.options[type.selectedIndex].getAttribute('typeid'));
         data.forEach(element => {
-            if(element.type_id == type.options[type.selectedIndex].getAttribute('typeid')){ 
-                values = values + `
+            values = values + `
                 <option value="${element.id}">${element.name}</option>
             `
-            }
+            
         });
         identificative.innerHTML = values;
     });
