@@ -5,6 +5,7 @@ const Routes = {
     municipios: 'workshop/municipios', //get all, get all by department for param
     rol: 'users/roles', //get all, post new, put update
     client: 'clients/clients', //get all, post new, put update
+    clientState: 'clients/clientState',
     clientPage: 'clients/clientsPaginate', // get all paginate
     productPage: 'products/productsPaginate', // get all pagine
     userPage: 'users/usersPaginate', // get all pagine

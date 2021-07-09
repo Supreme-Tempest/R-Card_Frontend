@@ -15,6 +15,11 @@ router.post('/clients', (req, res) => {
     apiMethods.ApiPost(routes.client, req, res);
 }); 
 
+router.put('/clientState', (req, res) => {
+    console.log(req);
+    apiMethods.ApiPut(routes.clientState, req, res);
+}); 
+
 router.post('/clientPage', (req, res) => {
     console.log('clientpage router', 'pre body', req.body);
     apiMethods.ApiGet(routes.clientPage, req, res, (e) => {
