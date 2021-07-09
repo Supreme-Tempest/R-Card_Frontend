@@ -71,6 +71,8 @@ form.addEventListener('submit', function (event) {
                 }).then(res => res.json())
                 .then(res => {
                     if (res.ok) {
+                        alert("Producto agregado con exito");
+                        form.reset();
                     } else {
                         alert("puede que estes repitiendo nombre o te falten datos");
                     }
@@ -82,6 +84,7 @@ form.addEventListener('submit', function (event) {
 cancel.addEventListener('click', ()=> {
     userId = null;
     $("#cancelarUpdate").hide();
+    form.reset();
     labelNewProduct.innerText= "Agregar nuevo empleado";
     //alert("Cancel update");
 })
