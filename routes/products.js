@@ -14,7 +14,7 @@ router.get('/register', (req, res) => {
 router.post('/productPage', (req, res) => {
     console.log("lo lograremos?");
     console.log(req.body);
-    apiMethods.ApiPost(routes.productPage, req, res, (e) => {
+    apiMethods.ApiGet(routes.productPage, req, res, (e) => {
         //console.log("responce", e);
     });
 }); 

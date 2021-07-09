@@ -11,8 +11,8 @@ const ApiPost = (route, req, res, e) => {
 }
 
 const ApiGet = (route, req, res, e) => {
-    //console.log('apiGet: ', 'pre-responce');
-    ApiResponce('get', route, req, res, e);
+    let query = Object.keys(req.body).map(k => `${k}=${req.body[k]}`).join('&');
+    ApiResponce('get', route + '?' + query, req, res, e);
 }
 
 const ApiPut = (route, req, res, e) => {
@@ -30,7 +30,6 @@ const ApiResponce = (method, route, req, res, e) => {
         res.redirect('/login');
         return
     }
-    //console.log('apiRespone','pre-axios');
     axios({
         method: method,
         url: apiOptions.server + route,
