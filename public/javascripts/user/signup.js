@@ -50,6 +50,7 @@ function onloadRegister(){
 
 
 form.addEventListener('submit', function (event) {
+    console.log("intentando crear usuario");
     event.preventDefault();
     if (form.username.value != "" && form.name.value != "" && form.lastname.value != "" && form.password.value != "") {
         if (form.password.value == form.validated_password.value) {
