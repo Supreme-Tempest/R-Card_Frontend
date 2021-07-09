@@ -2,6 +2,15 @@
 var form = (document.forms.signup);
 var rol = document.getElementById("rol");
 var workshop = document.getElementById("workshop");
+var table_employee = document.getElementById("table_employee");
+var tbody_products = document.getElementById("tbody_products");
+
+
+let prev = document.getElementById("prevPage");
+let next = document.getElementById("nextPage");
+let center = document.getElementById("page");
+let last = document.getElementById("endPage");
+let first = document.getElementById("startPage");
 
 let page = {
     page: 1,
@@ -13,7 +22,7 @@ onloadclient(page);
 
 function onload(){
     fetch('/workshop',{
-        method: 'GET'
+        method: 'POST'
     }).then(res => res.json()).then(data => {
         let values = "<option disabled selected>Selecciona una sucursal</option>";
         data.forEach(element => {
@@ -68,7 +77,6 @@ form.addEventListener('submit', function (event) {
 });
 
 function onloadclient(page) { 
-     
     fetch('/userPage', {
         method: 'POST',
         body: JSON.stringify(page),
@@ -77,26 +85,26 @@ function onloadclient(page) {
         }
     }).then(res => res.json()).then(data => {
         let values = "";
-        console.log(data);
-        /*prev.style.display = 'block'
+        console.log("hola buenas");
+        prev.style.display = 'block'
         next.style.display = 'block'
         lastpage = data.data.pages
         data.data.preview != null ? prev.innerText = data.data.preview : prev.style.display = 'none';
         center.innerText = data.data.current;
         data.data.next != null ? next.innerText = data.data.next : next.style.display = 'none';
-        /*data.data.data.forEach(element => {
+        console.log(data.data.data)
+        data.data.data.forEach(element => {
             values = values + `
                 <tr> 
-                    <td>${element.id}</td>
+                    <td>${element.username}</td>
                     <td>${element.name}</td>
-                    <td>${element.brand}</td>
-                    <td>${element.stock}</td>
-                    <td>${element.price}</td>
-                    <td>${element.type.name}|${element.identificative.name}</td>
+                    <td>${element.lastname}</td>
+                    <td>${element.role.name}</td>
+                    <td>${element.workshop.name}</td>
                     <td><button class = "btn btn-success">E</button></td>
                 </tr>
             `
         });
-        table_product.innerHTML = values;*/
+        tbody_products.innerHTML = values;
     });
 }

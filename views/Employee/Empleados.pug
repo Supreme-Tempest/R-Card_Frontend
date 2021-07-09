@@ -12,10 +12,11 @@ html(lang="en")
                     table(class="table table-striped" id="table_employee")
                         thead
                             tr 
-                                th(scope="col") Carnet
+                                th(scope="col") Nombre de usuario
                                 th(scope="col") Nombre
                                 th(scope="col") Apellido
                                 th(scope="col") Rol
+                                th(scope="col") Sucursal
                                 th(scope="col") 
                         tbody(id="tbody_products")
                     <nav aria-label="Page navigation example">
@@ -73,4 +74,4 @@ html(lang="en")
                             div(class="form-group")
                                 input.btn.btn-primary.btn-block(type="submit" value="Guardar")
     <script src="../javascripts/user/signup.js"></script>
-        
+    script(src="../../../javascripts/tools/paginate.js")

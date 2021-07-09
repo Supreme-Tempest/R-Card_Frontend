@@ -4,11 +4,7 @@ var table_product = document.getElementById("tbody_products");
 var form = (document.forms.registerProduct);
 var type = document.getElementById("product_type");
 var identificative = document.getElementById("product_identificative");
-let prev = document.getElementById("prevPage");
-let next = document.getElementById("nextPage");
-let center = document.getElementById("page");
-let last = document.getElementById("endPage");
-let first = document.getElementById("startPage");
+
 let productId = 1; // aqui poner id de  producto a editar  ;v
 var lastpage;
 console.log(table_product);
@@ -35,12 +31,7 @@ function onload(page) {
     }).then(res => res.json()).then(data => {
         let values = "";
         console.log(data);
-        prev.style.display = 'block'
-        next.style.display = 'block'
-        lastpage = data.data.pages
-        data.data.preview != null ? prev.innerText = data.data.preview : prev.style.display = 'none';
-        center.innerText = data.data.current;
-        data.data.next != null ? next.innerText = data.data.next : next.style.display = 'none';
+        paginateAux(data.data)
         data.data.data.forEach(element => {
             values = values + `
                 <tr> 
@@ -129,48 +120,4 @@ type.addEventListener('click', (event) => {
     productIdentificative();
 });
 
-function hola(){
-}
 
-var nextpage = (event) => {
-    page = {
-        page: next.textContent,
-        size: 5,
-    };
-    onload(page);
-}
-
-var prevpage = (event) => {
-    page = {
-        page: prev.textContent,
-        size: 5,
-    };
-    onload(page);
-}
-
-var centerpage = (event) => {
-    page = {
-        page: center.textContent,
-        size: 5,
-    };
-    onload(page);
-}
-var firstpagination = (event) => {
-    page = {
-        page: 1,
-        size: 5,
-    };
-    onload(page);
-}
-var lastpagination = (event) => {
-    page = {
-        page: lastpage,
-        size: 5,
-    };
-    onload(page);
-}
-center.addEventListener('click', centerpage);
-next.addEventListener('click', nextpage);
-prev.addEventListener('click', prevpage);
-first.addEventListener('click', firstpagination);
-last.addEventListener('click', lastpagination);
