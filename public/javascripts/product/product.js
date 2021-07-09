@@ -39,7 +39,12 @@ function onload(page) {
                     <td>${element.brand}</td>
                     <td>${element.stock}</td>
                     <td>${element.price}</td>
-                    <td>${element.type.name}|${element.identificative.name}</td>
+                    <td 
+                        typeid="${element.type.id}" 
+                        identificativeid="${element.identificative.id}"
+                    >
+                        ${element.type.name}|${element.identificative.name}
+                    </td>
                     <td><button class ="btn btn-success" name="edit">E</button></td>
                 </tr>
             `
@@ -50,7 +55,20 @@ function onload(page) {
             element.addEventListener("click", function (event) {
                 event.preventDefault();
                 fila = element.parentNode.parentNode.childNodes;
-                form.product_name.value = fila[1];
+                productId = fila[1].innerText;
+                form.product_name.value = fila[3].innerText;
+                form.product_brand.value = fila[5].innerText;
+                form.product_stock.value = fila[7].innerText;
+                form.product_price.value = fila[9].innerText;
+                if ( fila[11].getAttribute("typeid") != type.value){
+                    productIdentificative(()=>{
+                        identificative.value = fila[11].getAttribute("identificativeid");
+                    })
+                } else {
+                    identificative.value = fila[11].getAttribute("identificativeid");
+                }
+                type.value = fila[11].getAttribute("typeid");
+                //console.log('fila',fila[11].getAttribute("typeid"));
             });
         });
     });
@@ -72,7 +90,7 @@ function productType() {
     });
 };
 
-function productIdentificative() { 
+function productIdentificative(e) { 
     let mydata = {type: type.options[type.selectedIndex].getAttribute('typeid')}
     console.log("my data", mydata);
     fetch('/products/productIdentificative', {
@@ -92,6 +110,9 @@ function productIdentificative() {
 
         });
         identificative.innerHTML = values;
+        if (e) {
+            e();
+        }
     });
 };
 
@@ -129,6 +150,6 @@ form.addEventListener('submit', function (event) {
         })
 });
 
-type.addEventListener('click', (event) => {
+type.addEventListener('change', (event) => {
     productIdentificative();
 });
