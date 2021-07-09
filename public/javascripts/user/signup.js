@@ -20,7 +20,7 @@ onloadRegister();
 onload(page);
 
 function onloadRegister(){
-    console.log("sho mero", myRoleLevelAccess);
+    //console.log("sho mero", myRoleLevelAccess);
     fetch('/workshop',{
         method: 'GET'
     }).then(res => res.json()).then(data => {
@@ -85,7 +85,7 @@ cancel.addEventListener('click', ()=> {
     //alert("Cancel update");
 })
 
-function onloadclient(page) { 
+function onload(page) { 
     fetch('/userPage', {
         method: 'POST',
         body: JSON.stringify(page),
@@ -133,7 +133,5 @@ function onloadclient(page) {
                 //console.log('fila',fila[11].getAttribute("typeid"));
             });
         });
-
-
     });
 }
