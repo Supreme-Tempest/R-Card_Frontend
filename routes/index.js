@@ -10,7 +10,11 @@ router.get('/', (req, res) => {
 
 router.get('/test', (req, res) => {
     //console.log('user token: ', JSON.parse(localStorage.getItem('user')).token);
-    res.render('tools/Empleados')
+    //res.render('tools/Empleados')
+    apiMethods.ApiGet('products/productShoping', req, res, (e) => {
+        //console.log("responce", e);
+    });
+    
 });
 
 
