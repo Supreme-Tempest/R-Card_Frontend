@@ -13,7 +13,7 @@
 /*Estadisticas de clientes*/
 .Grid-Clientes{
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 25% 50% 25%;
     /*Posicion dentro del contenedor*/
     grid-column-start: 2;
     grid-column-end: 3;
@@ -25,8 +25,8 @@
 
 .Grid-Clientes-icon{
     background: #32ab52;
-    grid-column-start: 1;
-    grid-column-end: 2;
+    grid-column-start: 2;
+    grid-column-end: 3;
 }
 
 /*area de input*/
@@ -43,7 +43,7 @@
 /*Div general*/
 .Grid-Compras{
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 25% 50% 25%;
     /*Posicion dentro del contenedor*/
     grid-column-start: 4;
     grid-column-end: 5;
@@ -55,8 +55,8 @@
 
 .Grid-Compras-icon{
     background: #ed6f25;
-    grid-column-start: 1;
-    grid-column-end: 2;
+    grid-column-start: 2;
+    grid-column-end: 3;
     
 }
 
@@ -73,7 +73,7 @@
 
 .Grid-Ventas{
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 25% 50% 25%;
     /*Posicion dentro del contenedor*/
     grid-column-start: 6;
     grid-column-end: 7;
@@ -85,8 +85,8 @@
 
 .Grid-Ventas-icon{
     background: #f9b71f;
-    grid-column-start: 1;
-    grid-column-end: 2;
+    grid-column-start:2;
+    grid-column-end: 3;
     
 }
 
@@ -103,7 +103,7 @@
 
 .Grid-Productos{
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 25% 50% 25%;
     /*Posicion dentro del contenedor*/
     grid-column-start: 8;
     grid-column-end: 9;
@@ -117,8 +117,8 @@
     display: flex;
     justify-content: center;
     background: #6362aa;
-    grid-column-start: 1;
-    grid-column-end: 2;
+    grid-column-start:2;
+    grid-column-end: 3;
     
 }
 

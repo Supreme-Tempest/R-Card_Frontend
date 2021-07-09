@@ -1,0 +1,29 @@
+.Contenedor{
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    grid-template-rows: 5% 50% 8% 15% 5%;
+}
+
+.g1{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.g2{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+.g3{
+    display: flex;
+    justify-content: center;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 4;
+    grid-row-end: 5;
+}
+

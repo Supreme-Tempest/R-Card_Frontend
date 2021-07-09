@@ -1,69 +1,44 @@
 <!DOCTYPE html>
 html(lang="en")
     include ../tools/head.pug
-        link(rel="stylesheet" href="/stylesheets/employee/Empleados.css")
+        link(rel="stylesheet" href="/stylesheets/employee/EmployeeView.css")
         title="Empleados"
     body
         include ../tools/navigation.pug
         <!--Div del contenedor-->
-        <div class="Div-Contenedor">
+        div(class="Contenedor")
             <!-- Informacion de Empleados -->
-            <div class="C-InformacionE">
-                <div class="Div-TIE">
-                    <table class="table-css table-IE">
-                        <thead>
-                            <tr>
-                                <th colspan="2">Informacion de Empleado</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Carnet:</td>
-                                <td id="td-InfCarnet"></td>
-                            </tr>
-                            <tr>
-                                <td>Nombre:</td>
-                                <td id="td-InfNombre"></td>
-                            </tr>
-                            <tr>
-                                <td>DUI:</td>
-                                <td id="td-InfDui"></td>
-                            </tr>
-                            <tr>
-                                <td>Fecha de Nacimiento:</td>
-                                <td id="td-InfNFecha"></td>
-                            </tr>
-                            <tr>
-                                <td>Puesto:</td>
-                                <td id="td-InfPuesto"></td>
-                            </tr>
-                            <tr>
-                                <td>Contacto de Emergencia:</td>
-                                <td id="td-InfCEmergencia"></td>
-                            </tr>
-                            <tr>
-                                <td>Numero de Emergencia:</td>
-                                <td id="td-InfNEmergencia"></td>
-                            </tr>
-                            <tr>
-                                <td>Fecha de Contratacion:</td>
-                                <td id="td-InfContacto"></td>
-                            </tr>
-                            <tr>
-                                <td>Fecha de Baja:</td>
-                                <td id="td-InfFBaja"></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    
-                </div>
-                <div class="Div-btn-TIE">
-                    <p id="p-InfExito" class="p-Exito">Proceso Exitoso</p>
-                    <p id="p-InfError" class="p-Error">Proceso Fallido!</p>
-                    <button id="Btn-InfBaja" class="btn-General btn-Rojo bnt-TIE"> Dar de Baja</button>
-                </div>
-            </div>
-        </div>
-    </body>
-
-    </html>
+            table(class="table table-striped g1")
+                thead
+                    tr
+                        th(colspan="4") Informacion de Empleado
+                tbody
+                    tr
+                        td Carnet
+                        td
+                        td Contacto de Emergencia
+                        td
+                    tr
+                        td Nombre
+                        td
+                        td Numero de Contacto
+                        td
+                    tr
+                        td DUI
+                        td
+                        td Fecha de Contratacion
+                        td
+                    tr
+                        td Fecha de Nacimiento
+                        td
+                        td Fecha de Baja
+                        td
+                    tr
+                        td Puesto
+                        td
+                        td
+                        td
+            div(class="alert alert-success g2" role="alert") Proceso Exitoso!
+            div(class="alert alert-danger g2" role="alert") Algo salio Mal!
+            div(class="g3")
+                button(id="Btn_InfBaja" class="btn btn-danger") Dar de Baja
