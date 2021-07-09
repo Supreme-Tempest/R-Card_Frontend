@@ -2,7 +2,10 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/Employees', (req, res) => {
-    res.render('Employee/Empleados')
+    
+    res.render('Employee/Empleados', {
+        levelAccessRol: JSON.parse(localStorage.getItem('user')).role.levelaccess,
+    })
 });
 
 router.get('/EmployeeC', (req, res) => {

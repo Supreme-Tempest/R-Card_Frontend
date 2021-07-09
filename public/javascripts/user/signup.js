@@ -3,6 +3,7 @@ var form = (document.forms.signup);
 var rol = document.getElementById("rol");
 var workshop = document.getElementById("workshop");
 var table_employee = document.getElementById("table_employee");
+var myRoleLevelAccess = document.getElementById("myRolLevelAcess").textContent;
 var tbody_products = document.getElementById("tbody_products");
 
 
@@ -21,6 +22,7 @@ onload();
 onloadclient(page);
 
 function onload(){
+    console.log("sho mero", myRoleLevelAccess);
     fetch('/workshop',{
         method: 'GET'
     }).then(res => res.json()).then(data => {
@@ -38,9 +40,11 @@ function onload(){
     }).then(res => res.json()).then(data => {
         let roles = "<option disabled selected>Selecciona un rol</option>";
         data.forEach(element => {
-            roles = roles + `
+            if (element.levelaccess < myRoleLevelAccess) {
+                roles = roles + `
                 <option value="${element.role}">${element.name}</option>
             `
+            }
         });
         rol.innerHTML = roles;
     });
@@ -94,6 +98,7 @@ function onloadclient(page) {
         data.data.next != null ? next.innerText = data.data.next : next.style.display = 'none';
         console.log(data.data.data)
         data.data.data.forEach(element => {
+            //console.log("eleemtne user", element.role.levelaccess);
             values = values + `
                 <tr> 
                     <td>${element.username}</td>
@@ -101,7 +106,11 @@ function onloadclient(page) {
                     <td>${element.lastname}</td>
                     <td>${element.role.name}</td>
                     <td>${element.workshop.name}</td>
-                    <td><button class = "btn btn-success">E</button></td>
+                    <td>
+                        ${element.role.levelaccess < myRoleLevelAccess ? 
+                            '<button class = "btn btn-success">E</button>' : ''
+                        }
+                    </td>
                 </tr>
             `
         });
