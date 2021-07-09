@@ -11,8 +11,9 @@ router.get('/signup', (req, res) => {
     res.render('signup')
 });
 
-router.post('/signup', function(req, res, next) {
-    console.log(req.body);
+router.post('/signup', (req, res, next) => {
+    apiMethods.ApiPost(routes.users, req, res);
+    /*console.log(req.body);
     axios({
         method: 'post',
         url: apiOptions.server + 'auth/v1/register',
@@ -31,7 +32,7 @@ router.post('/signup', function(req, res, next) {
             console.log('email ya existe');
         }
         console.log('No logro concetar a la direccion');
-        });
+        });*/
 });
 
 router.login = (req, res) =>{

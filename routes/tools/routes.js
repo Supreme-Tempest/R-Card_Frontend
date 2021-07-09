@@ -8,6 +8,7 @@ const Routes = {
     clientPage: 'clients/clientsPaginate', // get all paginate
     productPage: 'products/productsPaginate', // get all pagine
     userPage: 'users/usersPaginate', // get all pagine
+    users: 'users/users', // get all pagine
     product: 'products/product', //get all, get all by type for param, post new, put update
     productType: 'products/type', //get all, get all by type for param, post new, put update
     productIdentificative: 'products/identificative', //get all, get all by type for param, post new, put update
