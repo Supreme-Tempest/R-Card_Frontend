@@ -10,7 +10,7 @@ var lastpage;
 console.log(table_product);
 console.log(center);
 
-let page = { 
+let page = {
     page: 1,
     size: 5,
 }
@@ -20,8 +20,7 @@ productType();
 
 
 
-function onload(page) { 
-    
+function onload(page) {
     fetch('/products/productPage', {
         method: 'POST',
         body: JSON.stringify(page),
@@ -41,15 +40,24 @@ function onload(page) {
                     <td>${element.stock}</td>
                     <td>${element.price}</td>
                     <td>${element.type.name}|${element.identificative.name}</td>
-                    <td><button class = "btn btn-success">E</button></td>
+                    <td><button class ="btn btn-success" name="edit">E</button></td>
                 </tr>
             `
         });
         table_product.innerHTML = values;
+        let btn_update = document.getElementsByName('edit');
+        btn_update.forEach(element => {
+            element.addEventListener("click", function (event) {
+                event.preventDefault();
+                fila = element.parentNode.parentNode.childNodes;
+                form.product_name.value = fila[1];
+            });
+        });
     });
 }
 
-function productType() { 
+
+function productType() {
     fetch('/products/productType', {
         method: 'GET'
     }).then(res => res.json()).then(data => {
@@ -64,10 +72,12 @@ function productType() {
     });
 };
 
-function productIdentificative() { 
+function productIdentificative() {
     fetch('/products/productIdentificative', {
         method: 'POST',
-        body:  JSON.stringify({type: type.options[type.selectedIndex].getAttribute('typeid')})
+        body: JSON.stringify({
+            type: type.options[type.selectedIndex].getAttribute('typeid')
+        })
     }).then(res => res.json()).then(data => {
         let values = "<option disabled selected>Identificativo</option>";
         console.log("identificatives", data);
@@ -76,7 +86,7 @@ function productIdentificative() {
             values = values + `
                 <option value="${element.id}">${element.name}</option>
             `
-            
+
         });
         identificative.innerHTML = values;
     });
@@ -85,39 +95,37 @@ function productIdentificative() {
 
 form.addEventListener('submit', function (event) {
     event.preventDefault();
-        let data = {
-            id: productId,
-            name: form.product_name.value,
-            brand: form.product_brand.value,
-            stock: form.product_stock.value,
-            price: form.product_price.value,
-            productType: parseInt(type.value),
-            identificative: parseInt(identificative.value),
-        }
-        let method = 'POST';
-        if (productId) {
-            method = 'PUT';
-        }
-        fetch('/products/product', {
-                method: method,
-                body: JSON.stringify(data),
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            }).then(res => res.json())
-            .then(res => {
-                console.log(res)
-                if (res.success) {
-                    alert("Producto agregado con exito");
-                    form.reset();
-                } else {
-                    
-                }
-            })
+    let data = {
+        id: productId,
+        name: form.product_name.value,
+        brand: form.product_brand.value,
+        stock: form.product_stock.value,
+        price: form.product_price.value,
+        productType: parseInt(type.value),
+        identificative: parseInt(identificative.value),
+    }
+    let method = 'POST';
+    if (productId) {
+        method = 'PUT';
+    }
+    fetch('/products/product', {
+            method: method,
+            body: JSON.stringify(data),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then(res => res.json())
+        .then(res => {
+            console.log(res)
+            if (res.success) {
+                alert("Producto agregado con exito");
+                form.reset();
+            } else {
+
+            }
+        })
 });
 
 type.addEventListener('click', (event) => {
     productIdentificative();
 });
-
-
