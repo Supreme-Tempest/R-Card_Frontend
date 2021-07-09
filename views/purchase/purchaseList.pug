@@ -9,7 +9,7 @@ html(lang="en")
                 div(class="container col-8 ")
                     table(class="table table-striped" id="table_products")
                         thead
-                            tr
+                            tr 
                                 th(scope="col") Codigo
                                 th(scope="col") Producto
                                 th(scope="col") Marca
@@ -18,33 +18,54 @@ html(lang="en")
                                 th(scope="col") Detalle
                                 th(scope="col") 
                         tbody(id="tbody_products")
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Previous" id="startPage">
+                                    <span aria-hidden="true">&laquo;</span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                            </li>
+                            li(class="page-item")
+                                button(class="page-link" id="prevPage") 1
+                            li(class="page-item")
+                                button(class="page-link" id="page") 2
+                            li(class="page-item")
+                                button(class="page-link" id="nextPage") 3
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Next" id="endPage">
+                                    <span aria-hidden="true">&raquo;</span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
                 div.container.col-4.card.p-3                       
                     h3(class="text-center") Registrar Producto
-                    form(class="row" role='form' method='POST' action='/clients/clients' name="registerPurchase")
+                    form(class="row" role='form' method='POST' action='/products/product' name="registerProduct")
                         div(class="col-6" )
                             div(class="form-group")
                                 label(for="registerPurchase") Nombre de producto 
-                                input(type="text" class="form-control" id="product-name" placeholder="Nombre del producto")
+                                input(type="text" class="form-control" id="product_name" placeholder="Nombre del producto")
                             div(class="form-group")
                                 label(for="registerPurchase") Precio de venta
-                                input(type="number" class="form-control" id="product-price" placeholder="Ej: $ 10.00")
+                                input(type="number" class="form-control" id="product_price" placeholder="Ej: $ 10.00")
                             div(class="form-group")
                                 label(for="registerPurchase") Tipo de producto
-                                select(id="product-type" class="form-control")
+                                select(id="product_type" class="form-control")
                                     option(disabled selected) Seleccione tipo
                                     option(value="1") Camisa
                         div(class="col-6")
                             div(class="form-group")
                                 label(for="registerPurchase") Marca
-                                input(type="text" class="form-control" id="product-brand" placeholder="Ingrese el costo total")
+                                input(type="text" class="form-control" id="product_brand" placeholder="Ingrese el costo total")
                             div(class="form-group")
                                 label(for="registerPurchase") Cantidad
-                                input(type="number" class="form-control" id="product-stock" placeholder="Cantidad a ingresar")
+                                input(type="number" class="form-control" id="product_stock" placeholder="Cantidad a ingresar")
                             div(class="form-group")
                                 label(for="registerPurchase") Identificativo
-                                select(id="product-identificative" class="form-control")
+                                select(id="product_identificative" class="form-control")
                                     option(disabled selected) Seleccione identificativo
-                                    option(value="1") Talla M
                             div(class="form-group")
-                                input.btn.btn-primary.btn-block(type="submit"  value="Guardar")
+                                input.btn.btn-primary.btn-block(type="submit" value="Guardar")
         script(src="../../../javascripts/product/product.js")

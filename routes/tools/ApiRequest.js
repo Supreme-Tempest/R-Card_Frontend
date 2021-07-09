@@ -4,13 +4,14 @@ const axios = require('axios');
 const apiOptions = {
     server: 'http://localhost:3000/api/',
 }
-const login = require('../user');
+//const login = require('../user');
 
 const ApiPost = (route, req, res, e) => {
     ApiResponce('post', route, req, res, e);
 }
 
 const ApiGet = (route, req, res, e) => {
+    //console.log('apiGet: ', 'pre-responce');
     ApiResponce('get', route, req, res, e);
 }
 
@@ -23,13 +24,13 @@ const ApiDelete = (route, req, res, e) => {
 }
 
 const ApiResponce = (method, route, req, res, e) => {
-    console.log('apiRespone','pre-token');
+    //console.log('apiRespone','pre-token');
     if (localStorage.getItem('user') == '') {
-        console.log('apiRespone','no session');
-        login.login(req, res);
+        //console.log('apiRespone','no session');
+        res.redirect('/login');
         return
     }
-    console.log('apiRespone','pre-axios');
+    //console.log('apiRespone','pre-axios');
     axios({
         method: method,
         url: apiOptions.server + route,
@@ -39,12 +40,12 @@ const ApiResponce = (method, route, req, res, e) => {
         },
     })
         .then((response) => {
-            console.log('responce', response);
+            //console.log('responce', response);
             if (e) {
                 e(response.data);
             }
             if (response.data.code === 4012) {
-                console.log('responce', response.data);
+                //console.log('responce', response.data);
                 //res.redirect('/logout');
             } else {
                 res.send(response.data);
@@ -55,7 +56,7 @@ const ApiResponce = (method, route, req, res, e) => {
         console.log('No logro concetar a la direccion', error.message);
         })
         .then(() => {
-        console.log('goal :v');
+        //console.log('goal :v');
     });
 }
 
