@@ -22,8 +22,9 @@ onloadclient(page);
 
 function onload(){
     fetch('/workshop',{
-        method: 'POST'
+        method: 'GET'
     }).then(res => res.json()).then(data => {
+        console.log("Si llego o no?");
         let values = "<option disabled selected>Selecciona una sucursal</option>";
         data.forEach(element => {
             values = values + `
@@ -35,7 +36,6 @@ function onload(){
     fetch('/roles',{
         method: 'GET'
     }).then(res => res.json()).then(data => {
-        console.log(data);
         let roles = "<option disabled selected>Selecciona un rol</option>";
         data.forEach(element => {
             roles = roles + `
