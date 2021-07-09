@@ -24,9 +24,9 @@ function onload(){
     fetch('/workshop',{
         method: 'GET'
     }).then(res => res.json()).then(data => {
-        console.log("Si llego o no?");
+        console.log(data);
         let values = "<option disabled selected>Selecciona una sucursal</option>";
-        data.forEach(element => {
+        data.data.forEach(element => {
             values = values + `
                 <option value="${element.id}">${element.name}</option>
             `
