@@ -11,21 +11,15 @@ const labelNewProduct = document.getElementById('labelNewProduct');
 let userId = null;
 
 
-let prev = document.getElementById("prevPage");
-let next = document.getElementById("nextPage");
-let center = document.getElementById("page");
-let last = document.getElementById("endPage");
-let first = document.getElementById("startPage");
-
 let page = {
     page: 1,
     size: 5,
 }
 
-onload();
-onloadclient(page);
+onloadRegister();
+onload(page);
 
-function onload(){
+function onloadRegister(){
     console.log("sho mero", myRoleLevelAccess);
     fetch('/workshop',{
         method: 'GET'
@@ -98,20 +92,13 @@ function onloadclient(page) {
         headers: {
             'Content-Type': 'application/json'
         }
-    }).then(res => res.json()).then(data => {
+    }).then(res => res.json()).then(data => { 
         let values = "";
-        console.log("hola buenas");
-        prev.style.display = 'block'
-        next.style.display = 'block'
-        lastpage = data.data.pages
-        data.data.preview != null ? prev.innerText = data.data.preview : prev.style.display = 'none';
-        center.innerText = data.data.current;
-        data.data.next != null ? next.innerText = data.data.next : next.style.display = 'none';
-        console.log(data.data.data)
+        paginateAux(data.data)
         data.data.data.forEach(element => {
             //console.log("eleemtne user", element.role.levelaccess);
             values = values + `
-                <tr> 
+                <tr>  
                     <td>${element.username}</td>
                     <td>${element.name}</td>
                     <td>${element.lastname}</td>

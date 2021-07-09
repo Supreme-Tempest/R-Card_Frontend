@@ -12,7 +12,7 @@ var lastpage;
 console.log(table_product);
 console.log(center);
 
-let page = {
+let page = { 
     page: 1,
     size: 5,
 }
@@ -31,7 +31,6 @@ function onload(page) {
         }
     }).then(res => res.json()).then(data => {
         let values = "";
-        console.log(data);
         paginateAux(data.data)
         data.data.data.forEach(element => {
             values = values + `
@@ -92,7 +91,7 @@ function productType() {
                 <option value="${element.id}" typeid="${element.type_id}">${element.name}</option>
             `
         });
-        type.innerHTML = values;
+        type.innerHTML = values; 
     });
 };
 
@@ -125,6 +124,7 @@ function productIdentificative(e) {
 cancel.addEventListener('click', ()=> {
     productId = null;
     $("#cancelarUpdate").hide();
+    form.reset();
     labelNewProduct.innerText= "Registrar Producto";
     //alert("Cancel update");
 })
