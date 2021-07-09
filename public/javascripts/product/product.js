@@ -50,7 +50,10 @@ function onload(page) {
             element.addEventListener("click", function (event) {
                 event.preventDefault();
                 fila = element.parentNode.parentNode.childNodes;
-                form.product_name.value = fila[1];
+                form.product_name.value = fila[3].textContent;
+                form.product_brand.value = fila[5].textContent;
+                form.product_stock.value = fila[7].textContent;
+                form.product_price.value = fila[9].textContent;
             });
         });
     });
