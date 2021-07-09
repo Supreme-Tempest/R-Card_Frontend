@@ -65,9 +65,14 @@ function productType() {
 };
 
 function productIdentificative() { 
+    let mydata = {type: type.options[type.selectedIndex].getAttribute('typeid')}
+    console.log("my data", mydata);
     fetch('/products/productIdentificative', {
         method: 'POST',
-        body:  JSON.stringify({type: type.options[type.selectedIndex].getAttribute('typeid')})
+        body:  JSON.stringify(mydata),
+        headers: {
+            'Content-Type': 'application/json'
+        },
     }).then(res => res.json()).then(data => {
         let values = "<option disabled selected>Identificativo</option>";
         console.log("identificatives", data);
