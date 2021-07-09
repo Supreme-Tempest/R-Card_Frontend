@@ -72,12 +72,24 @@ function productType() {
     });
 };
 
+<<<<<<< HEAD
 function productIdentificative() {
     fetch('/products/productIdentificative', {
         method: 'POST',
         body: JSON.stringify({
             type: type.options[type.selectedIndex].getAttribute('typeid')
         })
+=======
+function productIdentificative() { 
+    let mydata = {type: type.options[type.selectedIndex].getAttribute('typeid')}
+    console.log("my data", mydata);
+    fetch('/products/productIdentificative', {
+        method: 'POST',
+        body:  JSON.stringify(mydata),
+        headers: {
+            'Content-Type': 'application/json'
+        },
+>>>>>>> b5e3c152aac62563a346b9c9fc80f4cc215b2b4a
     }).then(res => res.json()).then(data => {
         let values = "<option disabled selected>Identificativo</option>";
         console.log("identificatives", data);
