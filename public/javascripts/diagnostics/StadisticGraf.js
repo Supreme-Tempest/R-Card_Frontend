@@ -1,6 +1,17 @@
 // Obtener una referencia al elemento canvas del DOM
 const $grafica = document.querySelector("#grafica");
 
+
+
+var topTable = document.getElementById("top3desc");
+var ascTable = document.getElementById("top3asc");
+var statTable = document.getElementById("statTable");
+
+let stats = ""
+
+onload();
+btnGraficar();
+
 function GetEtiquetas(t){
     if (t=="Ventas Por Mes"){
         return ["Enero", "Febrero", "Marzo", "Abril"];
@@ -62,5 +73,63 @@ function btnGraficar() {
 
 }
 
-btnGraficar();
 
+
+
+function onload() {
+    fetch('/diagnostics/diagnoticfacture', {
+        method: 'GET'
+    }).then(res => res.json()).then(data => {
+        data.data.forEach(element => {
+            stats = stats + `
+                <tr> 
+                    <th> Total de ventas ${element.total} </th> 
+                    <th> Total de ingresos ${element.amount.toFixed(2)} </th> 
+            `
+        });
+        //type.innerHTML = values; 
+    });
+    fetch('/diagnostics/diagnoticproduct', {
+        method: 'GET'
+    }).then(res => res.json()).then(data => {
+        data.data.forEach(element => {
+            console.log(element)
+            stats = stats + `
+                    <th> Total de ventas ${element.products} </th> 
+                    <th> Total de ingresos: ${element.total} </th> 
+                </tr> 
+            `
+        });
+        statTable.innerHTML = stats; 
+    });
+    fetch('/diagnostics/diagnoticproductsaledesc', {
+        method: 'GET'
+    }).then(res => res.json()).then(data => {
+        let top3 = "";
+        data.data.forEach(element => {
+            top3 = top3 + `
+                <tr>
+                    <th>${element.product_id}</th>
+                    <th>${element.name}</th>
+                    <th>${element.total}</th>
+                </tr>
+            `
+        });
+        topTable.innerHTML = top3; 
+    });
+    fetch('/diagnostics/diagnoticproductsaleasc', {
+        method: 'GET'
+    }).then(res => res.json()).then(data => {
+        let top3 = "";
+        data.data.forEach(element => {
+            top3 = top3 + `
+                <tr>
+                    <th>${element.product_id}</th>
+                    <th>${element.name}</th>
+                    <th>${element.total}</th>
+                </tr>
+            `
+        });
+        ascTable.innerHTML = top3; 
+    })
+};
