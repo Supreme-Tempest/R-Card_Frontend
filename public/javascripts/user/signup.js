@@ -78,10 +78,13 @@ form.addEventListener('submit', function (event) {
                 }).then(res => res.json())
                 .then(data => {
                     console.log("data", data);
-                    if (data.status) {
+                    if (data.success) {
                         alert("Producto agregado con exito");
                         form.reset();
                     } else {
+                        data.error.forEach(e=>{
+                            console.log("error", e.message);
+                        })
                         alert("puede que estes repitiendo nombre o te falten datos");
                     }
                 })
