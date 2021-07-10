@@ -77,6 +77,7 @@ form.addEventListener('submit', function (event) {
                     }
                 }).then(res => res.json())
                 .then(data => {
+                    console.log("data", data);
                     if (data.status) {
                         alert("Producto agregado con exito");
                         form.reset();
