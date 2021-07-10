@@ -6,6 +6,7 @@ var type = document.getElementById("product_type");
 const cancel = document.getElementById("cancelarUpdate");
 const labelNewProduct = document.getElementById('labelNewProduct');
 var identificative = document.getElementById("product_identificative");
+var myRoleLevelAccess = document.getElementById("myRolLevelAcess").textContent;
 
 let productId = null; // aqui poner id de  producto a editar  ;v
 var lastpage;
@@ -46,7 +47,11 @@ function onload(page) {
                     >
                         ${element.type.name}|${element.identificative.name}
                     </td>
-                    <td><button class ="btn btn-success" name="edit">E</button></td>
+                    <td>
+                        ${2 < myRoleLevelAccess ? 
+                            '<button class = "btn btn-success" name="edit">E</button>' : ''
+                        }
+                    </td>
                 </tr>
             `
         });
@@ -143,7 +148,7 @@ form.addEventListener('submit', function (event) {
     }
     let method = 'POST';
     if (productId) {
-        method = 'PUT';
+        method = 'PUT'; 
     }
     fetch('/products/product', {
             method: method,

@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-html(lang="en")
+html(lang="es")
     title="Productos"
     body
         include ../tools/navigation.pug
-        div(class="container-fluid pt-4")
-            h3(class="text-center") Productos
-            div.p-5.row
+        div(class="container-fluid")
+            span(id="myRolLevelAcess" hidden=true)= levelAccessRol
+            h3(class="text-center pt-3") Productos
+            div.p-5.row 
                 div(class="container col-8 ")
                     table(class="table table-striped" id="table_products")
                         thead

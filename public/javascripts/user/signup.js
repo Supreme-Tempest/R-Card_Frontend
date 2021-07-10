@@ -40,7 +40,7 @@ function onloadRegister(){
         data.forEach(element => {
             if (element.levelaccess < myRoleLevelAccess) {
                 roles = roles + `
-                <option value="${element.role}" levelacces="${element.levelaccess}">${element.name}</option>
+                <option value="${element.role}" levelaccess="${element.levelaccess}">${element.name}</option>
             `
             }
         });
@@ -54,6 +54,7 @@ form.addEventListener('submit', function (event) {
     event.preventDefault();
     if (form.username.value != "" && form.name.value != "" && form.lastname.value != "" && form.password.value != "") {
         if (form.password.value == form.validated_password.value) {
+            
             let data = {
                 username: form.username.value,
                 password: form.password.value,
@@ -61,7 +62,7 @@ form.addEventListener('submit', function (event) {
                 lastname: form.lastname.value,
                 workshop: parseInt(workshop.value),
                 role: rol.value,
-                roleAccess: parseInt(rol.getAttribute("levelacces")),
+                roleAccess: parseInt(rol.options[rol.selectedIndex].getAttribute("levelaccess")),
             }
             let method = 'POST';
             if (userId) {
@@ -75,11 +76,15 @@ form.addEventListener('submit', function (event) {
                         'Content-Type': 'application/json'
                     }
                 }).then(res => res.json())
-                .then(res => {
-                    if (res.ok) {
+                .then(data => {
+                    console.log("data", data);
+                    if (data.success) {
                         alert("Producto agregado con exito");
                         form.reset();
                     } else {
+                        data.error.forEach(e=>{
+                            console.log("error", e.message);
+                        })
                         alert("puede que estes repitiendo nombre o te falten datos");
                     }
                 })

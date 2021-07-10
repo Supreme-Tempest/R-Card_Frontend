@@ -17,14 +17,13 @@ function onload() {
         }
     }).then(res => res.json()).then(data => {
         let values = "";
-        console.log(data); 
+        paginateAux(data.data);
         data.data.data.forEach(element => {
             values = values + `
                 <tr>
                     <td name="card">${element.card}</td>
                     <td>${element.name}</td>
                     <td class="btn-toolbar">
-                        <button class="btn btn-success">Editar</button>
                         ${element.state 
                             ? `<button class="btn btn-danger" name="editstatus" status="false" card="${element.card}">Deshabilitar</button>`
                             : `<button class="btn btn-primary" name="editstatus" status="true" card="${element.card}">Habilitar</button>`

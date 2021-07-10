@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-html(lang="en")
+html(lang="es")
     include ../tools/head.pug
         link(rel="stylesheet" href="/stylesheets/employee/Empleados.css")
         title="Empleados"
     body
         include ../tools/navigation.pug
-        div(class="container-fluid pt-4")
+        div(class="container-fluid")
             span(id="myRolLevelAcess" hidden=true)= levelAccessRol
-            h3(class="text-center") Empleados
+            h3(class="text-center pt-3") Empleados
             div.p-5.row
                 div(class="container col-7 ")
                     table(class="table table-striped" id="table_employee")
