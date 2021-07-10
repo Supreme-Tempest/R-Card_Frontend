@@ -22,7 +22,7 @@ function getProduct(id, cantidad) {
                     <td>${element.price}</td>
                     <td>${element.price * cantidad}</td>
                     <td>
-                        '<button class = "btn btn-success" name="edit">E</button>'
+                        '<button class = "btn btn-danger" name="edit">X</button>'
                     </td>
                 </tr>
             `
