@@ -14,6 +14,11 @@ const Routes = {
     productType: 'products/type', //get all, get all by type for param, post new, put update
     productIdentificative: 'products/identificative', //get all, get all by type for param, post new, put update
     productIdentificativeType: 'products/identificative_type', //get all, post new, put update
+
+    diagnosticFacture: 'diagnostic/factures',
+    diagnosticProduct: 'diagnostic/products',
+    diagnosticProductSalDesc: 'diagnostic/productSalesDesc',
+    diagnosticProductSalAsc: 'diagnostic/productSalesAsc',
 }
 
 module.exports = Routes;
