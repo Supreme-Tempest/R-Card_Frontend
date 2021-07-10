@@ -16,7 +16,8 @@ form.addEventListener('submit', function (event) {
                 }
             }).then(res => res.json())
             .then(res => {
-                if (res.ok) {
+                if (res.success) {
+                    alert("se pudo prro ;v");
                 } else {
                     alert("puede que estes repitiendo nombre o te falten datos");
                 }
