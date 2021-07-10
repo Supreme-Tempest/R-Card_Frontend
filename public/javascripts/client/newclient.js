@@ -1,4 +1,4 @@
-var form = (document.forms.newclient);
+const form = (document.forms.newclient);
 
 form.addEventListener('submit', function (event) {
     event.preventDefault();
@@ -6,9 +6,7 @@ form.addEventListener('submit', function (event) {
             number_card: form.number_card.value,
             dui: form.dui.value,
             name: form.name.value,
-            creation_date: form.creation_date.value,
             birthday: form.birthday.value,
-            state: true,
         }
         fetch('/clients/clients', {
                 method: 'POST',

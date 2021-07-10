@@ -11,12 +11,12 @@ router.get('/client_list', (req, res) => {
 }); 
 
 router.post('/clients', (req, res) => {
-    console.log(req);
+    console.log("body", req.body);
     apiMethods.ApiPost(routes.client, req, res);
 }); 
 
 router.put('/clientState', (req, res) => {
-    console.log(req);
+    console.log("body", req.body);
     apiMethods.ApiPut(routes.clientState, req, res);
 }); 
 
