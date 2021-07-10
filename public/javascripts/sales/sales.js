@@ -1,6 +1,7 @@
 var table_sales = document.getElementById("table_sales");
 var carrito = []
 var form = (document.forms.sales);
+const total =  document.getElementById("sale_Total")
 
 function getProduct(id, cantidad) {
     fetch('/products/productId', {
@@ -27,6 +28,8 @@ function getProduct(id, cantidad) {
                 </tr>
             `
             table_sales.innerHTML = table_sales.innerHTML + value;
+            
+            total.value = element.price * cantidad + parseFloat(total.value);
         }
             
     });
