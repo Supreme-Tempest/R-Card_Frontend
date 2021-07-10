@@ -3,18 +3,16 @@ var table_product = document.getElementById("tbody_products");
 //var product_identificative = document.getElementById("product_identificative");
 var form = (document.forms.registerProduct);
 var type = document.getElementById("product_type");
+const cancel = document.getElementById("cancelarUpdate");
+const labelNewProduct = document.getElementById('labelNewProduct');
 var identificative = document.getElementById("product_identificative");
-let prev = document.getElementById("prevPage");
-let next = document.getElementById("nextPage");
-let center = document.getElementById("page");
-let last = document.getElementById("endPage");
-let first = document.getElementById("startPage");
-let productId = 1; // aqui poner id de  producto a editar  ;v
+
+let productId = null; // aqui poner id de  producto a editar  ;v
 var lastpage;
 console.log(table_product);
 console.log(center);
 
-let page = {
+let page = { 
     page: 1,
     size: 5,
 }
@@ -24,8 +22,7 @@ productType();
 
 
 
-function onload(page) { 
-    
+function onload(page) {
     fetch('/products/productPage', {
         method: 'POST',
         body: JSON.stringify(page),
@@ -34,13 +31,7 @@ function onload(page) {
         }
     }).then(res => res.json()).then(data => {
         let values = "";
-        console.log(data);
-        prev.style.display = 'block'
-        next.style.display = 'block'
-        lastpage = data.data.pages
-        data.data.preview != null ? prev.innerText = data.data.preview : prev.style.display = 'none';
-        center.innerText = data.data.current;
-        data.data.next != null ? next.innerText = data.data.next : next.style.display = 'none';
+        paginateAux(data.data)
         data.data.data.forEach(element => {
             values = values + `
                 <tr> 
@@ -49,16 +40,47 @@ function onload(page) {
                     <td>${element.brand}</td>
                     <td>${element.stock}</td>
                     <td>${element.price}</td>
-                    <td>${element.type.name}|${element.identificative.name}</td>
-                    <td><button class = "btn btn-success">E</button></td>
+                    <td 
+                        typeid="${element.type.id}" 
+                        identificativeid="${element.identificative.id}"
+                    >
+                        ${element.type.name}|${element.identificative.name}
+                    </td>
+                    <td><button class ="btn btn-success" name="edit">E</button></td>
                 </tr>
             `
         });
+        $("#cancelarUpdate").hide();
         table_product.innerHTML = values;
+        let btn_update = document.getElementsByName('edit');
+        btn_update.forEach(element => {
+            element.addEventListener("click", function (event) {
+                event.preventDefault();
+                fila = element.parentNode.parentNode.childNodes;
+                productId = fila[1].innerText;
+                form.product_name.value = fila[3].innerText;
+                form.product_brand.value = fila[5].innerText;
+                form.product_stock.value = fila[7].innerText;
+                form.product_price.value = fila[9].innerText;
+                if ( fila[11].getAttribute("typeid") != type.value){
+                    productIdentificative(()=>{
+                        identificative.value = fila[11].getAttribute("identificativeid");
+                    })
+                } else {
+                    identificative.value = fila[11].getAttribute("identificativeid");
+                }
+                type.value = fila[11].getAttribute("typeid");
+                //console.log('label',label);
+                labelNewProduct.innerText= "Actualizar Producto";
+                $("#cancelarUpdate").show();
+                //console.log('fila',fila[11].getAttribute("typeid"));
+            });
+        });
     });
 }
 
-function productType() { 
+
+function productType() {
     fetch('/products/productType', {
         method: 'GET'
     }).then(res => res.json()).then(data => {
@@ -69,108 +91,78 @@ function productType() {
                 <option value="${element.id}" typeid="${element.type_id}">${element.name}</option>
             `
         });
-        type.innerHTML = values;
+        type.innerHTML = values; 
     });
 };
 
-function productIdentificative() { 
+function productIdentificative(e) { 
+    let mydata = {type: type.options[type.selectedIndex].getAttribute('typeid')}
+    console.log("my data", mydata);
     fetch('/products/productIdentificative', {
-        method: 'GET'
+        method: 'POST',
+        body:  JSON.stringify(mydata),
+        headers: {
+            'Content-Type': 'application/json'
+        },
     }).then(res => res.json()).then(data => {
         let values = "<option disabled selected>Identificativo</option>";
         console.log("identificatives", data);
         //console.log("typeid", type.options[type.selectedIndex].getAttribute('typeid'));
         data.forEach(element => {
-            if(element.type_id == type.options[type.selectedIndex].getAttribute('typeid')){ 
-                values = values + `
+            values = values + `
                 <option value="${element.id}">${element.name}</option>
             `
-            }
+
         });
         identificative.innerHTML = values;
+        if (e) {
+            e();
+        }
     });
 };
+
+cancel.addEventListener('click', ()=> {
+    productId = null;
+    $("#cancelarUpdate").hide();
+    form.reset();
+    labelNewProduct.innerText= "Registrar Producto";
+    //alert("Cancel update");
+})
 
 
 form.addEventListener('submit', function (event) {
     event.preventDefault();
-        let data = {
-            id: productId,
-            name: form.product_name.value,
-            brand: form.product_brand.value,
-            stock: form.product_stock.value,
-            price: form.product_price.value,
-            productType: parseInt(type.value),
-            identificative: parseInt(identificative.value),
-        }
-        let method = 'POST';
-        if (productId) {
-            method = 'PUT';
-        }
-        fetch('/products/product', {
-                method: method,
-                body: JSON.stringify(data),
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            }).then(res => res.json())
-            .then(res => {
-                console.log(res)
-                if (res.success) {
-                    alert("Producto agregado con exito");
-                    form.reset();
-                } else {
-                    
-                }
-            })
+    let data = {
+        id: productId,
+        name: form.product_name.value,
+        brand: form.product_brand.value,
+        stock: form.product_stock.value,
+        price: form.product_price.value,
+        productType: parseInt(type.value),
+        identificative: parseInt(identificative.value),
+    }
+    let method = 'POST';
+    if (productId) {
+        method = 'PUT';
+    }
+    fetch('/products/product', {
+            method: method,
+            body: JSON.stringify(data),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then(res => res.json())
+        .then(res => {
+            console.log(res)
+            if (res.success) {
+                alert("Producto agregado con exito");
+                form.reset();
+            } else {
+
+            }
+        })
 });
 
-type.addEventListener('click', (event) => {
+type.addEventListener('change', (event) => {
     productIdentificative();
 });
-
-function hola(){
-}
-
-var nextpage = (event) => {
-    page = {
-        page: next.textContent,
-        size: 5,
-    };
-    onload(page);
-}
-
-var prevpage = (event) => {
-    page = {
-        page: prev.textContent,
-        size: 5,
-    };
-    onload(page);
-}
-
-var centerpage = (event) => {
-    page = {
-        page: center.textContent,
-        size: 5,
-    };
-    onload(page);
-}
-var firstpagination = (event) => {
-    page = {
-        page: 1,
-        size: 5,
-    };
-    onload(page);
-}
-var lastpagination = (event) => {
-    page = {
-        page: lastpage,
-        size: 5,
-    };
-    onload(page);
-}
-center.addEventListener('click', centerpage);
-next.addEventListener('click', nextpage);
-prev.addEventListener('click', prevpage);
-first.addEventListener('click', firstpagination);
-last.addEventListener('click', lastpagination);

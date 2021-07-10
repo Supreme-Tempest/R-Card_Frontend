@@ -1,4 +1,4 @@
-var form = (document.forms.newclient);
+const form = (document.forms.newclient);
 
 form.addEventListener('submit', function (event) {
     event.preventDefault();
@@ -6,9 +6,7 @@ form.addEventListener('submit', function (event) {
             number_card: form.number_card.value,
             dui: form.dui.value,
             name: form.name.value,
-            creation_date: form.creation_date.value,
             birthday: form.birthday.value,
-            state: true,
         }
         fetch('/clients/clients', {
                 method: 'POST',
@@ -18,7 +16,8 @@ form.addEventListener('submit', function (event) {
                 }
             }).then(res => res.json())
             .then(res => {
-                if (res.ok) {
+                if (res.success) {
+                    alert("se pudo prro ;v");
                 } else {
                     alert("puede que estes repitiendo nombre o te falten datos");
                 }

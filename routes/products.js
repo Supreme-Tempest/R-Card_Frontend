@@ -39,8 +39,9 @@ router.get('/productType', (req, res) => {
     });
 }); 
 
-router.get('/productIdentificative', (req, res) => {
-    //console.log('productIdentificative router', 'pre body');
+router.post('/productIdentificative', (req, res) => {
+    console.log('productIdentificative router', req.body);
+    console.log('productIdentificative router', req.params);
     apiMethods.ApiGet(routes.productIdentificative, req, res, (e) => {
         //console.log("responce", e);
     });
