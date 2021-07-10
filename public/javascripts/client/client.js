@@ -17,7 +17,7 @@ function onload() {
         }
     }).then(res => res.json()).then(data => {
         let values = "";
-        console.log(data); 
+        paginateAux(data.data);
         data.data.data.forEach(element => {
             values = values + `
                 <tr>
