@@ -40,7 +40,7 @@ function onloadRegister(){
         data.forEach(element => {
             if (element.levelaccess < myRoleLevelAccess) {
                 roles = roles + `
-                <option value="${element.role}">${element.name}</option>
+                <option value="${element.role}" levelacces="${element.levelaccess}">${element.name}</option>
             `
             }
         });
@@ -61,6 +61,7 @@ form.addEventListener('submit', function (event) {
                 lastname: form.lastname.value,
                 workshop: parseInt(workshop.value),
                 role: rol.value,
+                roleAccess: parseInt(rol.getAttribute("levelacces")),
             }
             let method = 'POST';
             if (userId) {
