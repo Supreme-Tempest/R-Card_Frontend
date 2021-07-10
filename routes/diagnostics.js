@@ -6,7 +6,7 @@ const apiMethods = require('./tools/ApiRequest');
 router.get('/stadistics', (req, res) => {
     res.render('diagnostic/stadistics')
 });
-
+ 
 router.get('/diagnoticfacture', (req, res) => {
     apiMethods.ApiGet(routes.diagnosticFacture, req, res);
 }); 
