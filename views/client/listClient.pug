@@ -2,45 +2,66 @@
 html(lang="es")
     title="Clientes"
     body
-        include ../tools/navigation.pug
-        div(class="container")
-            div(class="container p-5")
-                h3(class="text-center") Clientes
-                div.p-5.row
-                    div(class="container col-7 ")
-                        table(class="table table-striped" id="table_client")
-                            thead
-                                tr
-                                    th(scope="col") Numero de Tarjeta
-                                    th(scope="col") Cliente
-                                    th(scope="col") Opciones
-                            tbody(id="tbody_client") 
-                                tr
-                                    td 1234 5678 5789
-                                    td Cristian Mauricio Alfaro Contreras
-                                    td
-                                        div.btn-toolbar
-                                            button.btn.btn-success Editar
-                                            button.btn.btn-danger Deshabilitar
-                    div.container.col-5.card.p-3
-                        h3(class="text-center") Agregar Cliente
-                        form(class="row" role='form' method='POST' action='/clients/clients' name="newclient")
-                            div(class="col-12" )
-                                div(class="form-group")
-                                    label(for="newclient") Numero de DUI
-                                    input(type="text" class="form-control validate-input" id="dui" aria-describedby="duiHelp" placeholder="Ejemplo: 12345678-9")
-                                    small(id="duiHelp" class="form-text text-muted") Debes incluir el guion 
-                                div(class="form-group")
-                                    label(for="newclient") Nombre completo
-                                    input(type="text" class="form-control" id="name" placeholder="Ingrese nombre completo")
-                                div(class="form-group")
-                                    label(for="newclient") Año de nacimiento
-                                    input(type="date" class="form-control" id="birthday")
-                                div(class="form-group")
-                                    label(for="newclient") Numero de tarjeta
-                                    input(type="text" class="form-control" id="number_card" placeholder="Ejemplo: 3000 7856 1234")
-                                div(class="form-group col")
-                                    input.btn.btn-success(type="submit" value="Guardar")  
+        include ../tools/navigation.pug 
+        div(class="container-fluid")
+            h3(class="text-center pt-3") Clientes
+            div.p-5.row
+                div(class="container col-7 ")
+                    table(class="table table-striped" id="table_client")
+                        thead
+                            tr
+                                th(scope="col") Numero de Tarjeta
+                                th(scope="col") Cliente
+                                th(scope="col") Opciones
+                        tbody(id="tbody_client") 
+                            tr
+                                td 1234 5678 5789
+                                td Cristian Mauricio Alfaro Contreras
+                                td
+                                    div.btn-toolbar
+                                        button.btn.btn-success Editar
+                                        button.btn.btn-danger Deshabilitar
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Previous" id="startPage">
+                                    <span aria-hidden="true">&laquo;</span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                            </li>
+                            li(class="page-item")
+                                button(class="page-link" id="prevPage") 1
+                            li(class="page-item")
+                                button(class="page-link" id="page") 2
+                            li(class="page-item")
+                                button(class="page-link" id="nextPage") 3
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Next" id="endPage">
+                                    <span aria-hidden="true">&raquo;</span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                div.container.col-5.card.p-3
+                    h3(class="text-center") Agregar Cliente
+                    form(class="row" role='form' method='POST' action='/clients/clients' name="newclient")
+                        div(class="col-12" )
+                            div(class="form-group")
+                                label(for="newclient") Numero de DUI
+                                input(type="text" class="form-control validate-input" id="dui" aria-describedby="duiHelp" placeholder="Ejemplo: 12345678-9")
+                                small(id="duiHelp" class="form-text text-muted") Debes incluir el guion 
+                            div(class="form-group")
+                                label(for="newclient") Nombre completo
+                                input(type="text" class="form-control" id="name" placeholder="Ingrese nombre completo")
+                            div(class="form-group")
+                                label(for="newclient") Año de nacimiento
+                                input(type="date" class="form-control" id="birthday")
+                            div(class="form-group")
+                                label(for="newclient") Numero de tarjeta
+                                input(type="text" class="form-control" id="number_card" placeholder="Ejemplo: 3000 7856 1234")
+                            div(class="form-group col")
+                                input.btn.btn-success(type="submit" value="Guardar")  
         script(src="../../../javascripts/tools/paginate.js")
         script(src="../../../javascripts/client/client.js")
         script(src="../../../javascripts/client/newclient.js")

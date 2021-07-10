@@ -8,7 +8,9 @@ router.get('/new', (req, res) => {
 });
 
 router.get('/register', (req, res) => {
-    res.render('purchase/purchaseList')
+    res.render('purchase/purchaseList',{
+        levelAccessRol: JSON.parse(localStorage.getItem('user')).role.levelaccess,
+    })
 });
 
 router.post('/productPage', (req, res) => {
