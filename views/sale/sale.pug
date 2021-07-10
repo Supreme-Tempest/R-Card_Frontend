@@ -57,7 +57,7 @@ html(lang="es")
                     </nav>
                 div.container.col-4.card.p-3                   
                     h3(class="text-center") Agregar
-                    form(class="row" role='form' method='POST' action='/sales/sale' name="sales")
+                    form(class="row" role='form' method='POST' name="sales")
                         div(class="col-6" )
                             div(class="form-group")
                                 label( for="sale") Codigo de producto 
@@ -78,3 +78,4 @@ html(lang="es")
                         div(class="col-6")  
                             div(class="form-group")
                                 input.btn.btn-danger.btn-block(type="submit" value="Cancelar")
+        script(src="/javascripts/sales/sales.js")

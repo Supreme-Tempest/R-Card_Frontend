@@ -19,6 +19,7 @@ const Routes = {
     diagnosticProduct: 'diagnostic/products',
     diagnosticProductSalDesc: 'diagnostic/productSalesDesc',
     diagnosticProductSalAsc: 'diagnostic/productSalesAsc',
+    productid: 'products/productid',
 }
 
 module.exports = Routes;
