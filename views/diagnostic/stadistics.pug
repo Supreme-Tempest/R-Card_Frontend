@@ -1,65 +1,37 @@
 <!DOCTYPE html>
 html(lang="es")
     title="Productos"
-    
     body
         include ../tools/navigation.pug
         div(class="container-fluid") 
             h3(class="text-center pt-3") Estadisticas
             div.row
-                div.col-2
+                div.col-3
                     div.card.p-3.text-center
                         h5.text-center Top 3 productos mas vendidos
                         small.d-flex.justify-content-center
                             table.table-sm.table-striped
-                                tr
-                                    th N
-                                    th Producto
-                                    th Cantidad
-                                tr
-                                    td 1
-                                    td Camisas
-                                    td 500
-                                tr
-                                    td 2
-                                    td Zapatos
-                                    td 300
-                                tr
-                                    td 3
-                                    td Vestidos
-                                    td 96
+                                thead 
+                                    tr
+                                        th N
+                                        th Producto
+                                        th Cantidad
+                                tbody#top3desc
+                                
                     div.card.p-3.text-center.mt-3
                         h5.text-center Top 3 productos menos vendidos
                         small.d-flex.justify-content-center
                             table.table-sm.table-striped
-                                tr
-                                    th N
-                                    th Producto
-                                    th Cantidad
-                                
-                                tr
-                                    td 1
-                                    td Pantalones
-                                    td 2
-                                
-                                tr
-                                    td 2
-                                    td Collar
-                                    td 3
-                                
-                                tr
-                                    td 3
-                                    td Anillo
-                                    td 6
-                div.col-10
+                                thead
+                                    tr
+                                        th N
+                                        th Producto
+                                        th Cantidad
+                                tbody#top3asc
+                div.col-9
                     div.row
                         table.table
-                                tr
-                                    th Total de clientes: 5
-                                    th Total de compras: 10
-                                    th Total de ventas: 15
-                                    th Total de productos: 20
-                                tr
+                            thead#statTable
                     div.row.card 
                         div.container
                             div.h75
@@ -76,4 +48,3 @@ html(lang="es")
                         
     <script src="https://cdn.jsdelivr.net/npm/chart.js@latest/dist/Chart.min.js"></script>
     <script src="/javascripts/diagnostics/StadisticGraf.js"></script>
-    img.img-sizing.mx-auto.d-block(src="/images/Bolso.svg" alt="")

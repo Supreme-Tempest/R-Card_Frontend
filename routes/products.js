@@ -41,6 +41,13 @@ router.get('/productType', (req, res) => {
     });
 }); 
 
+router.post('/productId', (req, res) => {
+    //console.log('productType router', 'pre body');
+    apiMethods.ApiGet(routes.productid, req, res, (e) => {
+        //console.log("responce", e);
+    });
+}); 
+
 router.post('/productIdentificative', (req, res) => {
     console.log('productIdentificative router', req.body);
     console.log('productIdentificative router', req.params);

@@ -16,48 +16,10 @@ html(lang="es")
                                 th(scope="col") Sub-Total
                                 th(scope="col") Eliminar
                         tbody(id="tbody_products")
-                            tr
-                                td( class="td-01") Cama
-                                td( class="td-02") 1
-                                td( class="td-02") 1,000
-                                td( class="td-02") 1,000
-                                td(class="td-05")
-                                        button(type="button" class="btn btn-danger") X
                                 
-                            tr
-                                td( class="td-01") Televisor
-                                td( class="td-02") 1
-                                td( class="td-02") 2,000
-                                td( class="td-02") 2,000
-                                td(class="td-05")
-                                        button(type="button" class="btn btn-danger") X
-                                
-                    <nav aria-label="Page navigation example">
-                        <ul class="pagination">
-                            <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Previous" id="startPage">
-                                    <span aria-hidden="true">&laquo;</span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                            </li>
-                            li(class="page-item")
-                                button(class="page-link" id="prevPage") 1
-                            li(class="page-item")
-                                button(class="page-link" id="page") 2
-                            li(class="page-item")
-                                button(class="page-link" id="nextPage") 3
-                            <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Next" id="endPage">
-                                    <span aria-hidden="true">&raquo;</span>
-                                    <span class="sr-only">Next</span>
-                                </a>
-                            </li>
-                            
-                        </ul>
-                    </nav>
                 div.container.col-4.card.p-3                   
                     h3(class="text-center") Agregar
-                    form(class="row" role='form' method='POST' action='/sales/sale' name="sales")
+                    form(class="row" role='form' method='POST' name="sales")
                         div(class="col-6" )
                             div(class="form-group")
                                 label( for="sale") Codigo de producto 
@@ -70,7 +32,7 @@ html(lang="es")
                                 input.btn.btn-primary.btn-block(type="submit" value="Agregar")
                 div.container.col-3.card.p-3                   
                     label( width="20px") Total
-                                input(type="text" class="form-control" id="sale_Total" value="$3,000")    
+                                input(type="text" class="form-control" id="sale_Total" value="0")    
                     form(class="row" role='form' method='POST' action='/sales/sale' name="sales")
                         div(class="col-6")
                             div(class="form-group")
@@ -78,3 +40,4 @@ html(lang="es")
                         div(class="col-6")  
                             div(class="form-group")
                                 input.btn.btn-danger.btn-block(type="submit" value="Cancelar")
+        script(src="/javascripts/sales/sales.js")
