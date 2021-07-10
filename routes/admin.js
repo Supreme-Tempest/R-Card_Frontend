@@ -92,4 +92,13 @@ router.post('/login', function(req, res, next) {
         });
 });
 
+router.get('/test', (req, res) => {
+    /*localStorage.setItem('login', {
+        login: 'yes',
+        item: 'yes'
+    });*/
+    res.redirect('/diagnostics/diagnoticfacture')
+    //res.end();
+});
+
 module.exports = router;

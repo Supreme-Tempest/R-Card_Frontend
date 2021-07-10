@@ -46,7 +46,9 @@ function onload(page) {
                     >
                         ${element.type.name}|${element.identificative.name}
                     </td>
-                    <td><button class ="btn btn-success" name="edit">E</button></td>
+                    <td><button class ="btn btn-success" name="edit">
+                        E
+                    </button></td>
                 </tr>
             `
         });
