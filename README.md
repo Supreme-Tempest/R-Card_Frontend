@@ -6,11 +6,20 @@
 
 ## Construido con 🛠️
 
-* Node JS
-* JavaScrip
-* Chart.js
-* Pug y CSS
+Node JS:
+es un entorno de tiempo de ejecución de JavaScript (de ahí su terminación en .js haciendo alusión al lenguaje JavaScript). Este entorno de tiempo de ejecución en tiempo real incluye todo lo que se necesita para ejecutar un programa escrito en JavaScript. 
 
+JavaScrip:
+es el único lenguaje de programación que funciona en los navegadores de forma nativa (lenguaje interpretado sin necesidad de compilación). Por tanto se utiliza como complemento de HTML y CSS para crear páginas webs.
+
+Chart.js :
+es una biblioteca JavaScript gratuita de código abierto para la visualización de datos, que admite 8 tipos de gráficos: barra línea área circular burbuja radar polar dispersión.
+
+PostgresSQL:
+es un sistema de gestión de bases de datos relacionales (RDBMS) libre y de código abierto (Open Source) que hace énfasis en la extensibilidad y el cumplimiento de SQL.
+
+Pug :
+es un motor de plantilla de Node.js con el que seremos capaces de escribir código HTML de una sintaxis mucho más sencilla, clara y directa, tanto a la hora de escribir como de leer y modificar
 
 ## Licencia 📄
 
